@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marilyn Frontal – Warholesque – Ron English Catalogue Raisonné</title>
+
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <meta name="work-type" content="warholesque-series" />
+
+  <style>
+    .variant-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 1rem;
+    }
+
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 26px;
+    }
+
+    .variant-item {
+      text-align: center;
+    }
+
+    /* Make each thumb clickable */
+    .variant-link {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .variant-link:focus {
+      outline: 2px solid #111;
+      outline-offset: 3px;
+    }
+
+    .variant-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #f3f4f6;
+      display: block;
+    }
+
+    .variant-title {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* ==========================
+       SOURCE PAINTING (fixed)
+       ========================== */
+    .source-wrap {
+      max-width: 900px;
+      margin: 26px auto 64px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .source-card {
+      max-width: 420px;
+      margin: 0 auto;
+      border-radius: 14px;
+      background: #fff;
+      padding: 14px 14px 16px 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .source-thumb {
+      width: 240px;
+      max-width: 80%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      margin: 10px auto 12px auto;
+      border-radius: 10px;
+      background: #f3f4f6;
+    }
+
+    /* Center the block overall, left-align label/value lines inside */
+    .source-meta {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .source-meta li { margin: 6px 0; }
+
+    .source-meta strong {
+      display: inline-block;
+      min-width: 110px;
+    }
+
+    /* Your extra note line: center it under the block */
+    .source-meta .source-note {
+      text-align: center;
+      margin-top: 10px;
+      color: #444;
+      font-size: 0.9rem;
+    }
+
+    /* ==========================
+       LIGHTBOX (page-local)
+       ========================== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.86);
+      z-index: 9999;
+    }
+    .lightbox.is-open {
+      display: flex;
+    }
+    .lightbox-card {
+      max-width: min(1100px, 96vw);
+      max-height: 92vh;
+      width: 100%;
+      position: relative;
+    }
+    .lightbox-img {
+      width: 100%;
+      max-height: 92vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+      background: #111;
+    }
+    .lightbox-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    .lightbox-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .lightbox-actions a,
+    .lightbox-actions button {
+      appearance: none;
+      border: 0;
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .lightbox-actions a:hover,
+    .lightbox-actions button:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+    .lightbox-close {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <h1>Marilyn Frontal</h1>
+
+  <nav class="top-nav">
+    <a class="nav-pill" href="../../index.html">Home</a>
+    <a class="nav-pill" href="./index.html">Warholesque</a>
+  </nav>
+</header>
+
+<main class="work-layout">
+
+  <img
+    src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-01a.jpg"
+    alt="Marilyn Frontal – Warholesque – Variant 01"
+    class="work-hero"
+    loading="lazy"
+  />
+
+  <ul class="work-meta">
+    <li><strong>Title:</strong> Marilyn Frontal</li>
+    <li><strong>Series:</strong> Warholesque</li>
+    <li><strong>Date:</strong> 2010</li>
+    <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+    <li><strong>Dimensions:</strong> 52 × 30 inches</li>
+    <li><strong>Notes:</strong> 20 colorway variants documented to date.</li>
+  </ul>
+
+</main>
+
+<section class="variant-section">
+  <h2 style="text-align:center; margin-bottom: 28px;">Variants</h2>
+
+  <div class="variant-grid" aria-label="Marilyn Frontal variants">
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-01a.jpg" data-title="Variant 1">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-01a.jpg" alt="Marilyn Frontal – Variant 1" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 1</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-02a.jpg" data-title="Variant 2">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-02a.jpg" alt="Marilyn Frontal – Variant 2" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 2</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-03a.jpg" data-title="Variant 3">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-03a.jpg" alt="Marilyn Frontal – Variant 3" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 3</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-04a.jpg" data-title="Variant 4">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-04a.jpg" alt="Marilyn Frontal – Variant 4" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 4</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-05a.jpg" data-title="Variant 5">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-05a.jpg" alt="Marilyn Frontal – Variant 5" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 5</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-06a.jpg" data-title="Variant 6">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-06a.jpg" alt="Marilyn Frontal – Variant 6" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 6</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-07a.jpg" data-title="Variant 7">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-07a.jpg" alt="Marilyn Frontal – Variant 7" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 7</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-08a.jpg" data-title="Variant 8">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-08a.jpg" alt="Marilyn Frontal – Variant 8" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 8</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-09a.jpg" data-title="Variant 9">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-09a.jpg" alt="Marilyn Frontal – Variant 9" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 9</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-10a.jpg" data-title="Variant 10">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-10a.jpg" alt="Marilyn Frontal – Variant 10" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 10</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-11a.jpg" data-title="Variant 11">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-11a.jpg" alt="Marilyn Frontal – Variant 11" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 11</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-12a.jpg" data-title="Variant 12">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-12a.jpg" alt="Marilyn Frontal – Variant 12" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 12</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-13a.jpg" data-title="Variant 13">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-13a.jpg" alt="Marilyn Frontal – Variant 13" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 13</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-14a.jpg" data-title="Variant 14">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-14a.jpg" alt="Marilyn Frontal – Variant 14" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 14</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-15a.jpg" data-title="Variant 15">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-15a.jpg" alt="Marilyn Frontal – Variant 15" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 15</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-16a.jpg" data-title="Variant 16">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-16a.jpg" alt="Marilyn Frontal – Variant 16" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 16</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-17a.jpg" data-title="Variant 17">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-17a.jpg" alt="Marilyn Frontal – Variant 17" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 17</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-18a.jpg" data-title="Variant 18">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-18a.jpg" alt="Marilyn Frontal – Variant 18" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 18</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-19a.jpg" data-title="Variant 19">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-19a.jpg" alt="Marilyn Frontal – Variant 19" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 19</div>
+    </div>
+
+    <div class="variant-item">
+      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-20a.jpg" data-title="Variant 20">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Frontal-var-20a.jpg" alt="Marilyn Frontal – Variant 20" loading="lazy">
+      </a>
+      <div class="variant-title">Variant 20</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOURCE PAINTING -->
+<section class="source-wrap" aria-label="Source painting information">
+  <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
+
+  <div class="source-card">
+    <img
+      class="source-thumb"
+      src="../../images/Paintings/Warholesque/Marilyn_Monotone.jpg"
+      alt="Marilyn Frontal source painting, oil on canvas, 2011"
+      loading="lazy"
+    />
+
+    <ul class="source-meta">
+      <li><strong>Title:</strong> Marilyn Monotone</li>
+      <li><strong>Date:</strong> 2010</li>
+      <li><strong>Medium:</strong> Oil on canvas</li>
+      <li><strong>Dimensions:</strong> 50 × 64 inches</li>
+      <li class="source-note">Dimensions are based on documentary evidence and are not fully confirmed.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Lightbox UI -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <div class="lightbox-bar">
+      <div id="lightboxTitle"></div>
+      <div class="lightbox-actions">
+        <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightboxImg");
+    const lbTitle = document.getElementById("lightboxTitle");
+    const lbOpen = document.getElementById("lightboxOpen");
+    const lbClose = document.getElementById("lightboxClose");
+
+    function openLightbox(src, title, alt) {
+      lb.classList.add("is-open");
+      lb.setAttribute("aria-hidden", "false");
+      lbImg.src = src;
+      lbImg.alt = alt || title || "Image";
+      lbTitle.textContent = title || "";
+      lbOpen.href = src;
+      document.body.style.overflow = "hidden";
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lb.classList.remove("is-open");
+      lb.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest(".variant-link");
+      if (link) {
+        e.preventDefault();
+        openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+        return;
+      }
+      if (e.target === lb) closeLightbox();
+    });
+
+    lbClose.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+    });
+  })();
+</script>
+
+</body>
+</html>
