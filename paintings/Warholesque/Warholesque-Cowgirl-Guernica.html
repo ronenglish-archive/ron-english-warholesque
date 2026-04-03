@@ -3,19 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cowgirl Guernica (2007) – Warholesque – Ron English Catalogue Raisonné</title>
+  <title>Cowgirl Guernica – Warholesque – Ron English Catalogue Raisonné</title>
 
   <link rel="stylesheet" href="../../css/styles.css" />
 
-  <!-- Machine-readable -->
   <meta name="work-type" content="warholesque-series" />
 
   <style>
-    .variant-wrap { margin-bottom: 56px; }
+    .variant-wrap {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 1rem;
+    }
 
     .variant-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
       gap: 26px;
     }
 
@@ -23,31 +26,85 @@
       text-align: center;
     }
 
-    /* Make each thumb clickable */
     .variant-link {
       display: block;
       border-radius: 10px;
       overflow: hidden;
     }
+
     .variant-link:focus {
       outline: 2px solid #111;
       outline-offset: 3px;
     }
 
-    /* LANDSCAPE THUMBS (better for your images) */
     .variant-item img {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
-      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       border-radius: 10px;
       background: #f3f4f6;
+      display: block;
     }
 
     .variant-title {
       font-size: 0.9rem;
       font-weight: 600;
       margin: 10px 0 0 0;
+    }
+
+    /* ==========================
+       SOURCE PAINTING (page-local)
+       ========================== */
+    .source-wrap {
+      max-width: 900px;
+      margin: 26px auto 64px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .source-card {
+      max-width: 640px;
+      margin: 0 auto;
+      border-radius: 14px;
+      background: #fff;
+      padding: 14px 14px 16px 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .source-thumb {
+      width: min(520px, 100%);
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 10px auto 12px auto;
+      border-radius: 10px;
+      background: #f3f4f6;
+    }
+
+    .source-meta {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .source-meta li {
+      margin: 6px 0;
+    }
+
+    .source-meta strong {
+      display: inline-block;
+      min-width: 110px;
+    }
+
+    .source-note {
+      margin: 14px 0 0 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
     }
 
     /* ==========================
@@ -63,15 +120,18 @@
       background: rgba(0, 0, 0, 0.86);
       z-index: 9999;
     }
+
     .lightbox.is-open {
       display: flex;
     }
+
     .lightbox-card {
       max-width: min(1100px, 96vw);
       max-height: 92vh;
       width: 100%;
       position: relative;
     }
+
     .lightbox-img {
       width: 100%;
       max-height: 92vh;
@@ -80,6 +140,7 @@
       border-radius: 12px;
       background: #111;
     }
+
     .lightbox-bar {
       display: flex;
       gap: 10px;
@@ -89,11 +150,13 @@
       color: #fff;
       font-size: 0.95rem;
     }
+
     .lightbox-actions {
       display: flex;
       gap: 10px;
       align-items: center;
     }
+
     .lightbox-actions a,
     .lightbox-actions button {
       appearance: none;
@@ -107,10 +170,12 @@
       font-weight: 600;
       line-height: 1;
     }
+
     .lightbox-actions a:hover,
     .lightbox-actions button:hover {
       background: rgba(255, 255, 255, 0.22);
     }
+
     .lightbox-close {
       width: 42px;
       height: 42px;
@@ -125,14 +190,13 @@
     <h1>Cowgirl Guernica (2007)</h1>
 
     <nav class="top-nav">
-<a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
       <a class="nav-pill" href="./index.html">Warholesque</a>
     </nav>
   </header>
 
   <!-- HERO + METADATA -->
   <main class="work-layout">
-
     <img
       src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg"
       alt="Cowgirl Guernica (Warholesque, 2007) – Variant 01a"
@@ -145,10 +209,8 @@
       <li><strong>Date:</strong> 2007</li>
       <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
       <li><strong>Dimensions:</strong> 36 × 90 inches</li>
-
       <li><strong>Notes:</strong> 13 colorway variants documented to date.</li>
     </ul>
-
   </main>
 
   <!-- VARIANTS -->
@@ -156,7 +218,6 @@
     <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
     <div class="variant-grid" aria-label="Cowgirl Guernica variants">
-
       <div class="variant-item">
         <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg" data-title="Variant 1">
           <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg" alt="Cowgirl Guernica – Variant 1" loading="lazy" />
@@ -247,12 +308,11 @@
         </a>
         <p class="variant-title">Variant 13</p>
       </div>
-
     </div>
   </section>
 
   <!-- SOURCE PAINTING -->
- <section class="source-wrap" aria-label="Source painting information">
+  <section class="source-wrap" aria-label="Source painting information">
     <h2 style="margin: 0 0 14px 0;">Source painting</h2>
 
     <div class="source-card">
@@ -271,13 +331,11 @@
       </ul>
 
       <p class="source-note">
-        Source painting shown for contextual reference. 
+        Source painting shown for contextual reference.
       </p>
     </div>
   </section>
 
-
-  
   <!-- Lightbox UI -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
