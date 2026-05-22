@@ -1,450 +1,558 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abraham Obama â€“ Warholesque â€“ Ron English Catalogue RaisonnÃ©</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Abraham Obama &ndash; Warholesque &ndash; Ron English Catalogue Raisonn&eacute;</title>
 
-  <!-- This file lives at /paintings/Warholesque/Warholesque-Abraham-Obama.html -->
-  <link rel="stylesheet" href="../../css/styles.css" />
+ <!-- This file lives at /paintings/Warholesque/Warholesque-Abraham-Obama.html -->
+ <link rel="stylesheet" href="../../css/styles.css" />
 
-  <style>
-    /* keep your narrower hero/meta area */
-    .work-layout {
-      max-width: 800px;
-      margin: 2.5rem auto 2.75rem auto;
-      text-align: center;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+ <style>
+ /* keep your narrower hero/meta area */
+ .work-layout {
+ max-width: 800px;
+ margin: 2.5rem auto 2.75rem auto;
+ text-align: center;
+ padding-left: 20px;
+ padding-right: 20px;
+ }
 
-    /* variants can be wider */
-    .variant-wrap {
-      max-width: 1100px;
-      margin: 0 auto 36px auto;
-      padding: 0 20px;
-    }
+ /* variants can be wider */
+ .variant-wrap {
+ max-width: 1100px;
+ margin: 0 auto 36px auto;
+ padding: 0 20px;
+ }
 
-    .variant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 26px;
-    }
+ .variant-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+ gap: 26px;
+ }
 
-    /* clickable tiles */
-    .variant-item {
-      text-decoration: none;
-      color: inherit;
-      text-align: center;
-      cursor: pointer;
-    }
+ /* clickable tiles */
+ .variant-item {
+ text-decoration: none;
+ color: inherit;
+ text-align: center;
+ cursor: pointer;
+ }
 
-    .variant-item img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .variant-item img {
+ width: 100%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ display: block;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .variant-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin: 10px 0 0 0;
-      color: #222;
-    }
+ .variant-title {
+ font-size: 0.9rem;
+ font-weight: 600;
+ margin: 10px 0 0 0;
+ color: #222;
+ }
 
-    /* ==========================
-       SOURCE PAINTING (smaller)
-       ========================== */
-    .source-wrap {
-      max-width: 900px;
-      margin: 26px auto 64px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+ /* ==========================
+ SOURCE PAINTING (smaller)
+ ========================== */
+ .source-wrap {
+ max-width: 900px;
+ margin: 26px auto 64px auto;
+ padding: 0 20px;
+ text-align: center;
+ }
 
 .source-card {
-  max-width: 420px;
-  margin: 0 auto;
-  border-radius: 14px;
-  background: #fff;
-  padding: 14px 14px 16px 14px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+ max-width: 420px;
+ margin: 0 auto;
+ border-radius: 14px;
+ background: #fff;
+ padding: 14px 14px 16px 14px;
+ box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
 .source-thumb {
-  width: 240px;
-  max-width: 80%;
-  aspect-ratio: 3 / 4;
+ width: 240px;
+ max-width: 80%;
+ aspect-ratio: 3 / 4;
+ object-fit: cover;
+ display: block;
+ margin: 10px auto 12px auto;
+ border-radius: 10px;
+ background: #f3f4f6;
+}
+
+ .source-meta {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ text-align: left;
+ display: inline-block;
+ font-size: 0.95rem;
+ }
+
+ .source-meta li { margin: 6px 0; }
+
+ .source-meta strong {
+ display: inline-block;
+ min-width: 110px;
+ }
+
+ .source-note {
+ margin-top: 10px;
+ font-size: 0.9rem;
+ color: #444;
+ }
+
+ /* ==========================
+ LIGHTBOX (page-local)
+ ========================== */
+ .lightbox {
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: rgba(0, 0, 0, 0.86);
+ z-index: 9999;
+ }
+ .lightbox.is-open { display: flex; }
+ .lightbox-card {
+ max-width: min(1100px, 96vw);
+ max-height: 92vh;
+ width: 100%;
+ position: relative;
+ }
+ .lightbox-img {
+ width: 100%;
+ max-height: 92vh;
+ object-fit: contain;
+ display: block;
+ border-radius: 12px;
+ background: #111;
+ }
+ .lightbox-bar {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 10px;
+ color: #fff;
+ font-size: 0.95rem;
+ }
+ .lightbox-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
+ .lightbox-actions a,
+ .lightbox-actions button {
+ appearance: none;
+ border: 0;
+ background: rgba(255, 255, 255, 0.14);
+ color: #fff;
+ padding: 10px 12px;
+ border-radius: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: 600;
+ line-height: 1;
+ }
+ .lightbox-actions a:hover,
+ .lightbox-actions button:hover {
+ background: rgba(255, 255, 255, 0.22);
+ }
+ .lightbox-close {
+ width: 42px;
+ height: 42px;
+ border-radius: 999px;
+ }
+ .variant-link:focus { outline: 2px solid #111; outline-offset: 3px; }
+ </style>
+ <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<style>
+/* WARHOLESQUE FINAL VARIANT GALLERY - START */
+.variant-wrap {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.variant-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.variant-item {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.variant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+}
+
+.variant-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  margin: 10px auto 12px auto;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #f3f4f6;
 }
 
-    .source-meta {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      display: inline-block;
-      font-size: 0.95rem;
-    }
+.variant-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 12px 0 0 0;
+  color: #222;
+}
 
-    .source-meta li { margin: 6px 0; }
+.variant-work-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 4px 0 0 0;
+}
 
-    .source-meta strong {
-      display: inline-block;
-      min-width: 110px;
-    }
+@media (max-width: 720px) {
+  .variant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+}
 
-    .source-note {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #444;
-    }
-
-    /* ==========================
-       LIGHTBOX (page-local)
-       ========================== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: rgba(0, 0, 0, 0.86);
-      z-index: 9999;
-    }
-    .lightbox.is-open { display: flex; }
-    .lightbox-card {
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      width: 100%;
-      position: relative;
-    }
-    .lightbox-img {
-      width: 100%;
-      max-height: 92vh;
-      object-fit: contain;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
-    .lightbox-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-    .lightbox-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .lightbox-actions a,
-    .lightbox-actions button {
-      appearance: none;
-      border: 0;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      line-height: 1;
-    }
-    .lightbox-actions a:hover,
-    .lightbox-actions button:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-    .lightbox-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-    }
-    .variant-link:focus { outline: 2px solid #111; outline-offset: 3px; }
-  </style>
-  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+@media (max-width: 420px) {
+  .variant-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* WARHOLESQUE FINAL VARIANT GALLERY - END */
+</style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <h1>Abraham Obama</h1>
+ <header class="site-header">
+ <h1>Abraham Obama</h1>
 
-    <nav class="top-nav">
-    <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
-      <a class="nav-pill" href="./index.html">Warholesque</a>
-    </nav>
-  </header>
+ <nav class="top-nav">
+ <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
+ <a class="nav-pill" href="./index.html">Warholesque</a>
+ </nav>
+ </header>
 
-  <!-- HERO + META -->
-  <main class="work-layout">
+ <!-- HERO + META -->
+ <main class="work-layout">
 
-    <img
-      src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-1.jpg"
-      alt="Abraham Obama (Warholesque) â€“ Variant 1"
-      class="work-hero"
-      loading="lazy"
-    />
+ <img
+ src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-1.jpg"
+ alt="Abraham Obama (Warholesque) &ndash; Variant 1"
+ class="work-hero"
+ loading="lazy"
+ />
 
-    <ul class="work-meta" data-work-id="WH-ABRAHAM-OBAMA">
-      <li><strong>Title:</strong> Abraham Obama</li>
-      <li><strong>Series:</strong> Warholesque</li>
-      <li><strong>Date:</strong> 2008</li>
-      <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
-      <li><strong>Dimensions:</strong> 24 Ã— 36 inches</li>
-      <li><strong>Notes:</strong> 29 colorway variants documented to date.</li>
-    </ul>
+ <ul class="work-meta" data-work-id="WH-ABRAHAM-OBAMA">
+ <li><strong>Title:</strong> Abraham Obama</li>
+ <li><strong>Series:</strong> Warholesque</li>
+ <li><strong>Date:</strong> 2008</li>
+ <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+ <li><strong>Dimensions:</strong> 24 &times; 36 inches</li>
+ <li><strong>Notes:</strong> 29 colorway variants documented to date.</li>
+ </ul>
 
-  </main>
+ </main>
 
-  <!-- VARIANTS GRID -->
+ <!-- VARIANTS GRID -->
+   <!-- VARIANTS -->
   <section class="variant-wrap">
     <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
     <div class="variant-grid" aria-label="Abraham Obama variants">
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-1.jpg" data-title="Variant 1">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-1.jpg" alt="Abraham Obama â€“ Variant 1" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-1.jpg" data-title="Variant 1 - RE-011566">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-1.jpg" alt="Abraham Obama - Variant 1 - RE-011566" loading="lazy" />
         <p class="variant-title">Variant 1</p>
+        <p class="variant-work-id">Work ID: RE-011566</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-2.jpg" data-title="Variant 2">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-2.jpg" alt="Abraham Obama â€“ Variant 2" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-2.jpg" data-title="Variant 2 - RE-011567">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-2.jpg" alt="Abraham Obama - Variant 2 - RE-011567" loading="lazy" />
         <p class="variant-title">Variant 2</p>
+        <p class="variant-work-id">Work ID: RE-011567</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-3.jpg" data-title="Variant 3">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-3.jpg" alt="Abraham Obama â€“ Variant 3" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-3.jpg" data-title="Variant 3 - RE-011568">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-3.jpg" alt="Abraham Obama - Variant 3 - RE-011568" loading="lazy" />
         <p class="variant-title">Variant 3</p>
+        <p class="variant-work-id">Work ID: RE-011568</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-4.jpg" data-title="Variant 4">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-4.jpg" alt="Abraham Obama â€“ Variant 4" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-4.jpg" data-title="Variant 4 - RE-011569">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-4.jpg" alt="Abraham Obama - Variant 4 - RE-011569" loading="lazy" />
         <p class="variant-title">Variant 4</p>
+        <p class="variant-work-id">Work ID: RE-011569</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-5.jpg" data-title="Variant 5">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-5.jpg" alt="Abraham Obama â€“ Variant 5" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-5.jpg" data-title="Variant 5 - RE-011570">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-5.jpg" alt="Abraham Obama - Variant 5 - RE-011570" loading="lazy" />
         <p class="variant-title">Variant 5</p>
+        <p class="variant-work-id">Work ID: RE-011570</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-6.jpg" data-title="Variant 6">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-6.jpg" alt="Abraham Obama â€“ Variant 6" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-6.jpg" data-title="Variant 6 - RE-011571">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-6.jpg" alt="Abraham Obama - Variant 6 - RE-011571" loading="lazy" />
         <p class="variant-title">Variant 6</p>
+        <p class="variant-work-id">Work ID: RE-011571</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-7.jpg" data-title="Variant 7">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-7.jpg" alt="Abraham Obama â€“ Variant 7" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-7.jpg" data-title="Variant 7 - RE-011572">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-7.jpg" alt="Abraham Obama - Variant 7 - RE-011572" loading="lazy" />
         <p class="variant-title">Variant 7</p>
+        <p class="variant-work-id">Work ID: RE-011572</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-8.jpg" data-title="Variant 8">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-8.jpg" alt="Abraham Obama â€“ Variant 8" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-8.jpg" data-title="Variant 8 - RE-011573">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-8.jpg" alt="Abraham Obama - Variant 8 - RE-011573" loading="lazy" />
         <p class="variant-title">Variant 8</p>
+        <p class="variant-work-id">Work ID: RE-011573</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-9.jpg" data-title="Variant 9">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-9.jpg" alt="Abraham Obama â€“ Variant 9" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-9.jpg" data-title="Variant 9 - RE-011574">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-9.jpg" alt="Abraham Obama - Variant 9 - RE-011574" loading="lazy" />
         <p class="variant-title">Variant 9</p>
+        <p class="variant-work-id">Work ID: RE-011574</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-10.jpg" data-title="Variant 10">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-10.jpg" alt="Abraham Obama â€“ Variant 10" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-10.jpg" data-title="Variant 10 - RE-011575">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-10.jpg" alt="Abraham Obama - Variant 10 - RE-011575" loading="lazy" />
         <p class="variant-title">Variant 10</p>
+        <p class="variant-work-id">Work ID: RE-011575</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-11.jpg" data-title="Variant 11">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-11.jpg" alt="Abraham Obama â€“ Variant 11" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-11.jpg" data-title="Variant 11 - RE-011576">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-11.jpg" alt="Abraham Obama - Variant 11 - RE-011576" loading="lazy" />
         <p class="variant-title">Variant 11</p>
+        <p class="variant-work-id">Work ID: RE-011576</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-12.jpg" data-title="Variant 12">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-12.jpg" alt="Abraham Obama â€“ Variant 12" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-12.jpg" data-title="Variant 12 - RE-011577">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-12.jpg" alt="Abraham Obama - Variant 12 - RE-011577" loading="lazy" />
         <p class="variant-title">Variant 12</p>
+        <p class="variant-work-id">Work ID: RE-011577</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-13.jpg" data-title="Variant 13">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-13.jpg" alt="Abraham Obama â€“ Variant 13" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-13.jpg" data-title="Variant 13 - RE-011578">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-13.jpg" alt="Abraham Obama - Variant 13 - RE-011578" loading="lazy" />
         <p class="variant-title">Variant 13</p>
+        <p class="variant-work-id">Work ID: RE-011578</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-14.jpg" data-title="Variant 14">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-14.jpg" alt="Abraham Obama â€“ Variant 14" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-14.jpg" data-title="Variant 14 - RE-011579">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-14.jpg" alt="Abraham Obama - Variant 14 - RE-011579" loading="lazy" />
         <p class="variant-title">Variant 14</p>
+        <p class="variant-work-id">Work ID: RE-011579</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-15.jpg" data-title="Variant 15">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-15.jpg" alt="Abraham Obama â€“ Variant 15" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-15.jpg" data-title="Variant 15 - RE-011580">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-15.jpg" alt="Abraham Obama - Variant 15 - RE-011580" loading="lazy" />
         <p class="variant-title">Variant 15</p>
+        <p class="variant-work-id">Work ID: RE-011580</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-16.jpg" data-title="Variant 16">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-16.jpg" alt="Abraham Obama â€“ Variant 16" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-16.jpg" data-title="Variant 16 - RE-011581">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-16.jpg" alt="Abraham Obama - Variant 16 - RE-011581" loading="lazy" />
         <p class="variant-title">Variant 16</p>
+        <p class="variant-work-id">Work ID: RE-011581</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-17.jpg" data-title="Variant 17">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-17.jpg" alt="Abraham Obama â€“ Variant 17" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-17.jpg" data-title="Variant 17 - RE-011582">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-17.jpg" alt="Abraham Obama - Variant 17 - RE-011582" loading="lazy" />
         <p class="variant-title">Variant 17</p>
+        <p class="variant-work-id">Work ID: RE-011582</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-18.jpg" data-title="Variant 18">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-18.jpg" alt="Abraham Obama â€“ Variant 18" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-18.jpg" data-title="Variant 18 - RE-011583">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-18.jpg" alt="Abraham Obama - Variant 18 - RE-011583" loading="lazy" />
         <p class="variant-title">Variant 18</p>
+        <p class="variant-work-id">Work ID: RE-011583</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-19.jpg" data-title="Variant 19">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-19.jpg" alt="Abraham Obama â€“ Variant 19" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-19.jpg" data-title="Variant 19 - RE-011584">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-19.jpg" alt="Abraham Obama - Variant 19 - RE-011584" loading="lazy" />
         <p class="variant-title">Variant 19</p>
+        <p class="variant-work-id">Work ID: RE-011584</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-20.jpg" data-title="Variant 20">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-20.jpg" alt="Abraham Obama â€“ Variant 20" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-20.jpg" data-title="Variant 20 - RE-011585">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-20.jpg" alt="Abraham Obama - Variant 20 - RE-011585" loading="lazy" />
         <p class="variant-title">Variant 20</p>
+        <p class="variant-work-id">Work ID: RE-011585</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-21.jpg" data-title="Variant 21">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-21.jpg" alt="Abraham Obama â€“ Variant 21" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-21.jpg" data-title="Variant 21 - RE-011586">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-21.jpg" alt="Abraham Obama - Variant 21 - RE-011586" loading="lazy" />
         <p class="variant-title">Variant 21</p>
+        <p class="variant-work-id">Work ID: RE-011586</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-22.jpg" data-title="Variant 22">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-22.jpg" alt="Abraham Obama â€“ Variant 22" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-22.jpg" data-title="Variant 22 - RE-011587">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-22.jpg" alt="Abraham Obama - Variant 22 - RE-011587" loading="lazy" />
         <p class="variant-title">Variant 22</p>
+        <p class="variant-work-id">Work ID: RE-011587</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-23.jpg" data-title="Variant 23">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-23.jpg" alt="Abraham Obama â€“ Variant 23" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-23.jpg" data-title="Variant 23 - RE-011588">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-23.jpg" alt="Abraham Obama - Variant 23 - RE-011588" loading="lazy" />
         <p class="variant-title">Variant 23</p>
+        <p class="variant-work-id">Work ID: RE-011588</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-24.jpg" data-title="Variant 24">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-24.jpg" alt="Abraham Obama â€“ Variant 24" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-24.jpg" data-title="Variant 24 - RE-011589">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-24.jpg" alt="Abraham Obama - Variant 24 - RE-011589" loading="lazy" />
         <p class="variant-title">Variant 24</p>
+        <p class="variant-work-id">Work ID: RE-011589</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-25.jpg" data-title="Variant 25">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-25.jpg" alt="Abraham Obama â€“ Variant 25" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-25.jpg" data-title="Variant 25 - RE-011590">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-25.jpg" alt="Abraham Obama - Variant 25 - RE-011590" loading="lazy" />
         <p class="variant-title">Variant 25</p>
+        <p class="variant-work-id">Work ID: RE-011590</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-26.jpg" data-title="Variant 26">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-26.jpg" alt="Abraham Obama â€“ Variant 26" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-26.jpg" data-title="Variant 26 - RE-011591">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-26.jpg" alt="Abraham Obama - Variant 26 - RE-011591" loading="lazy" />
         <p class="variant-title">Variant 26</p>
+        <p class="variant-work-id">Work ID: RE-011591</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-27.jpg" data-title="Variant 27">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-27.jpg" alt="Abraham Obama â€“ Variant 27" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-27.jpg" data-title="Variant 27 - RE-011592">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-27.jpg" alt="Abraham Obama - Variant 27 - RE-011592" loading="lazy" />
         <p class="variant-title">Variant 27</p>
+        <p class="variant-work-id">Work ID: RE-011592</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-28.jpg" data-title="Variant 28">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-28.jpg" alt="Abraham Obama â€“ Variant 28" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-28.jpg" data-title="Variant 28 - RE-011593">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-28.jpg" alt="Abraham Obama - Variant 28 - RE-011593" loading="lazy" />
         <p class="variant-title">Variant 28</p>
+        <p class="variant-work-id">Work ID: RE-011593</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-29.jpg" data-title="Variant 29">
-        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-29.jpg" alt="Abraham Obama â€“ Variant 29" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-29.jpg" data-title="Variant 29 - RE-011594">
+        <img src="../../images/Paintings/Warholesque/warholesque-abraham-obama-var-29.jpg" alt="Abraham Obama - Variant 29 - RE-011594" loading="lazy" />
         <p class="variant-title">Variant 29</p>
+        <p class="variant-work-id">Work ID: RE-011594</p>
       </a>
 
     </div>
   </section>
+<!-- SOURCE PAINTING -->
+ <section class="source-wrap" aria-label="Source painting information">
+ <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
 
-  <!-- SOURCE PAINTING -->
-  <section class="source-wrap" aria-label="Source painting information">
-    <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
+ <div class="source-card">
+ <img
+ class="source-thumb"
+ src="../../images/Paintings/Warholesque/warholesque-abraham-obama-original.jpg"
+ alt="Abraham Obama source painting, oil on canvas, 2008"
+ loading="lazy"
+ />
 
-    <div class="source-card">
-      <img
-        class="source-thumb"
-        src="../../images/Paintings/Warholesque/warholesque-abraham-obama-original.jpg"
-        alt="Abraham Obama source painting, oil on canvas, 2008"
-        loading="lazy"
-      />
+ <ul class="source-meta">
+ <li><strong>Title:</strong> Abraham Obama</li>
+ <li><strong>Date:</strong> 2008</li>
+ <li><strong>Medium:</strong> Oil on canvas</li>
+ <li><strong>Dimensions:</strong> 30 &times; 40 inches</li>
+ </ul>
 
-      <ul class="source-meta">
-        <li><strong>Title:</strong> Abraham Obama</li>
-        <li><strong>Date:</strong> 2008</li>
-        <li><strong>Medium:</strong> Oil on canvas</li>
-        <li><strong>Dimensions:</strong> 30 Ã— 40 inches</li>
-      </ul>
+ <p class="source-note">Source painting shown for contextual reference.</p>
+ </div>
+ </section>
 
-      <p class="source-note">
-        Source painting shown for contextual reference. Full catalogue entry forthcoming.
-      </p>
-    </div>
-  </section>
+ <!-- Lightbox UI -->
+ <div class="lightbox" id="lightbox" aria-hidden="true">
+ <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+ <img class="lightbox-img" id="lightboxImg" alt="">
+ <div class="lightbox-bar">
+ <div id="lightboxTitle"></div>
+ <div class="lightbox-actions">
+ <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ </div>
+ </div>
+ </div>
+ </div>
 
-  <!-- Lightbox UI -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-      <img class="lightbox-img" id="lightboxImg" alt="">
-      <div class="lightbox-bar">
-        <div id="lightboxTitle"></div>
-        <div class="lightbox-actions">
-          <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
-          <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">âœ•</button>
-        </div>
-      </div>
-    </div>
-  </div>
+ <script>
+ (function () {
+ const lb = document.getElementById("lightbox");
+ const lbImg = document.getElementById("lightboxImg");
+ const lbTitle = document.getElementById("lightboxTitle");
+ const lbOpen = document.getElementById("lightboxOpen");
+ const lbClose = document.getElementById("lightboxClose");
 
-  <script>
-    (function () {
-      const lb = document.getElementById("lightbox");
-      const lbImg = document.getElementById("lightboxImg");
-      const lbTitle = document.getElementById("lightboxTitle");
-      const lbOpen = document.getElementById("lightboxOpen");
-      const lbClose = document.getElementById("lightboxClose");
+ function openLightbox(src, title, alt) {
+ lb.classList.add("is-open");
+ lb.setAttribute("aria-hidden", "false");
+ lbImg.src = src;
+ lbImg.alt = alt || title || "Image";
+ lbTitle.textContent = title || "";
+ lbOpen.href = src;
+ document.body.style.overflow = "hidden";
+ lbClose.focus();
+ }
 
-      function openLightbox(src, title, alt) {
-        lb.classList.add("is-open");
-        lb.setAttribute("aria-hidden", "false");
-        lbImg.src = src;
-        lbImg.alt = alt || title || "Image";
-        lbTitle.textContent = title || "";
-        lbOpen.href = src;
-        document.body.style.overflow = "hidden";
-        lbClose.focus();
-      }
+ function closeLightbox() {
+ lb.classList.remove("is-open");
+ lb.setAttribute("aria-hidden", "true");
+ lbImg.src = "";
+ document.body.style.overflow = "";
+ }
 
-      function closeLightbox() {
-        lb.classList.remove("is-open");
-        lb.setAttribute("aria-hidden", "true");
-        lbImg.src = "";
-        document.body.style.overflow = "";
-      }
+ document.addEventListener("click", (e) => {
+ const link = e.target.closest(".variant-link");
+ if (link) {
+ e.preventDefault();
+ openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+ return;
+ }
+ if (e.target === lb) closeLightbox();
+ });
 
-      document.addEventListener("click", (e) => {
-        const link = e.target.closest(".variant-link");
-        if (link) {
-          e.preventDefault();
-          openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
-          return;
-        }
-        if (e.target === lb) closeLightbox();
-      });
+ lbClose.addEventListener("click", closeLightbox);
 
-      lbClose.addEventListener("click", closeLightbox);
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
-      });
-    })();
-  </script>
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+ });
+ })();
+ </script>
 
 </body>
 </html>
+
+
+
+
 

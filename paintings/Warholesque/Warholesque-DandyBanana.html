@@ -1,432 +1,542 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dandy Banana â€“ Warholesque â€“ Ron English Catalogue RaisonnÃ©</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Dandy Banana &ndash; Warholesque &ndash; Ron English Catalogue Raisonn&eacute;</title>
 
-  <link rel="stylesheet" href="../../css/styles.css" />
+ <link rel="stylesheet" href="../../css/styles.css" />
 
-  <!-- Machine-readable -->
-  <meta name="work-type" content="warholesque-series" />
+ <!-- Machine-readable -->
+ <meta name="work-type" content="warholesque-series" />
 
-  <style>
-    /* keep your narrower hero/meta area (matches other pages) */
-    .work-layout {
-      max-width: 800px;
-      margin: 2.5rem auto 2.75rem auto;
-      text-align: center;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+ <style>
+ /* keep your narrower hero/meta area (matches other pages) */
+ .work-layout {
+ max-width: 800px;
+ margin: 2.5rem auto 2.75rem auto;
+ text-align: center;
+ padding-left: 20px;
+ padding-right: 20px;
+ }
 
-    /* variants can be wider */
-    .variant-wrap {
-      max-width: 1100px;
-      margin: 0 auto 36px auto;
-      padding: 0 20px;
-    }
+ /* variants can be wider */
+ .variant-wrap {
+ max-width: 1100px;
+ margin: 0 auto 36px auto;
+ padding: 0 20px;
+ }
 
-    .variant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 26px;
-    }
+ .variant-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+ gap: 26px;
+ }
 
-    /* clickable tiles */
-    .variant-item {
-      text-decoration: none;
-      color: inherit;
-      text-align: center;
-      cursor: pointer;
-    }
+ /* clickable tiles */
+ .variant-item {
+ text-decoration: none;
+ color: inherit;
+ text-align: center;
+ cursor: pointer;
+ }
 
-    .variant-item img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .variant-item img {
+ width: 100%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ display: block;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .variant-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin: 10px 0 0 0;
-      color: #222;
-    }
+ .variant-title {
+ font-size: 0.9rem;
+ font-weight: 600;
+ margin: 10px 0 0 0;
+ color: #222;
+ }
 
-    /* ==========================
-       SOURCE PAINTING (smaller)
-       ========================== */
-    .source-wrap {
-      max-width: 900px;
-      margin: 26px auto 64px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+ /* ==========================
+ SOURCE PAINTING (smaller)
+ ========================== */
+ .source-wrap {
+ max-width: 900px;
+ margin: 26px auto 64px auto;
+ padding: 0 20px;
+ text-align: center;
+ }
 
-    .source-card {
-      max-width: 420px;
-      margin: 0 auto;
-      border-radius: 14px;
-      background: #fff;
-      padding: 14px 14px 16px 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
+ .source-card {
+ max-width: 420px;
+ margin: 0 auto;
+ border-radius: 14px;
+ background: #fff;
+ padding: 14px 14px 16px 14px;
+ box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+ }
 
-    .source-thumb {
-      width: 240px;
-      max-width: 80%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      display: block;
-      margin: 10px auto 12px auto;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .source-thumb {
+ width: 240px;
+ max-width: 80%;
+ aspect-ratio: 3 / 4;
+ object-fit: cover;
+ display: block;
+ margin: 10px auto 12px auto;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .source-meta {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      display: inline-block;
-      font-size: 0.95rem;
-    }
+ .source-meta {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ text-align: left;
+ display: inline-block;
+ font-size: 0.95rem;
+ }
 
-    .source-meta li { margin: 6px 0; }
+ .source-meta li { margin: 6px 0; }
 
-    .source-meta strong {
-      display: inline-block;
-      min-width: 110px;
-    }
+ .source-meta strong {
+ display: inline-block;
+ min-width: 110px;
+ }
 
-    .source-note {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #444;
-    }
+ .source-note {
+ margin-top: 10px;
+ font-size: 0.9rem;
+ color: #444;
+ }
 
-    /* ==========================
-       LIGHTBOX (page-local)
-       ========================== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: rgba(0, 0, 0, 0.86);
-      z-index: 9999;
-    }
-    .lightbox.is-open { display: flex; }
-    .lightbox-card {
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      width: 100%;
-      position: relative;
-    }
-    .lightbox-img {
-      width: 100%;
-      max-height: 92vh;
-      object-fit: contain;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
-    .lightbox-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-    .lightbox-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .lightbox-actions a,
-    .lightbox-actions button {
-      appearance: none;
-      border: 0;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      line-height: 1;
-    }
-    .lightbox-actions a:hover,
-    .lightbox-actions button:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-    .lightbox-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-    }
-    .variant-link:focus { outline: 2px solid #111; outline-offset: 3px; }
-  </style>
-  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+ /* ==========================
+ LIGHTBOX (page-local)
+ ========================== */
+ .lightbox {
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: rgba(0, 0, 0, 0.86);
+ z-index: 9999;
+ }
+ .lightbox.is-open { display: flex; }
+ .lightbox-card {
+ max-width: min(1100px, 96vw);
+ max-height: 92vh;
+ width: 100%;
+ position: relative;
+ }
+ .lightbox-img {
+ width: 100%;
+ max-height: 92vh;
+ object-fit: contain;
+ display: block;
+ border-radius: 12px;
+ background: #111;
+ }
+ .lightbox-bar {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 10px;
+ color: #fff;
+ font-size: 0.95rem;
+ }
+ .lightbox-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
+ .lightbox-actions a,
+ .lightbox-actions button {
+ appearance: none;
+ border: 0;
+ background: rgba(255, 255, 255, 0.14);
+ color: #fff;
+ padding: 10px 12px;
+ border-radius: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: 600;
+ line-height: 1;
+ }
+ .lightbox-actions a:hover,
+ .lightbox-actions button:hover {
+ background: rgba(255, 255, 255, 0.22);
+ }
+ .lightbox-close {
+ width: 42px;
+ height: 42px;
+ border-radius: 999px;
+ }
+ .variant-link:focus { outline: 2px solid #111; outline-offset: 3px; }
+ </style>
+ <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<style>
+/* WARHOLESQUE FINAL VARIANT GALLERY - START */
+.variant-wrap {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.variant-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.variant-item {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.variant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+}
+
+.variant-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.variant-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 12px 0 0 0;
+  color: #222;
+}
+
+.variant-work-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .variant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .variant-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* WARHOLESQUE FINAL VARIANT GALLERY - END */
+</style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <h1>Dandy Banana</h1>
+ <header class="site-header">
+ <h1>Dandy Banana</h1>
 
-    <nav class="top-nav">
+ <nav class="top-nav">
 <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
-      <a class="nav-pill" href="./index.html">Warholesque</a>
-    </nav>
-  </header>
+ <a class="nav-pill" href="./index.html">Warholesque</a>
+ </nav>
+ </header>
 
-  <!-- HERO + METADATA -->
-  <main class="work-layout">
+ <!-- HERO + METADATA -->
+ <main class="work-layout">
 
-    <img
-      src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-01a.jpg"
-      alt="Dandy Banana (Warholesque) â€“ Variant 1"
-      class="work-hero"
-      loading="lazy"
-    />
+ <img
+ src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-01a.jpg"
+ alt="Dandy Banana (Warholesque) &ndash; Variant 1"
+ class="work-hero"
+ loading="lazy"
+ />
 
-    <ul class="work-meta">
-      <li><strong>Title:</strong> Dandy Banana</li>
-      <li><strong>Series:</strong> Warholesque</li>
-      <li><strong>Date:</strong> 2003</li>
-      <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
-      <li><strong>Dimensions:</strong> 20 Ã— 24 inches</li>
-      <li><strong>Notes:</strong> 25 colorway variants documented to date.</li>
-    </ul>
+ <ul class="work-meta">
+ <li><strong>Title:</strong> Dandy Banana</li>
+ <li><strong>Series:</strong> Warholesque</li>
+ <li><strong>Date:</strong> 2003</li>
+ <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+ <li><strong>Dimensions:</strong> 20 &times; 24 inches</li>
+ <li><strong>Notes:</strong> 26 colorway variants documented to date.</li>
+ </ul>
 
-  </main>
+ </main>
 
-  <!-- VARIANTS -->
+ <!-- VARIANTS -->
+   <!-- VARIANTS -->
   <section class="variant-wrap">
     <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
     <div class="variant-grid" aria-label="Dandy Banana variants">
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-01a.jpg" data-title="Variant 1">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-01a.jpg" alt="Dandy Banana â€“ Variant 1" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-01a.jpg" data-title="Variant 1 - RE-011425">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-01a.jpg" alt="Dandy Banana - Variant 1 - RE-011425" loading="lazy" />
         <p class="variant-title">Variant 1</p>
+        <p class="variant-work-id">Work ID: RE-011425</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-02a.jpg" data-title="Variant 2">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-02a.jpg" alt="Dandy Banana â€“ Variant 2" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-02a.jpg" data-title="Variant 2 - RE-011426">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-02a.jpg" alt="Dandy Banana - Variant 2 - RE-011426" loading="lazy" />
         <p class="variant-title">Variant 2</p>
+        <p class="variant-work-id">Work ID: RE-011426</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-03a.jpg" data-title="Variant 3">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-03a.jpg" alt="Dandy Banana â€“ Variant 3" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-03a.jpg" data-title="Variant 3 - RE-011427">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-03a.jpg" alt="Dandy Banana - Variant 3 - RE-011427" loading="lazy" />
         <p class="variant-title">Variant 3</p>
+        <p class="variant-work-id">Work ID: RE-011427</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-04a.jpg" data-title="Variant 4">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-04a.jpg" alt="Dandy Banana â€“ Variant 4" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-04a.jpg" data-title="Variant 4 - RE-011428">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-04a.jpg" alt="Dandy Banana - Variant 4 - RE-011428" loading="lazy" />
         <p class="variant-title">Variant 4</p>
+        <p class="variant-work-id">Work ID: RE-011428</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-05a.jpg" data-title="Variant 5">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-05a.jpg" alt="Dandy Banana â€“ Variant 5" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-05a.jpg" data-title="Variant 5 - RE-011429">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-05a.jpg" alt="Dandy Banana - Variant 5 - RE-011429" loading="lazy" />
         <p class="variant-title">Variant 5</p>
+        <p class="variant-work-id">Work ID: RE-011429</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-06a.jpg" data-title="Variant 6">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-06a.jpg" alt="Dandy Banana â€“ Variant 6" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-06a.jpg" data-title="Variant 6 - RE-011430">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-06a.jpg" alt="Dandy Banana - Variant 6 - RE-011430" loading="lazy" />
         <p class="variant-title">Variant 6</p>
+        <p class="variant-work-id">Work ID: RE-011430</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-07a.jpg" data-title="Variant 7">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-07a.jpg" alt="Dandy Banana â€“ Variant 7" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-07a.jpg" data-title="Variant 7 - RE-011431">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-07a.jpg" alt="Dandy Banana - Variant 7 - RE-011431" loading="lazy" />
         <p class="variant-title">Variant 7</p>
+        <p class="variant-work-id">Work ID: RE-011431</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-08a.jpg" data-title="Variant 8">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-08a.jpg" alt="Dandy Banana â€“ Variant 8" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-08a.jpg" data-title="Variant 8 - RE-011432">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-08a.jpg" alt="Dandy Banana - Variant 8 - RE-011432" loading="lazy" />
         <p class="variant-title">Variant 8</p>
+        <p class="variant-work-id">Work ID: RE-011432</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-09a.jpg" data-title="Variant 9">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-09a.jpg" alt="Dandy Banana â€“ Variant 9" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-09a.jpg" data-title="Variant 9 - RE-011433">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-09a.jpg" alt="Dandy Banana - Variant 9 - RE-011433" loading="lazy" />
         <p class="variant-title">Variant 9</p>
+        <p class="variant-work-id">Work ID: RE-011433</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-10a.jpg" data-title="Variant 10">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-10a.jpg" alt="Dandy Banana â€“ Variant 10" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-10a.jpg" data-title="Variant 10 - RE-011434">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-10a.jpg" alt="Dandy Banana - Variant 10 - RE-011434" loading="lazy" />
         <p class="variant-title">Variant 10</p>
+        <p class="variant-work-id">Work ID: RE-011434</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-11a.jpg" data-title="Variant 11">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-11a.jpg" alt="Dandy Banana â€“ Variant 11" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-11a.jpg" data-title="Variant 11 - RE-011435">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-11a.jpg" alt="Dandy Banana - Variant 11 - RE-011435" loading="lazy" />
         <p class="variant-title">Variant 11</p>
+        <p class="variant-work-id">Work ID: RE-011435</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-12a.jpg" data-title="Variant 12">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-12a.jpg" alt="Dandy Banana â€“ Variant 12" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-12a.jpg" data-title="Variant 12 - RE-011436">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-12a.jpg" alt="Dandy Banana - Variant 12 - RE-011436" loading="lazy" />
         <p class="variant-title">Variant 12</p>
+        <p class="variant-work-id">Work ID: RE-011436</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-13a.jpg" data-title="Variant 13">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-13a.jpg" alt="Dandy Banana â€“ Variant 13" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-13a.jpg" data-title="Variant 13 - RE-011437">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-13a.jpg" alt="Dandy Banana - Variant 13 - RE-011437" loading="lazy" />
         <p class="variant-title">Variant 13</p>
+        <p class="variant-work-id">Work ID: RE-011437</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-14a.jpg" data-title="Variant 14">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-14a.jpg" alt="Dandy Banana â€“ Variant 14" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-14a.jpg" data-title="Variant 14 - RE-011438">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-14a.jpg" alt="Dandy Banana - Variant 14 - RE-011438" loading="lazy" />
         <p class="variant-title">Variant 14</p>
+        <p class="variant-work-id">Work ID: RE-011438</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-15a.jpg" data-title="Variant 15">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-15a.jpg" alt="Dandy Banana â€“ Variant 15" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-15a.jpg" data-title="Variant 15 - RE-011439">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-15a.jpg" alt="Dandy Banana - Variant 15 - RE-011439" loading="lazy" />
         <p class="variant-title">Variant 15</p>
+        <p class="variant-work-id">Work ID: RE-011439</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-16a.jpg" data-title="Variant 16">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-16a.jpg" alt="Dandy Banana â€“ Variant 16" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-16a.jpg" data-title="Variant 16 - RE-011440">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-16a.jpg" alt="Dandy Banana - Variant 16 - RE-011440" loading="lazy" />
         <p class="variant-title">Variant 16</p>
+        <p class="variant-work-id">Work ID: RE-011440</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-17a.jpg" data-title="Variant 17">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-17a.jpg" alt="Dandy Banana â€“ Variant 17" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-17a.jpg" data-title="Variant 17 - RE-011441">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-17a.jpg" alt="Dandy Banana - Variant 17 - RE-011441" loading="lazy" />
         <p class="variant-title">Variant 17</p>
+        <p class="variant-work-id">Work ID: RE-011441</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-18a.jpg" data-title="Variant 18">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-18a.jpg" alt="Dandy Banana â€“ Variant 18" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-18a.jpg" data-title="Variant 18 - RE-011442">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-18a.jpg" alt="Dandy Banana - Variant 18 - RE-011442" loading="lazy" />
         <p class="variant-title">Variant 18</p>
+        <p class="variant-work-id">Work ID: RE-011442</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-19a.jpg" data-title="Variant 19">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-19a.jpg" alt="Dandy Banana â€“ Variant 19" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-19a.jpg" data-title="Variant 19 - RE-011443">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-19a.jpg" alt="Dandy Banana - Variant 19 - RE-011443" loading="lazy" />
         <p class="variant-title">Variant 19</p>
+        <p class="variant-work-id">Work ID: RE-011443</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-20a.jpg" data-title="Variant 20">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-20a.jpg" alt="Dandy Banana â€“ Variant 20" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-20a.jpg" data-title="Variant 20 - RE-011444">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-20a.jpg" alt="Dandy Banana - Variant 20 - RE-011444" loading="lazy" />
         <p class="variant-title">Variant 20</p>
+        <p class="variant-work-id">Work ID: RE-011444</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-21a.jpg" data-title="Variant 21">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-21a.jpg" alt="Dandy Banana â€“ Variant 21" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-21a.jpg" data-title="Variant 21 - RE-011445">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-21a.jpg" alt="Dandy Banana - Variant 21 - RE-011445" loading="lazy" />
         <p class="variant-title">Variant 21</p>
+        <p class="variant-work-id">Work ID: RE-011445</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-22a.jpg" data-title="Variant 22">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-22a.jpg" alt="Dandy Banana â€“ Variant 22" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-22a.jpg" data-title="Variant 22 - RE-011446">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-22a.jpg" alt="Dandy Banana - Variant 22 - RE-011446" loading="lazy" />
         <p class="variant-title">Variant 22</p>
+        <p class="variant-work-id">Work ID: RE-011446</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-23a.jpg" data-title="Variant 23">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-23a.jpg" alt="Dandy Banana â€“ Variant 23" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-23a.jpg" data-title="Variant 23 - RE-011447">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-23a.jpg" alt="Dandy Banana - Variant 23 - RE-011447" loading="lazy" />
         <p class="variant-title">Variant 23</p>
+        <p class="variant-work-id">Work ID: RE-011447</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-24a.jpg" data-title="Variant 24">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-24a.jpg" alt="Dandy Banana â€“ Variant 24" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-24a.jpg" data-title="Variant 24 - RE-011448">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-24a.jpg" alt="Dandy Banana - Variant 24 - RE-011448" loading="lazy" />
         <p class="variant-title">Variant 24</p>
+        <p class="variant-work-id">Work ID: RE-011448</p>
       </a>
 
-      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-25a.jpg" data-title="Variant 25">
-        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-25a.jpg" alt="Dandy Banana â€“ Variant 25" loading="lazy" />
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-25a.jpg" data-title="Variant 25 - RE-011449">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-25a.jpg" alt="Dandy Banana - Variant 25 - RE-011449" loading="lazy" />
         <p class="variant-title">Variant 25</p>
+        <p class="variant-work-id">Work ID: RE-011449</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-DandyBanana-26a.jpg" data-title="Variant 26 - RE-011450">
+        <img src="../../images/Paintings/Warholesque/Warholesque-DandyBanana-26a.jpg" alt="Dandy Banana - Variant 26 - RE-011450" loading="lazy" />
+        <p class="variant-title">Variant 26</p>
+        <p class="variant-work-id">Work ID: RE-011450</p>
       </a>
 
     </div>
   </section>
+<!-- SOURCE PAINTING -->
+ <section class="source-wrap" aria-label="Source painting information">
+ <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
 
-  <!-- SOURCE PAINTING -->
-  <section class="source-wrap" aria-label="Source painting information">
-    <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
+ <div class="source-card">
+ <img
+ class="source-thumb"
+ src="../../images/Paintings/Warholesque/Dandy-Banana-original.jpg"
+ alt="Dandy Banana source painting, oil on canvas, 2002"
+ loading="lazy"
+ />
 
-    <div class="source-card">
-      <img
-        class="source-thumb"
-        src="../../images/Paintings/Warholesque/Dandy-Banana-original.jpg"
-        alt="Dandy Banana source painting, oil on canvas, 2002"
-        loading="lazy"
-      />
+ <ul class="source-meta">
+ <li><strong>Title:</strong> Dandy Banana</li>
+ <li><strong>Date:</strong> 2002</li>
+ <li><strong>Medium:</strong> Oil on canvas</li>
+ <li><strong>Dimensions:</strong> 20 &times; 18 inches</li>
+ </ul>
 
-      <ul class="source-meta">
-        <li><strong>Title:</strong> Dandy Banana</li>
-        <li><strong>Date:</strong> 2002</li>
-        <li><strong>Medium:</strong> Oil on canvas</li>
-        <li><strong>Dimensions:</strong> 20 Ã— 18 inches</li>
-      </ul>
+ <p class="source-note">Source painting shown for contextual reference.</p>
+ </div>
+ </section>
 
-      <p class="source-note">
-        Source painting shown for contextual reference. Full catalogue entry forthcoming.
-      </p>
-    </div>
-  </section>
+ <!-- Lightbox UI -->
+ <div class="lightbox" id="lightbox" aria-hidden="true">
+ <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+ <img class="lightbox-img" id="lightboxImg" alt="">
+ <div class="lightbox-bar">
+ <div id="lightboxTitle"></div>
+ <div class="lightbox-actions">
+ <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ </div>
+ </div>
+ </div>
+ </div>
 
-  <!-- Lightbox UI -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-      <img class="lightbox-img" id="lightboxImg" alt="">
-      <div class="lightbox-bar">
-        <div id="lightboxTitle"></div>
-        <div class="lightbox-actions">
-          <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
-          <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">âœ•</button>
-        </div>
-      </div>
-    </div>
-  </div>
+ <script>
+ (function () {
+ const lb = document.getElementById("lightbox");
+ const lbImg = document.getElementById("lightboxImg");
+ const lbTitle = document.getElementById("lightboxTitle");
+ const lbOpen = document.getElementById("lightboxOpen");
+ const lbClose = document.getElementById("lightboxClose");
 
-  <script>
-    (function () {
-      const lb = document.getElementById("lightbox");
-      const lbImg = document.getElementById("lightboxImg");
-      const lbTitle = document.getElementById("lightboxTitle");
-      const lbOpen = document.getElementById("lightboxOpen");
-      const lbClose = document.getElementById("lightboxClose");
+ function openLightbox(src, title, alt) {
+ lb.classList.add("is-open");
+ lb.setAttribute("aria-hidden", "false");
+ lbImg.src = src;
+ lbImg.alt = alt || title || "Image";
+ lbTitle.textContent = title || "";
+ lbOpen.href = src;
+ document.body.style.overflow = "hidden";
+ lbClose.focus();
+ }
 
-      function openLightbox(src, title, alt) {
-        lb.classList.add("is-open");
-        lb.setAttribute("aria-hidden", "false");
-        lbImg.src = src;
-        lbImg.alt = alt || title || "Image";
-        lbTitle.textContent = title || "";
-        lbOpen.href = src;
-        document.body.style.overflow = "hidden";
-        lbClose.focus();
-      }
+ function closeLightbox() {
+ lb.classList.remove("is-open");
+ lb.setAttribute("aria-hidden", "true");
+ lbImg.src = "";
+ document.body.style.overflow = "";
+ }
 
-      function closeLightbox() {
-        lb.classList.remove("is-open");
-        lb.setAttribute("aria-hidden", "true");
-        lbImg.src = "";
-        document.body.style.overflow = "";
-      }
+ document.addEventListener("click", (e) => {
+ const link = e.target.closest(".variant-link");
+ if (link) {
+ e.preventDefault();
+ openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+ return;
+ }
+ if (e.target === lb) closeLightbox();
+ });
 
-      document.addEventListener("click", (e) => {
-        const link = e.target.closest(".variant-link");
-        if (link) {
-          e.preventDefault();
-          openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
-          return;
-        }
-        if (e.target === lb) closeLightbox();
-      });
+ lbClose.addEventListener("click", closeLightbox);
 
-      lbClose.addEventListener("click", closeLightbox);
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
-      });
-    })();
-  </script>
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+ });
+ })();
+ </script>
 
 </body>
 </html>
+
+
+
+
 

@@ -1,402 +1,470 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cowgirl Guernica â€“ Warholesque â€“ Ron English Catalogue RaisonnÃ©</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Cowgirl Guernica &ndash; Warholesque &ndash; Ron English Catalogue Raisonn&eacute;</title>
 
-  <link rel="stylesheet" href="../../css/styles.css" />variant-grid {
+ <link rel="stylesheet" href="../../css/styles.css" />variant-grid {
 
-  <meta name="work-type" content="warholesque-series" />
+ <meta name="work-type" content="warholesque-series" />
 
-  <style>
-    .variant-wrap {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 1rem;
-    }
+ <style>
+ .variant-wrap {
+ max-width: 1200px;
+ margin: 60px auto;
+ padding: 0 1rem;
+ }
 
-    .variant-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 26px;
+ .variant-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 26px;
 }
 
-    .variant-item {
-      text-align: center;
-    }
+ .variant-item {
+ text-align: center;
+ }
 
-    .variant-link {
-      display: block;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #f3f4f6;
-      padding: 10px;
-    }
+ .variant-link {
+ display: block;
+ border-radius: 10px;
+ overflow: hidden;
+ background: #f3f4f6;
+ padding: 10px;
+ }
 
-    .variant-link:focus {
-      outline: 2px solid #111;
-      outline-offset: 3px;
-    }
+ .variant-link:focus {
+ outline: 2px solid #111;
+ outline-offset: 3px;
+ }
 
-    .variant-item img {
-      width: 100%;
-      aspect-ratio: 5 / 3;
-      object-fit: contain;
-      border-radius: 10px;
-      background: #f3f4f6;
-      display: block;
-    }
+ .variant-item img {
+ width: 100%;
+ aspect-ratio: 5 / 3;
+ object-fit: contain;
+ border-radius: 10px;
+ background: #f3f4f6;
+ display: block;
+ }
 
-    .variant-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin: 10px 0 0 0;
-    }
+ .variant-title {
+ font-size: 0.9rem;
+ font-weight: 600;
+ margin: 10px 0 0 0;
+ }
 
-    /* ==========================
-       SOURCE PAINTING (page-local)
-       ========================== */
-    .source-wrap {
-      max-width: 900px;
-      margin: 26px auto 64px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+ /* ==========================
+ SOURCE PAINTING (page-local)
+ ========================== */
+ .source-wrap {
+ max-width: 900px;
+ margin: 26px auto 64px auto;
+ padding: 0 20px;
+ text-align: center;
+ }
 
-    .source-card {
-      max-width: 640px;
-      margin: 0 auto;
-      border-radius: 14px;
-      background: #fff;
-      padding: 14px 14px 16px 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
+ .source-card {
+ max-width: 640px;
+ margin: 0 auto;
+ border-radius: 14px;
+ background: #fff;
+ padding: 14px 14px 16px 14px;
+ box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+ }
 
-    .source-thumb {
-      width: min(520px, 100%);
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      margin: 10px auto 12px auto;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .source-thumb {
+ width: min(520px, 100%);
+ max-width: 100%;
+ height: auto;
+ object-fit: contain;
+ display: block;
+ margin: 10px auto 12px auto;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .source-meta {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      display: inline-block;
-      font-size: 0.95rem;
-    }
+ .source-meta {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ text-align: left;
+ display: inline-block;
+ font-size: 0.95rem;
+ }
 
-    .source-meta li {
-      margin: 6px 0;
-    }
+ .source-meta li {
+ margin: 6px 0;
+ }
 
-    .source-meta strong {
-      display: inline-block;
-      min-width: 110px;
-    }
+ .source-meta strong {
+ display: inline-block;
+ min-width: 110px;
+ }
 
-    .source-note {
-      margin: 14px 0 0 0;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #444;
-    }
+ .source-note {
+ margin: 14px 0 0 0;
+ font-size: 0.95rem;
+ line-height: 1.5;
+ color: #444;
+ }
 
-    /* ==========================
-       LIGHTBOX (page-local)
-       ========================== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: rgba(0, 0, 0, 0.86);
-      z-index: 9999;
-    }
+ /* ==========================
+ LIGHTBOX (page-local)
+ ========================== */
+ .lightbox {
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: rgba(0, 0, 0, 0.86);
+ z-index: 9999;
+ }
 
-    .lightbox.is-open {
-      display: flex;
-    }
+ .lightbox.is-open {
+ display: flex;
+ }
 
-    .lightbox-card {
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      width: 100%;
-      position: relative;
-    }
+ .lightbox-card {
+ max-width: min(1100px, 96vw);
+ max-height: 92vh;
+ width: 100%;
+ position: relative;
+ }
 
-    .lightbox-img {
-      width: 100%;
-      max-height: 92vh;
-      object-fit: contain;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
+ .lightbox-img {
+ width: 100%;
+ max-height: 92vh;
+ object-fit: contain;
+ display: block;
+ border-radius: 12px;
+ background: #111;
+ }
 
-    .lightbox-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-    }
+ .lightbox-bar {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 10px;
+ color: #fff;
+ font-size: 0.95rem;
+ }
 
-    .lightbox-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
+ .lightbox-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
 
-    .lightbox-actions a,
-    .lightbox-actions button {
-      appearance: none;
-      border: 0;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      line-height: 1;
-    }
+ .lightbox-actions a,
+ .lightbox-actions button {
+ appearance: none;
+ border: 0;
+ background: rgba(255, 255, 255, 0.14);
+ color: #fff;
+ padding: 10px 12px;
+ border-radius: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: 600;
+ line-height: 1;
+ }
 
-    .lightbox-actions a:hover,
-    .lightbox-actions button:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
+ .lightbox-actions a:hover,
+ .lightbox-actions button:hover {
+ background: rgba(255, 255, 255, 0.22);
+ }
 
-    .lightbox-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+ .lightbox-close {
+ width: 42px;
+ height: 42px;
+ border-radius: 999px;
+ }
+ </style>
+ <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<style>
+/* WARHOLESQUE FINAL VARIANT GALLERY - START */
+.variant-wrap {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.variant-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.variant-item {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.variant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+}
+
+.variant-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.variant-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 12px 0 0 0;
+  color: #222;
+}
+
+.variant-work-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .variant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .variant-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* WARHOLESQUE FINAL VARIANT GALLERY - END */
+</style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <h1>Cowgirl Guernica (2007)</h1>
+ <header class="site-header">
+ <h1>Cowgirl Guernica (2007)</h1>
 
-    <nav class="top-nav">
-      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
-      <a class="nav-pill" href="./index.html">Warholesque</a>
-    </nav>
-  </header>
+ <nav class="top-nav">
+ <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
+ <a class="nav-pill" href="./index.html">Warholesque</a>
+ </nav>
+ </header>
 
-  <!-- HERO + METADATA -->
-  <main class="work-layout">
-    <img
-      src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg"
-      alt="Cowgirl Guernica (Warholesque, 2007) â€“ Variant 01a"
-      class="work-hero"
-      loading="lazy"
-    />
+ <!-- HERO + METADATA -->
+ <main class="work-layout">
+ <img
+ src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg"
+ alt="Cowgirl Guernica (Warholesque, 2007) &ndash; Variant 01a"
+ class="work-hero"
+ loading="lazy"
+ />
 
-    <ul class="work-meta">
-      <li><strong>Title:</strong> Cowgirl Guernica</li>
-      <li><strong>Date:</strong> 2007</li>
-      <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
-      <li><strong>Dimensions:</strong> 36 Ã— 90 inches</li>
-      <li><strong>Notes:</strong> 13 colorway variants documented to date.</li>
-    </ul>
-  </main>
+ <ul class="work-meta">
+ <li><strong>Title:</strong> Cowgirl Guernica</li>
+ <li><strong>Date:</strong> 2007</li>
+ <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+ <li><strong>Dimensions:</strong> 36 &times; 90 inches</li>
+ <li><strong>Notes:</strong> 13 colorway variants documented to date.</li>
+ </ul>
+ </main>
 
-  <!-- VARIANTS -->
+ <!-- VARIANTS -->
+   <!-- VARIANTS -->
   <section class="variant-wrap">
     <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
-    <div class="variant-grid" aria-label="Cowgirl Guernica variants">
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg" data-title="Variant 1">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg" alt="Cowgirl Guernica â€“ Variant 1" loading="lazy" />
-        </a>
+    <div class="variant-grid" aria-label="Cowgirl Guernica (2007) variants">
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg" data-title="Variant 1 - RE-011461">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-01a.jpg" alt="Cowgirl Guernica (2007) - Variant 1 - RE-011461" loading="lazy" />
         <p class="variant-title">Variant 1</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011461</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-02a.jpg" data-title="Variant 2">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-02a.jpg" alt="Cowgirl Guernica â€“ Variant 2" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-02a.jpg" data-title="Variant 2 - RE-011462">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-02a.jpg" alt="Cowgirl Guernica (2007) - Variant 2 - RE-011462" loading="lazy" />
         <p class="variant-title">Variant 2</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011462</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-03a.jpg" data-title="Variant 3">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-03a.jpg" alt="Cowgirl Guernica â€“ Variant 3" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-03a.jpg" data-title="Variant 3 - RE-011463">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-03a.jpg" alt="Cowgirl Guernica (2007) - Variant 3 - RE-011463" loading="lazy" />
         <p class="variant-title">Variant 3</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011463</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-04a.jpg" data-title="Variant 4">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-04a.jpg" alt="Cowgirl Guernica â€“ Variant 4" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-04a.jpg" data-title="Variant 4 - RE-011464">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-04a.jpg" alt="Cowgirl Guernica (2007) - Variant 4 - RE-011464" loading="lazy" />
         <p class="variant-title">Variant 4</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011464</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-05a.jpg" data-title="Variant 5">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-05a.jpg" alt="Cowgirl Guernica â€“ Variant 5" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-05a.jpg" data-title="Variant 5 - RE-011465">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-05a.jpg" alt="Cowgirl Guernica (2007) - Variant 5 - RE-011465" loading="lazy" />
         <p class="variant-title">Variant 5</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011465</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-06a.jpg" data-title="Variant 6">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-06a.jpg" alt="Cowgirl Guernica â€“ Variant 6" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-06a.jpg" data-title="Variant 6 - RE-011466">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-06a.jpg" alt="Cowgirl Guernica (2007) - Variant 6 - RE-011466" loading="lazy" />
         <p class="variant-title">Variant 6</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011466</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-07a.jpg" data-title="Variant 7">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-07a.jpg" alt="Cowgirl Guernica â€“ Variant 7" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-07a.jpg" data-title="Variant 7 - RE-011467">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-07a.jpg" alt="Cowgirl Guernica (2007) - Variant 7 - RE-011467" loading="lazy" />
         <p class="variant-title">Variant 7</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011467</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-08a.jpg" data-title="Variant 8">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-08a.jpg" alt="Cowgirl Guernica â€“ Variant 8" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-08a.jpg" data-title="Variant 8 - RE-011468">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-08a.jpg" alt="Cowgirl Guernica (2007) - Variant 8 - RE-011468" loading="lazy" />
         <p class="variant-title">Variant 8</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011468</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-09a.jpg" data-title="Variant 9">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-09a.jpg" alt="Cowgirl Guernica â€“ Variant 9" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-09a.jpg" data-title="Variant 9 - RE-011469">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-09a.jpg" alt="Cowgirl Guernica (2007) - Variant 9 - RE-011469" loading="lazy" />
         <p class="variant-title">Variant 9</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011469</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-10a.jpg" data-title="Variant 10">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-10a.jpg" alt="Cowgirl Guernica â€“ Variant 10" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-10a.jpg" data-title="Variant 10 - RE-011470">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-10a.jpg" alt="Cowgirl Guernica (2007) - Variant 10 - RE-011470" loading="lazy" />
         <p class="variant-title">Variant 10</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011470</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-11a.jpg" data-title="Variant 11">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-11a.jpg" alt="Cowgirl Guernica â€“ Variant 11" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-11a.jpg" data-title="Variant 11 - RE-011471">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-11a.jpg" alt="Cowgirl Guernica (2007) - Variant 11 - RE-011471" loading="lazy" />
         <p class="variant-title">Variant 11</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011471</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-12a.jpg" data-title="Variant 12">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-12a.jpg" alt="Cowgirl Guernica â€“ Variant 12" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-12a.jpg" data-title="Variant 12 - RE-011472">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-12a.jpg" alt="Cowgirl Guernica (2007) - Variant 12 - RE-011472" loading="lazy" />
         <p class="variant-title">Variant 12</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011472</p>
+      </a>
 
-      <div class="variant-item">
-        <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-13a.jpg" data-title="Variant 13">
-          <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-13a.jpg" alt="Cowgirl Guernica â€“ Variant 13" loading="lazy" />
-        </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-13a.jpg" data-title="Variant 13 - RE-011473">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Cowgirl-Guernica-var-13a.jpg" alt="Cowgirl Guernica (2007) - Variant 13 - RE-011473" loading="lazy" />
         <p class="variant-title">Variant 13</p>
-      </div>
+        <p class="variant-work-id">Work ID: RE-011473</p>
+      </a>
+
     </div>
   </section>
+<!-- SOURCE PAINTING -->
+ <section class="source-wrap" aria-label="Source painting information">
+ <h2 style="margin: 0 0 14px 0;">Source painting</h2>
 
-  <!-- SOURCE PAINTING -->
-  <section class="source-wrap" aria-label="Source painting information">
-    <h2 style="margin: 0 0 14px 0;">Source painting</h2>
+ <div class="source-card">
+ <img
+ class="source-thumb"
+ src="../../images/Paintings/Warholesque/Cowgirl-Guernica-PAINTING.jpg"
+ alt="Cowgirl Guernica painting, oil on canvas, 2006"
+ loading="lazy"
+ />
 
-    <div class="source-card">
-      <img
-        class="source-thumb"
-        src="../../images/Paintings/Warholesque/Cowgirl-Guernica-PAINTING.jpg"
-        alt="Cowgirl Guernica painting, oil on canvas, 2006"
-        loading="lazy"
-      />
+ <ul class="source-meta">
+ <li><strong>Title:</strong> Cowgirl Guernica</li>
+ <li><strong>Date:</strong> 2006</li>
+ <li><strong>Medium:</strong> Oil on canvas</li>
+ <li><strong>Dimensions:</strong> 90 &times; 36 inches</li>
+ </ul>
 
-      <ul class="source-meta">
-        <li><strong>Title:</strong> Cowgirl Guernica</li>
-        <li><strong>Date:</strong> 2006</li>
-        <li><strong>Medium:</strong> Oil on canvas</li>
-        <li><strong>Dimensions:</strong> 90 Ã— 36 inches</li>
-      </ul>
+ <p class="source-note">Source painting shown for contextual reference.</p>
+ </div>
+ </section>
 
-      <p class="source-note">
-        Source painting shown for contextual reference.
-      </p>
-    </div>
-  </section>
+ <!-- Lightbox UI -->
+ <div class="lightbox" id="lightbox" aria-hidden="true">
+ <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+ <img class="lightbox-img" id="lightboxImg" alt="">
+ <div class="lightbox-bar">
+ <div id="lightboxTitle"></div>
+ <div class="lightbox-actions">
+ <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ </div>
+ </div>
+ </div>
+ </div>
 
-  <!-- Lightbox UI -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-      <img class="lightbox-img" id="lightboxImg" alt="">
-      <div class="lightbox-bar">
-        <div id="lightboxTitle"></div>
-        <div class="lightbox-actions">
-          <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
-          <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">âœ•</button>
-        </div>
-      </div>
-    </div>
-  </div>
+ <script>
+ (function () {
+ const lb = document.getElementById("lightbox");
+ const lbImg = document.getElementById("lightboxImg");
+ const lbTitle = document.getElementById("lightboxTitle");
+ const lbOpen = document.getElementById("lightboxOpen");
+ const lbClose = document.getElementById("lightboxClose");
 
-  <script>
-    (function () {
-      const lb = document.getElementById("lightbox");
-      const lbImg = document.getElementById("lightboxImg");
-      const lbTitle = document.getElementById("lightboxTitle");
-      const lbOpen = document.getElementById("lightboxOpen");
-      const lbClose = document.getElementById("lightboxClose");
+ function openLightbox(src, title, alt) {
+ lb.classList.add("is-open");
+ lb.setAttribute("aria-hidden", "false");
+ lbImg.src = src;
+ lbImg.alt = alt || title || "Image";
+ lbTitle.textContent = title || "";
+ lbOpen.href = src;
+ document.body.style.overflow = "hidden";
+ lbClose.focus();
+ }
 
-      function openLightbox(src, title, alt) {
-        lb.classList.add("is-open");
-        lb.setAttribute("aria-hidden", "false");
-        lbImg.src = src;
-        lbImg.alt = alt || title || "Image";
-        lbTitle.textContent = title || "";
-        lbOpen.href = src;
-        document.body.style.overflow = "hidden";
-        lbClose.focus();
-      }
+ function closeLightbox() {
+ lb.classList.remove("is-open");
+ lb.setAttribute("aria-hidden", "true");
+ lbImg.src = "";
+ document.body.style.overflow = "";
+ }
 
-      function closeLightbox() {
-        lb.classList.remove("is-open");
-        lb.setAttribute("aria-hidden", "true");
-        lbImg.src = "";
-        document.body.style.overflow = "";
-      }
+ document.addEventListener("click", (e) => {
+ const link = e.target.closest(".variant-link");
+ if (link) {
+ e.preventDefault();
+ openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+ return;
+ }
+ if (e.target === lb) closeLightbox();
+ });
 
-      document.addEventListener("click", (e) => {
-        const link = e.target.closest(".variant-link");
-        if (link) {
-          e.preventDefault();
-          openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
-          return;
-        }
-        if (e.target === lb) closeLightbox();
-      });
+ lbClose.addEventListener("click", closeLightbox);
 
-      lbClose.addEventListener("click", closeLightbox);
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
-      });
-    })();
-  </script>
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+ });
+ })();
+ </script>
 
 </body>
 </html>
+
+
+
+
 

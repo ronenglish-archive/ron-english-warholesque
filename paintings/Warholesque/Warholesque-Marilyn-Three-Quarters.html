@@ -1,410 +1,1010 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marilyn Three Quarters â€“ Warholesque â€“ Ron English Catalogue RaisonnÃ©</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Marilyn Three Quarters &ndash; Warholesque &ndash; Ron English Catalogue Raisonn&eacute;</title>
 
-  <!-- This file lives at /paintings/Warholesque/Warholesque-Marilyn-Three-Quarters.html -->
-  <link rel="stylesheet" href="../../css/styles.css" />
+ <!-- This file lives at /paintings/Warholesque/Warholesque-Marilyn-Three-Quarters.html -->
+ <link rel="stylesheet" href="../../css/styles.css" />
 
-  <meta name="series-id" content="WH-MARILYN-3Q" />
-  <meta name="work-type" content="warholesque-series" />
+ <meta name="series-id" content="WH-MARILYN-3Q" />
+ <meta name="work-type" content="warholesque-series" />
 
-  <style>
-    .variant-wrap {
-      margin: 60px auto;
-      max-width: 1200px;
-      padding: 0 1rem;
-    }
+ <style>
+ .variant-wrap {
+ margin: 60px auto;
+ max-width: 1200px;
+ padding: 0 1rem;
+ }
 
-    .variant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 26px;
-    }
+ .variant-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+ gap: 26px;
+ }
 
-    .variant-item {
-      text-align: center;
-    }
+ .variant-item {
+ text-align: center;
+ }
 
-    /* Make each thumb clickable */
-    .variant-link {
-      display: block;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .variant-link:focus {
-      outline: 2px solid #111;
-      outline-offset: 3px;
-    }
+ /* Make each thumb clickable */
+ .variant-link {
+ display: block;
+ border-radius: 10px;
+ overflow: hidden;
+ }
+ .variant-link:focus {
+ outline: 2px solid #111;
+ outline-offset: 3px;
+ }
 
-    .variant-item img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .variant-item img {
+ width: 100%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ display: block;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .variant-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 10px;
-    }
+ .variant-title {
+ font-size: 0.9rem;
+ font-weight: 600;
+ margin-top: 10px;
+ }
 
-    /* ==========================
-       SOURCE PAINTING (fixed)
-       ========================== */
-    .source-wrap {
-      max-width: 900px;
-      margin: 26px auto 64px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+ /* ==========================
+ SOURCE PAINTING (fixed)
+ ========================== */
+ .source-wrap {
+ max-width: 900px;
+ margin: 26px auto 64px auto;
+ padding: 0 20px;
+ text-align: center;
+ }
 
-    .source-card {
-      max-width: 420px;
-      margin: 0 auto;
-      border-radius: 14px;
-      background: #fff;
-      padding: 14px 14px 16px 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
+ .source-card {
+ max-width: 420px;
+ margin: 0 auto;
+ border-radius: 14px;
+ background: #fff;
+ padding: 14px 14px 16px 14px;
+ box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+ }
 
-    .source-thumb {
-      width: 240px;
-      max-width: 80%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      margin: 10px auto 12px auto;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .source-thumb {
+ width: 240px;
+ max-width: 80%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ display: block;
+ margin: 10px auto 12px auto;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    /* Center the block overall, left-align label/value lines inside */
-    .source-meta {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      display: inline-block;
-      font-size: 0.95rem;
-    }
+ /* Center the block overall, left-align label/value lines inside */
+ .source-meta {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ text-align: left;
+ display: inline-block;
+ font-size: 0.95rem;
+ }
 
-    .source-meta li { margin: 6px 0; }
+ .source-meta li { margin: 6px 0; }
 
-    .source-meta strong {
-      display: inline-block;
-      min-width: 110px;
-    }
+ .source-meta strong {
+ display: inline-block;
+ min-width: 110px;
+ }
 
-    /* ==========================
-       LIGHTBOX (page-local)
-       ========================== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: rgba(0, 0, 0, 0.86);
-      z-index: 9999;
-    }
-    .lightbox.is-open {
-      display: flex;
-    }
-    .lightbox-card {
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      width: 100%;
-      position: relative;
-    }
-    .lightbox-img {
-      width: 100%;
-      max-height: 92vh;
-      object-fit: contain;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
-    .lightbox-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-    .lightbox-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .lightbox-actions a,
-    .lightbox-actions button {
-      appearance: none;
-      border: 0;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      line-height: 1;
-    }
-    .lightbox-actions a:hover,
-    .lightbox-actions button:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-    .lightbox-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+ /* ==========================
+ LIGHTBOX (page-local)
+ ========================== */
+ .lightbox {
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: rgba(0, 0, 0, 0.86);
+ z-index: 9999;
+ }
+ .lightbox.is-open {
+ display: flex;
+ }
+ .lightbox-card {
+ max-width: min(1100px, 96vw);
+ max-height: 92vh;
+ width: 100%;
+ position: relative;
+ }
+ .lightbox-img {
+ width: 100%;
+ max-height: 92vh;
+ object-fit: contain;
+ display: block;
+ border-radius: 12px;
+ background: #111;
+ }
+ .lightbox-bar {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 10px;
+ color: #fff;
+ font-size: 0.95rem;
+ }
+ .lightbox-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
+ .lightbox-actions a,
+ .lightbox-actions button {
+ appearance: none;
+ border: 0;
+ background: rgba(255, 255, 255, 0.14);
+ color: #fff;
+ padding: 10px 12px;
+ border-radius: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: 600;
+ line-height: 1;
+ }
+ .lightbox-actions a:hover,
+ .lightbox-actions button:hover {
+ background: rgba(255, 255, 255, 0.22);
+ }
+ .lightbox-close {
+ width: 42px;
+ height: 42px;
+ border-radius: 999px;
+ }
+ </style>
+ <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<style>
+/* WARHOLESQUE FINAL VARIANT GALLERY - START */
+.variant-wrap {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.variant-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.variant-item {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.variant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+}
+
+.variant-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.variant-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 12px 0 0 0;
+  color: #222;
+}
+
+.variant-work-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .variant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .variant-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* WARHOLESQUE FINAL VARIANT GALLERY - END */
+</style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <h1>Marilyn Three Quarters</h1>
-  <nav class="top-nav">
+ <h1>Marilyn Three Quarters</h1>
+ <nav class="top-nav">
 <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
-    <a class="nav-pill" href="./index.html">Warholesque</a>
-  </nav>
+ <a class="nav-pill" href="./index.html">Warholesque</a>
+ </nav>
 </header>
 
 <main class="work-layout">
 
-  <img
-    src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-26a.jpg"
-    alt="Marilyn Three Quarters â€“ Warholesque â€“ Variant 26"
-    class="work-hero"
-    loading="lazy"
-  />
+ <img
+ src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-26a.jpg"
+ alt="Marilyn Three Quarters &ndash; Warholesque &ndash; Variant 26"
+ class="work-hero"
+ loading="lazy"
+ />
 
-  <ul class="work-meta">
-    <li><strong>Title:</strong> Marilyn Three Quarters</li>
-    <li><strong>Series:</strong> Warholesque</li>
-    <li><strong>Date:</strong> 2005</li>
-    <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
-    <li><strong>Dimensions:</strong> 22 Ã— 37 inches</li>
-    <li><strong>Notes:</strong> 106 colorway variants documented to date.</li>
-  </ul>
+ <ul class="work-meta">
+ <li><strong>Title:</strong> Marilyn Three Quarters</li>
+ <li><strong>Series:</strong> Warholesque</li>
+ <li><strong>Date:</strong> 2005</li>
+ <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+ <li><strong>Dimensions:</strong> 22 &times; 37 inches</li>
+ <li><strong>Notes:</strong> 106 colorway variants documented to date.</li>
+ </ul>
 
 </main>
 
-<section class="variant-wrap">
-  <h2 style="text-align:center; margin-bottom: 24px;">Variants</h2>
+  <!-- VARIANTS -->
+  <section class="variant-wrap">
+    <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
-  <div class="variant-grid" aria-label="Marilyn Three Quarters variants">
+    <div class="variant-grid" aria-label="Marilyn Three Quarters variants">
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-01a.jpg" data-title="Variant 1"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-01a.jpg" alt="Marilyn Three Quarters â€“ Variant 1" loading="lazy"></a><div class="variant-title">Variant 1</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-02a.jpg" data-title="Variant 2"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-02a.jpg" alt="Marilyn Three Quarters â€“ Variant 2" loading="lazy"></a><div class="variant-title">Variant 2</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-03a.jpg" data-title="Variant 3"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-03a.jpg" alt="Marilyn Three Quarters â€“ Variant 3" loading="lazy"></a><div class="variant-title">Variant 3</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-04a.jpg" data-title="Variant 4"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-04a.jpg" alt="Marilyn Three Quarters â€“ Variant 4" loading="lazy"></a><div class="variant-title">Variant 4</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-05a.jpg" data-title="Variant 5"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-05a.jpg" alt="Marilyn Three Quarters â€“ Variant 5" loading="lazy"></a><div class="variant-title">Variant 5</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-06a.jpg" data-title="Variant 6"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-06a.jpg" alt="Marilyn Three Quarters â€“ Variant 6" loading="lazy"></a><div class="variant-title">Variant 6</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-07a.jpg" data-title="Variant 7"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-07a.jpg" alt="Marilyn Three Quarters â€“ Variant 7" loading="lazy"></a><div class="variant-title">Variant 7</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-08a.jpg" data-title="Variant 8"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-08a.jpg" alt="Marilyn Three Quarters â€“ Variant 8" loading="lazy"></a><div class="variant-title">Variant 8</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-09a.jpg" data-title="Variant 9"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-09a.jpg" alt="Marilyn Three Quarters â€“ Variant 9" loading="lazy"></a><div class="variant-title">Variant 9</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-10a.jpg" data-title="Variant 10"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-10a.jpg" alt="Marilyn Three Quarters â€“ Variant 10" loading="lazy"></a><div class="variant-title">Variant 10</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-01a.jpg" data-title="Variant 1 - RE-011217">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-01a.jpg" alt="Marilyn Three Quarters - Variant 1 - RE-011217" loading="lazy" />
+        <p class="variant-title">Variant 1</p>
+        <p class="variant-work-id">Work ID: RE-011217</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-11a.jpg" data-title="Variant 11"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-11a.jpg" alt="Marilyn Three Quarters â€“ Variant 11" loading="lazy"></a><div class="variant-title">Variant 11</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-12a.jpg" data-title="Variant 12"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-12a.jpg" alt="Marilyn Three Quarters â€“ Variant 12" loading="lazy"></a><div class="variant-title">Variant 12</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-13a.jpg" data-title="Variant 13"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-13a.jpg" alt="Marilyn Three Quarters â€“ Variant 13" loading="lazy"></a><div class="variant-title">Variant 13</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-14a.jpg" data-title="Variant 14"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-14a.jpg" alt="Marilyn Three Quarters â€“ Variant 14" loading="lazy"></a><div class="variant-title">Variant 14</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-15a.jpg" data-title="Variant 15"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-15a.jpg" alt="Marilyn Three Quarters â€“ Variant 15" loading="lazy"></a><div class="variant-title">Variant 15</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-16a.jpg" data-title="Variant 16"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-16a.jpg" alt="Marilyn Three Quarters â€“ Variant 16" loading="lazy"></a><div class="variant-title">Variant 16</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-17a.jpg" data-title="Variant 17"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-17a.jpg" alt="Marilyn Three Quarters â€“ Variant 17" loading="lazy"></a><div class="variant-title">Variant 17</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-18a.jpg" data-title="Variant 18"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-18a.jpg" alt="Marilyn Three Quarters â€“ Variant 18" loading="lazy"></a><div class="variant-title">Variant 18</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-19a.jpg" data-title="Variant 19"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-19a.jpg" alt="Marilyn Three Quarters â€“ Variant 19" loading="lazy"></a><div class="variant-title">Variant 19</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-20a.jpg" data-title="Variant 20"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-20a.jpg" alt="Marilyn Three Quarters â€“ Variant 20" loading="lazy"></a><div class="variant-title">Variant 20</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-02a.jpg" data-title="Variant 2 - RE-011218">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-02a.jpg" alt="Marilyn Three Quarters - Variant 2 - RE-011218" loading="lazy" />
+        <p class="variant-title">Variant 2</p>
+        <p class="variant-work-id">Work ID: RE-011218</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-21a.jpg" data-title="Variant 21"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-21a.jpg" alt="Marilyn Three Quarters â€“ Variant 21" loading="lazy"></a><div class="variant-title">Variant 21</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-22a.jpg" data-title="Variant 22"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-22a.jpg" alt="Marilyn Three Quarters â€“ Variant 22" loading="lazy"></a><div class="variant-title">Variant 22</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-23a.jpg" data-title="Variant 23"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-23a.jpg" alt="Marilyn Three Quarters â€“ Variant 23" loading="lazy"></a><div class="variant-title">Variant 23</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-24a.jpg" data-title="Variant 24"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-24a.jpg" alt="Marilyn Three Quarters â€“ Variant 24" loading="lazy"></a><div class="variant-title">Variant 24</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-25a.jpg" data-title="Variant 25"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-25a.jpg" alt="Marilyn Three Quarters â€“ Variant 25" loading="lazy"></a><div class="variant-title">Variant 25</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-26a.jpg" data-title="Variant 26"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-26a.jpg" alt="Marilyn Three Quarters â€“ Variant 26" loading="lazy"></a><div class="variant-title">Variant 26</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-27a.jpg" data-title="Variant 27"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-27a.jpg" alt="Marilyn Three Quarters â€“ Variant 27" loading="lazy"></a><div class="variant-title">Variant 27</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-28a.jpg" data-title="Variant 28"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-28a.jpg" alt="Marilyn Three Quarters â€“ Variant 28" loading="lazy"></a><div class="variant-title">Variant 28</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-29a.jpg" data-title="Variant 29"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-29a.jpg" alt="Marilyn Three Quarters â€“ Variant 29" loading="lazy"></a><div class="variant-title">Variant 29</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-30a.jpg" data-title="Variant 30"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-30a.jpg" alt="Marilyn Three Quarters â€“ Variant 30" loading="lazy"></a><div class="variant-title">Variant 30</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-03a.jpg" data-title="Variant 3 - RE-011219">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-03a.jpg" alt="Marilyn Three Quarters - Variant 3 - RE-011219" loading="lazy" />
+        <p class="variant-title">Variant 3</p>
+        <p class="variant-work-id">Work ID: RE-011219</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-31a.jpg" data-title="Variant 31"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-31a.jpg" alt="Marilyn Three Quarters â€“ Variant 31" loading="lazy"></a><div class="variant-title">Variant 31</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-32a.jpg" data-title="Variant 32"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-32a.jpg" alt="Marilyn Three Quarters â€“ Variant 32" loading="lazy"></a><div class="variant-title">Variant 32</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-33a.jpg" data-title="Variant 33"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-33a.jpg" alt="Marilyn Three Quarters â€“ Variant 33" loading="lazy"></a><div class="variant-title">Variant 33</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-34a.jpg" data-title="Variant 34"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-34a.jpg" alt="Marilyn Three Quarters â€“ Variant 34" loading="lazy"></a><div class="variant-title">Variant 34</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-35a.jpg" data-title="Variant 35"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-35a.jpg" alt="Marilyn Three Quarters â€“ Variant 35" loading="lazy"></a><div class="variant-title">Variant 35</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-36a.jpg" data-title="Variant 36"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-36a.jpg" alt="Marilyn Three Quarters â€“ Variant 36" loading="lazy"></a><div class="variant-title">Variant 36</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-37a.jpg" data-title="Variant 37"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-37a.jpg" alt="Marilyn Three Quarters â€“ Variant 37" loading="lazy"></a><div class="variant-title">Variant 37</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-38a.jpg" data-title="Variant 38"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-38a.jpg" alt="Marilyn Three Quarters â€“ Variant 38" loading="lazy"></a><div class="variant-title">Variant 38</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-39a.jpg" data-title="Variant 39"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-39a.jpg" alt="Marilyn Three Quarters â€“ Variant 39" loading="lazy"></a><div class="variant-title">Variant 39</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-40a.jpg" data-title="Variant 40"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-40a.jpg" alt="Marilyn Three Quarters â€“ Variant 40" loading="lazy"></a><div class="variant-title">Variant 40</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-04a.jpg" data-title="Variant 4 - RE-011220">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-04a.jpg" alt="Marilyn Three Quarters - Variant 4 - RE-011220" loading="lazy" />
+        <p class="variant-title">Variant 4</p>
+        <p class="variant-work-id">Work ID: RE-011220</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-41a.jpg" data-title="Variant 41"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-41a.jpg" alt="Marilyn Three Quarters â€“ Variant 41" loading="lazy"></a><div class="variant-title">Variant 41</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-42a.jpg" data-title="Variant 42"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-42a.jpg" alt="Marilyn Three Quarters â€“ Variant 42" loading="lazy"></a><div class="variant-title">Variant 42</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-43a.jpg" data-title="Variant 43"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-43a.jpg" alt="Marilyn Three Quarters â€“ Variant 43" loading="lazy"></a><div class="variant-title">Variant 43</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-44a.jpg" data-title="Variant 44"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-44a.jpg" alt="Marilyn Three Quarters â€“ Variant 44" loading="lazy"></a><div class="variant-title">Variant 44</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-45a.jpg" data-title="Variant 45"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-45a.jpg" alt="Marilyn Three Quarters â€“ Variant 45" loading="lazy"></a><div class="variant-title">Variant 45</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-46a.jpg" data-title="Variant 46"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-46a.jpg" alt="Marilyn Three Quarters â€“ Variant 46" loading="lazy"></a><div class="variant-title">Variant 46</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-47a.jpg" data-title="Variant 47"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-47a.jpg" alt="Marilyn Three Quarters â€“ Variant 47" loading="lazy"></a><div class="variant-title">Variant 47</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-48a.jpg" data-title="Variant 48"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-48a.jpg" alt="Marilyn Three Quarters â€“ Variant 48" loading="lazy"></a><div class="variant-title">Variant 48</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-49a.jpg" data-title="Variant 49"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-49a.jpg" alt="Marilyn Three Quarters â€“ Variant 49" loading="lazy"></a><div class="variant-title">Variant 49</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-50a.jpg" data-title="Variant 50"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-50a.jpg" alt="Marilyn Three Quarters â€“ Variant 50" loading="lazy"></a><div class="variant-title">Variant 50</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-05a.jpg" data-title="Variant 5 - RE-011221">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-05a.jpg" alt="Marilyn Three Quarters - Variant 5 - RE-011221" loading="lazy" />
+        <p class="variant-title">Variant 5</p>
+        <p class="variant-work-id">Work ID: RE-011221</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-51a.jpg" data-title="Variant 51"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-51a.jpg" alt="Marilyn Three Quarters â€“ Variant 51" loading="lazy"></a><div class="variant-title">Variant 51</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-52a.jpg" data-title="Variant 52"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-52a.jpg" alt="Marilyn Three Quarters â€“ Variant 52" loading="lazy"></a><div class="variant-title">Variant 52</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-53a.jpg" data-title="Variant 53"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-53a.jpg" alt="Marilyn Three Quarters â€“ Variant 53" loading="lazy"></a><div class="variant-title">Variant 53</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-54a.jpg" data-title="Variant 54"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-54a.jpg" alt="Marilyn Three Quarters â€“ Variant 54" loading="lazy"></a><div class="variant-title">Variant 54</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-55a.jpg" data-title="Variant 55"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-55a.jpg" alt="Marilyn Three Quarters â€“ Variant 55" loading="lazy"></a><div class="variant-title">Variant 55</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-56a.jpg" data-title="Variant 56"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-56a.jpg" alt="Marilyn Three Quarters â€“ Variant 56" loading="lazy"></a><div class="variant-title">Variant 56</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-57a.jpg" data-title="Variant 57"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-57a.jpg" alt="Marilyn Three Quarters â€“ Variant 57" loading="lazy"></a><div class="variant-title">Variant 57</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-58a.jpg" data-title="Variant 58"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-58a.jpg" alt="Marilyn Three Quarters â€“ Variant 58" loading="lazy"></a><div class="variant-title">Variant 58</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-59a.jpg" data-title="Variant 59"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-59a.jpg" alt="Marilyn Three Quarters â€“ Variant 59" loading="lazy"></a><div class="variant-title">Variant 59</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-60a.jpg" data-title="Variant 60"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-60a.jpg" alt="Marilyn Three Quarters â€“ Variant 60" loading="lazy"></a><div class="variant-title">Variant 60</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-06a.jpg" data-title="Variant 6 - RE-011222">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-06a.jpg" alt="Marilyn Three Quarters - Variant 6 - RE-011222" loading="lazy" />
+        <p class="variant-title">Variant 6</p>
+        <p class="variant-work-id">Work ID: RE-011222</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-61a.jpg" data-title="Variant 61"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-61a.jpg" alt="Marilyn Three Quarters â€“ Variant 61" loading="lazy"></a><div class="variant-title">Variant 61</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-62a.jpg" data-title="Variant 62"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-62a.jpg" alt="Marilyn Three Quarters â€“ Variant 62" loading="lazy"></a><div class="variant-title">Variant 62</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-63a.jpg" data-title="Variant 63"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-63a.jpg" alt="Marilyn Three Quarters â€“ Variant 63" loading="lazy"></a><div class="variant-title">Variant 63</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-64a.jpg" data-title="Variant 64"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-64a.jpg" alt="Marilyn Three Quarters â€“ Variant 64" loading="lazy"></a><div class="variant-title">Variant 64</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-65a.jpg" data-title="Variant 65"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-65a.jpg" alt="Marilyn Three Quarters â€“ Variant 65" loading="lazy"></a><div class="variant-title">Variant 65</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-66a.jpg" data-title="Variant 66"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-66a.jpg" alt="Marilyn Three Quarters â€“ Variant 66" loading="lazy"></a><div class="variant-title">Variant 66</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-67a.jpg" data-title="Variant 67"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-67a.jpg" alt="Marilyn Three Quarters â€“ Variant 67" loading="lazy"></a><div class="variant-title">Variant 67</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-68a.jpg" data-title="Variant 68"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-68a.jpg" alt="Marilyn Three Quarters â€“ Variant 68" loading="lazy"></a><div class="variant-title">Variant 68</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-69a.jpg" data-title="Variant 69"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-69a.jpg" alt="Marilyn Three Quarters â€“ Variant 69" loading="lazy"></a><div class="variant-title">Variant 69</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-70a.jpg" data-title="Variant 70"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-70a.jpg" alt="Marilyn Three Quarters â€“ Variant 70" loading="lazy"></a><div class="variant-title">Variant 70</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-07a.jpg" data-title="Variant 7 - RE-011223">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-07a.jpg" alt="Marilyn Three Quarters - Variant 7 - RE-011223" loading="lazy" />
+        <p class="variant-title">Variant 7</p>
+        <p class="variant-work-id">Work ID: RE-011223</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-71a.jpg" data-title="Variant 71"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-71a.jpg" alt="Marilyn Three Quarters â€“ Variant 71" loading="lazy"></a><div class="variant-title">Variant 71</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-72a.jpg" data-title="Variant 72"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-72a.jpg" alt="Marilyn Three Quarters â€“ Variant 72" loading="lazy"></a><div class="variant-title">Variant 72</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-73a.jpg" data-title="Variant 73"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-73a.jpg" alt="Marilyn Three Quarters â€“ Variant 73" loading="lazy"></a><div class="variant-title">Variant 73</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-74a.jpg" data-title="Variant 74"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-74a.jpg" alt="Marilyn Three Quarters â€“ Variant 74" loading="lazy"></a><div class="variant-title">Variant 74</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-75a.jpg" data-title="Variant 75"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-75a.jpg" alt="Marilyn Three Quarters â€“ Variant 75" loading="lazy"></a><div class="variant-title">Variant 75</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-76a.jpg" data-title="Variant 76"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-76a.jpg" alt="Marilyn Three Quarters â€“ Variant 76" loading="lazy"></a><div class="variant-title">Variant 76</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-77a.jpg" data-title="Variant 77"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-77a.jpg" alt="Marilyn Three Quarters â€“ Variant 77" loading="lazy"></a><div class="variant-title">Variant 77</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-78a.jpg" data-title="Variant 78"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-78a.jpg" alt="Marilyn Three Quarters â€“ Variant 78" loading="lazy"></a><div class="variant-title">Variant 78</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-79a.jpg" data-title="Variant 79"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-79a.jpg" alt="Marilyn Three Quarters â€“ Variant 79" loading="lazy"></a><div class="variant-title">Variant 79</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-80a.jpg" data-title="Variant 80"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-80a.jpg" alt="Marilyn Three Quarters â€“ Variant 80" loading="lazy"></a><div class="variant-title">Variant 80</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-08a.jpg" data-title="Variant 8 - RE-011224">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-08a.jpg" alt="Marilyn Three Quarters - Variant 8 - RE-011224" loading="lazy" />
+        <p class="variant-title">Variant 8</p>
+        <p class="variant-work-id">Work ID: RE-011224</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-81a.jpg" data-title="Variant 81"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-81a.jpg" alt="Marilyn Three Quarters â€“ Variant 81" loading="lazy"></a><div class="variant-title">Variant 81</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-82a.jpg" data-title="Variant 82"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-82a.jpg" alt="Marilyn Three Quarters â€“ Variant 82" loading="lazy"></a><div class="variant-title">Variant 82</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-83a.jpg" data-title="Variant 83"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-83a.jpg" alt="Marilyn Three Quarters â€“ Variant 83" loading="lazy"></a><div class="variant-title">Variant 83</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-84a.jpg" data-title="Variant 84"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-84a.jpg" alt="Marilyn Three Quarters â€“ Variant 84" loading="lazy"></a><div class="variant-title">Variant 84</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-85a.jpg" data-title="Variant 85"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-85a.jpg" alt="Marilyn Three Quarters â€“ Variant 85" loading="lazy"></a><div class="variant-title">Variant 85</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-86a.jpg" data-title="Variant 86"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-86a.jpg" alt="Marilyn Three Quarters â€“ Variant 86" loading="lazy"></a><div class="variant-title">Variant 86</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-87a.jpg" data-title="Variant 87"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-87a.jpg" alt="Marilyn Three Quarters â€“ Variant 87" loading="lazy"></a><div class="variant-title">Variant 87</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-88a.jpg" data-title="Variant 88"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-88a.jpg" alt="Marilyn Three Quarters â€“ Variant 88" loading="lazy"></a><div class="variant-title">Variant 88</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-89a.jpg" data-title="Variant 89"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-89a.jpg" alt="Marilyn Three Quarters â€“ Variant 89" loading="lazy"></a><div class="variant-title">Variant 89</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-90a.jpg" data-title="Variant 90"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-90a.jpg" alt="Marilyn Three Quarters â€“ Variant 90" loading="lazy"></a><div class="variant-title">Variant 90</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-09a.jpg" data-title="Variant 9 - RE-011225">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-09a.jpg" alt="Marilyn Three Quarters - Variant 9 - RE-011225" loading="lazy" />
+        <p class="variant-title">Variant 9</p>
+        <p class="variant-work-id">Work ID: RE-011225</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-91a.jpg" data-title="Variant 91"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-91a.jpg" alt="Marilyn Three Quarters â€“ Variant 91" loading="lazy"></a><div class="variant-title">Variant 91</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-92a.jpg" data-title="Variant 92"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-92a.jpg" alt="Marilyn Three Quarters â€“ Variant 92" loading="lazy"></a><div class="variant-title">Variant 92</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-93a.jpg" data-title="Variant 93"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-93a.jpg" alt="Marilyn Three Quarters â€“ Variant 93" loading="lazy"></a><div class="variant-title">Variant 93</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-94a.jpg" data-title="Variant 94"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-94a.jpg" alt="Marilyn Three Quarters â€“ Variant 94" loading="lazy"></a><div class="variant-title">Variant 94</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-95a.jpg" data-title="Variant 95"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-95a.jpg" alt="Marilyn Three Quarters â€“ Variant 95" loading="lazy"></a><div class="variant-title">Variant 95</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-96a.jpg" data-title="Variant 96"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-96a.jpg" alt="Marilyn Three Quarters â€“ Variant 96" loading="lazy"></a><div class="variant-title">Variant 96</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-97a.jpg" data-title="Variant 97"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-97a.jpg" alt="Marilyn Three Quarters â€“ Variant 97" loading="lazy"></a><div class="variant-title">Variant 97</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-98a.jpg" data-title="Variant 98"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-98a.jpg" alt="Marilyn Three Quarters â€“ Variant 98" loading="lazy"></a><div class="variant-title">Variant 98</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-99a.jpg" data-title="Variant 99"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-99a.jpg" alt="Marilyn Three Quarters â€“ Variant 99" loading="lazy"></a><div class="variant-title">Variant 99</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-100a.jpg" data-title="Variant 100"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-100a.jpg" alt="Marilyn Three Quarters â€“ Variant 100" loading="lazy"></a><div class="variant-title">Variant 100</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-10a.jpg" data-title="Variant 10 - RE-011226">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-10a.jpg" alt="Marilyn Three Quarters - Variant 10 - RE-011226" loading="lazy" />
+        <p class="variant-title">Variant 10</p>
+        <p class="variant-work-id">Work ID: RE-011226</p>
+      </a>
 
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-101a.jpg" data-title="Variant 101"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-101a.jpg" alt="Marilyn Three Quarters â€“ Variant 101" loading="lazy"></a><div class="variant-title">Variant 101</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-102a.jpg" data-title="Variant 102"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-102a.jpg" alt="Marilyn Three Quarters â€“ Variant 102" loading="lazy"></a><div class="variant-title">Variant 102</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-103a.jpg" data-title="Variant 103"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-103a.jpg" alt="Marilyn Three Quarters â€“ Variant 103" loading="lazy"></a><div class="variant-title">Variant 103</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-104a.jpg" data-title="Variant 104"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-104a.jpg" alt="Marilyn Three Quarters â€“ Variant 104" loading="lazy"></a><div class="variant-title">Variant 104</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-105a.jpg" data-title="Variant 105"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-105a.jpg" alt="Marilyn Three Quarters â€“ Variant 105" loading="lazy"></a><div class="variant-title">Variant 105</div></div>
-    <div class="variant-item"><a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-106a.jpg" data-title="Variant 106"><img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-106a.jpg" alt="Marilyn Three Quarters â€“ Variant 106" loading="lazy"></a><div class="variant-title">Variant 106</div></div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-11a.jpg" data-title="Variant 11 - RE-011227">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-11a.jpg" alt="Marilyn Three Quarters - Variant 11 - RE-011227" loading="lazy" />
+        <p class="variant-title">Variant 11</p>
+        <p class="variant-work-id">Work ID: RE-011227</p>
+      </a>
 
-  </div>
-</section>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-12a.jpg" data-title="Variant 12 - RE-011228">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-12a.jpg" alt="Marilyn Three Quarters - Variant 12 - RE-011228" loading="lazy" />
+        <p class="variant-title">Variant 12</p>
+        <p class="variant-work-id">Work ID: RE-011228</p>
+      </a>
 
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-13a.jpg" data-title="Variant 13 - RE-011229">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-13a.jpg" alt="Marilyn Three Quarters - Variant 13 - RE-011229" loading="lazy" />
+        <p class="variant-title">Variant 13</p>
+        <p class="variant-work-id">Work ID: RE-011229</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-14a.jpg" data-title="Variant 14 - RE-011230">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-14a.jpg" alt="Marilyn Three Quarters - Variant 14 - RE-011230" loading="lazy" />
+        <p class="variant-title">Variant 14</p>
+        <p class="variant-work-id">Work ID: RE-011230</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-15a.jpg" data-title="Variant 15 - RE-011231">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-15a.jpg" alt="Marilyn Three Quarters - Variant 15 - RE-011231" loading="lazy" />
+        <p class="variant-title">Variant 15</p>
+        <p class="variant-work-id">Work ID: RE-011231</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-16a.jpg" data-title="Variant 16 - RE-011232">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-16a.jpg" alt="Marilyn Three Quarters - Variant 16 - RE-011232" loading="lazy" />
+        <p class="variant-title">Variant 16</p>
+        <p class="variant-work-id">Work ID: RE-011232</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-17a.jpg" data-title="Variant 17 - RE-011233">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-17a.jpg" alt="Marilyn Three Quarters - Variant 17 - RE-011233" loading="lazy" />
+        <p class="variant-title">Variant 17</p>
+        <p class="variant-work-id">Work ID: RE-011233</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-18a.jpg" data-title="Variant 18 - RE-011234">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-18a.jpg" alt="Marilyn Three Quarters - Variant 18 - RE-011234" loading="lazy" />
+        <p class="variant-title">Variant 18</p>
+        <p class="variant-work-id">Work ID: RE-011234</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-19a.jpg" data-title="Variant 19 - RE-011235">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-19a.jpg" alt="Marilyn Three Quarters - Variant 19 - RE-011235" loading="lazy" />
+        <p class="variant-title">Variant 19</p>
+        <p class="variant-work-id">Work ID: RE-011235</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-20a.jpg" data-title="Variant 20 - RE-011236">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-20a.jpg" alt="Marilyn Three Quarters - Variant 20 - RE-011236" loading="lazy" />
+        <p class="variant-title">Variant 20</p>
+        <p class="variant-work-id">Work ID: RE-011236</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-21a.jpg" data-title="Variant 21 - RE-011237">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-21a.jpg" alt="Marilyn Three Quarters - Variant 21 - RE-011237" loading="lazy" />
+        <p class="variant-title">Variant 21</p>
+        <p class="variant-work-id">Work ID: RE-011237</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-22a.jpg" data-title="Variant 22 - RE-011238">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-22a.jpg" alt="Marilyn Three Quarters - Variant 22 - RE-011238" loading="lazy" />
+        <p class="variant-title">Variant 22</p>
+        <p class="variant-work-id">Work ID: RE-011238</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-23a.jpg" data-title="Variant 23 - RE-011239">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-23a.jpg" alt="Marilyn Three Quarters - Variant 23 - RE-011239" loading="lazy" />
+        <p class="variant-title">Variant 23</p>
+        <p class="variant-work-id">Work ID: RE-011239</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-24a.jpg" data-title="Variant 24 - RE-011240">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-24a.jpg" alt="Marilyn Three Quarters - Variant 24 - RE-011240" loading="lazy" />
+        <p class="variant-title">Variant 24</p>
+        <p class="variant-work-id">Work ID: RE-011240</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-25a.jpg" data-title="Variant 25 - RE-011241">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-25a.jpg" alt="Marilyn Three Quarters - Variant 25 - RE-011241" loading="lazy" />
+        <p class="variant-title">Variant 25</p>
+        <p class="variant-work-id">Work ID: RE-011241</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-26a.jpg" data-title="Variant 26 - RE-011242">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-26a.jpg" alt="Marilyn Three Quarters - Variant 26 - RE-011242" loading="lazy" />
+        <p class="variant-title">Variant 26</p>
+        <p class="variant-work-id">Work ID: RE-011242</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-27a.jpg" data-title="Variant 27 - RE-011243">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-27a.jpg" alt="Marilyn Three Quarters - Variant 27 - RE-011243" loading="lazy" />
+        <p class="variant-title">Variant 27</p>
+        <p class="variant-work-id">Work ID: RE-011243</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-28a.jpg" data-title="Variant 28 - RE-011244">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-28a.jpg" alt="Marilyn Three Quarters - Variant 28 - RE-011244" loading="lazy" />
+        <p class="variant-title">Variant 28</p>
+        <p class="variant-work-id">Work ID: RE-011244</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-29a.jpg" data-title="Variant 29 - RE-011245">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-29a.jpg" alt="Marilyn Three Quarters - Variant 29 - RE-011245" loading="lazy" />
+        <p class="variant-title">Variant 29</p>
+        <p class="variant-work-id">Work ID: RE-011245</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-30a.jpg" data-title="Variant 30 - RE-011246">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-30a.jpg" alt="Marilyn Three Quarters - Variant 30 - RE-011246" loading="lazy" />
+        <p class="variant-title">Variant 30</p>
+        <p class="variant-work-id">Work ID: RE-011246</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-31a.jpg" data-title="Variant 31 - RE-011247">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-31a.jpg" alt="Marilyn Three Quarters - Variant 31 - RE-011247" loading="lazy" />
+        <p class="variant-title">Variant 31</p>
+        <p class="variant-work-id">Work ID: RE-011247</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-32a.jpg" data-title="Variant 32 - RE-011248">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-32a.jpg" alt="Marilyn Three Quarters - Variant 32 - RE-011248" loading="lazy" />
+        <p class="variant-title">Variant 32</p>
+        <p class="variant-work-id">Work ID: RE-011248</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-33a.jpg" data-title="Variant 33 - RE-011249">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-33a.jpg" alt="Marilyn Three Quarters - Variant 33 - RE-011249" loading="lazy" />
+        <p class="variant-title">Variant 33</p>
+        <p class="variant-work-id">Work ID: RE-011249</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-34a.jpg" data-title="Variant 34 - RE-011250">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-34a.jpg" alt="Marilyn Three Quarters - Variant 34 - RE-011250" loading="lazy" />
+        <p class="variant-title">Variant 34</p>
+        <p class="variant-work-id">Work ID: RE-011250</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-35a.jpg" data-title="Variant 35 - RE-011251">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-35a.jpg" alt="Marilyn Three Quarters - Variant 35 - RE-011251" loading="lazy" />
+        <p class="variant-title">Variant 35</p>
+        <p class="variant-work-id">Work ID: RE-011251</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-36a.jpg" data-title="Variant 36 - RE-011252">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-36a.jpg" alt="Marilyn Three Quarters - Variant 36 - RE-011252" loading="lazy" />
+        <p class="variant-title">Variant 36</p>
+        <p class="variant-work-id">Work ID: RE-011252</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-37a.jpg" data-title="Variant 37 - RE-011253">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-37a.jpg" alt="Marilyn Three Quarters - Variant 37 - RE-011253" loading="lazy" />
+        <p class="variant-title">Variant 37</p>
+        <p class="variant-work-id">Work ID: RE-011253</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-38a.jpg" data-title="Variant 38 - RE-011254">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-38a.jpg" alt="Marilyn Three Quarters - Variant 38 - RE-011254" loading="lazy" />
+        <p class="variant-title">Variant 38</p>
+        <p class="variant-work-id">Work ID: RE-011254</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-39a.jpg" data-title="Variant 39 - RE-011255">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-39a.jpg" alt="Marilyn Three Quarters - Variant 39 - RE-011255" loading="lazy" />
+        <p class="variant-title">Variant 39</p>
+        <p class="variant-work-id">Work ID: RE-011255</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-40a.jpg" data-title="Variant 40 - RE-011256">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-40a.jpg" alt="Marilyn Three Quarters - Variant 40 - RE-011256" loading="lazy" />
+        <p class="variant-title">Variant 40</p>
+        <p class="variant-work-id">Work ID: RE-011256</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-41a.jpg" data-title="Variant 41 - RE-011257">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-41a.jpg" alt="Marilyn Three Quarters - Variant 41 - RE-011257" loading="lazy" />
+        <p class="variant-title">Variant 41</p>
+        <p class="variant-work-id">Work ID: RE-011257</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-42a.jpg" data-title="Variant 42 - RE-011258">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-42a.jpg" alt="Marilyn Three Quarters - Variant 42 - RE-011258" loading="lazy" />
+        <p class="variant-title">Variant 42</p>
+        <p class="variant-work-id">Work ID: RE-011258</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-43a.jpg" data-title="Variant 43 - RE-011259">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-43a.jpg" alt="Marilyn Three Quarters - Variant 43 - RE-011259" loading="lazy" />
+        <p class="variant-title">Variant 43</p>
+        <p class="variant-work-id">Work ID: RE-011259</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-44a.jpg" data-title="Variant 44 - RE-011260">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-44a.jpg" alt="Marilyn Three Quarters - Variant 44 - RE-011260" loading="lazy" />
+        <p class="variant-title">Variant 44</p>
+        <p class="variant-work-id">Work ID: RE-011260</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-45a.jpg" data-title="Variant 45 - RE-011261">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-45a.jpg" alt="Marilyn Three Quarters - Variant 45 - RE-011261" loading="lazy" />
+        <p class="variant-title">Variant 45</p>
+        <p class="variant-work-id">Work ID: RE-011261</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-46a.jpg" data-title="Variant 46 - RE-011262">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-46a.jpg" alt="Marilyn Three Quarters - Variant 46 - RE-011262" loading="lazy" />
+        <p class="variant-title">Variant 46</p>
+        <p class="variant-work-id">Work ID: RE-011262</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-47a.jpg" data-title="Variant 47 - RE-011263">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-47a.jpg" alt="Marilyn Three Quarters - Variant 47 - RE-011263" loading="lazy" />
+        <p class="variant-title">Variant 47</p>
+        <p class="variant-work-id">Work ID: RE-011263</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-48a.jpg" data-title="Variant 48 - RE-011264">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-48a.jpg" alt="Marilyn Three Quarters - Variant 48 - RE-011264" loading="lazy" />
+        <p class="variant-title">Variant 48</p>
+        <p class="variant-work-id">Work ID: RE-011264</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-49a.jpg" data-title="Variant 49 - RE-011265">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-49a.jpg" alt="Marilyn Three Quarters - Variant 49 - RE-011265" loading="lazy" />
+        <p class="variant-title">Variant 49</p>
+        <p class="variant-work-id">Work ID: RE-011265</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-50a.jpg" data-title="Variant 50 - RE-011266">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-50a.jpg" alt="Marilyn Three Quarters - Variant 50 - RE-011266" loading="lazy" />
+        <p class="variant-title">Variant 50</p>
+        <p class="variant-work-id">Work ID: RE-011266</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-51a.jpg" data-title="Variant 51 - RE-011267">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-51a.jpg" alt="Marilyn Three Quarters - Variant 51 - RE-011267" loading="lazy" />
+        <p class="variant-title">Variant 51</p>
+        <p class="variant-work-id">Work ID: RE-011267</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-52a.jpg" data-title="Variant 52 - RE-011268">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-52a.jpg" alt="Marilyn Three Quarters - Variant 52 - RE-011268" loading="lazy" />
+        <p class="variant-title">Variant 52</p>
+        <p class="variant-work-id">Work ID: RE-011268</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-53a.jpg" data-title="Variant 53 - RE-011269">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-53a.jpg" alt="Marilyn Three Quarters - Variant 53 - RE-011269" loading="lazy" />
+        <p class="variant-title">Variant 53</p>
+        <p class="variant-work-id">Work ID: RE-011269</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-54a.jpg" data-title="Variant 54 - RE-011270">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-54a.jpg" alt="Marilyn Three Quarters - Variant 54 - RE-011270" loading="lazy" />
+        <p class="variant-title">Variant 54</p>
+        <p class="variant-work-id">Work ID: RE-011270</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-55a.jpg" data-title="Variant 55 - RE-011271">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-55a.jpg" alt="Marilyn Three Quarters - Variant 55 - RE-011271" loading="lazy" />
+        <p class="variant-title">Variant 55</p>
+        <p class="variant-work-id">Work ID: RE-011271</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-56a.jpg" data-title="Variant 56 - RE-011272">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-56a.jpg" alt="Marilyn Three Quarters - Variant 56 - RE-011272" loading="lazy" />
+        <p class="variant-title">Variant 56</p>
+        <p class="variant-work-id">Work ID: RE-011272</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-57a.jpg" data-title="Variant 57 - RE-011273">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-57a.jpg" alt="Marilyn Three Quarters - Variant 57 - RE-011273" loading="lazy" />
+        <p class="variant-title">Variant 57</p>
+        <p class="variant-work-id">Work ID: RE-011273</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-58a.jpg" data-title="Variant 58 - RE-011274">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-58a.jpg" alt="Marilyn Three Quarters - Variant 58 - RE-011274" loading="lazy" />
+        <p class="variant-title">Variant 58</p>
+        <p class="variant-work-id">Work ID: RE-011274</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-59a.jpg" data-title="Variant 59 - RE-011275">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-59a.jpg" alt="Marilyn Three Quarters - Variant 59 - RE-011275" loading="lazy" />
+        <p class="variant-title">Variant 59</p>
+        <p class="variant-work-id">Work ID: RE-011275</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-60a.jpg" data-title="Variant 60 - RE-011276">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-60a.jpg" alt="Marilyn Three Quarters - Variant 60 - RE-011276" loading="lazy" />
+        <p class="variant-title">Variant 60</p>
+        <p class="variant-work-id">Work ID: RE-011276</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-61a.jpg" data-title="Variant 61 - RE-011277">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-61a.jpg" alt="Marilyn Three Quarters - Variant 61 - RE-011277" loading="lazy" />
+        <p class="variant-title">Variant 61</p>
+        <p class="variant-work-id">Work ID: RE-011277</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-62a.jpg" data-title="Variant 62 - RE-011278">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-62a.jpg" alt="Marilyn Three Quarters - Variant 62 - RE-011278" loading="lazy" />
+        <p class="variant-title">Variant 62</p>
+        <p class="variant-work-id">Work ID: RE-011278</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-63a.jpg" data-title="Variant 63 - RE-011279">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-63a.jpg" alt="Marilyn Three Quarters - Variant 63 - RE-011279" loading="lazy" />
+        <p class="variant-title">Variant 63</p>
+        <p class="variant-work-id">Work ID: RE-011279</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-64a.jpg" data-title="Variant 64 - RE-011280">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-64a.jpg" alt="Marilyn Three Quarters - Variant 64 - RE-011280" loading="lazy" />
+        <p class="variant-title">Variant 64</p>
+        <p class="variant-work-id">Work ID: RE-011280</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-65a.jpg" data-title="Variant 65 - RE-011281">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-65a.jpg" alt="Marilyn Three Quarters - Variant 65 - RE-011281" loading="lazy" />
+        <p class="variant-title">Variant 65</p>
+        <p class="variant-work-id">Work ID: RE-011281</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-66a.jpg" data-title="Variant 66 - RE-011282">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-66a.jpg" alt="Marilyn Three Quarters - Variant 66 - RE-011282" loading="lazy" />
+        <p class="variant-title">Variant 66</p>
+        <p class="variant-work-id">Work ID: RE-011282</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-67a.jpg" data-title="Variant 67 - RE-011283">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-67a.jpg" alt="Marilyn Three Quarters - Variant 67 - RE-011283" loading="lazy" />
+        <p class="variant-title">Variant 67</p>
+        <p class="variant-work-id">Work ID: RE-011283</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-68a.jpg" data-title="Variant 68 - RE-011284">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-68a.jpg" alt="Marilyn Three Quarters - Variant 68 - RE-011284" loading="lazy" />
+        <p class="variant-title">Variant 68</p>
+        <p class="variant-work-id">Work ID: RE-011284</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-69a.jpg" data-title="Variant 69 - RE-011285">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-69a.jpg" alt="Marilyn Three Quarters - Variant 69 - RE-011285" loading="lazy" />
+        <p class="variant-title">Variant 69</p>
+        <p class="variant-work-id">Work ID: RE-011285</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-70a.jpg" data-title="Variant 70 - RE-011286">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-70a.jpg" alt="Marilyn Three Quarters - Variant 70 - RE-011286" loading="lazy" />
+        <p class="variant-title">Variant 70</p>
+        <p class="variant-work-id">Work ID: RE-011286</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-71a.jpg" data-title="Variant 71 - RE-011287">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-71a.jpg" alt="Marilyn Three Quarters - Variant 71 - RE-011287" loading="lazy" />
+        <p class="variant-title">Variant 71</p>
+        <p class="variant-work-id">Work ID: RE-011287</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-72a.jpg" data-title="Variant 72 - RE-011288">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-72a.jpg" alt="Marilyn Three Quarters - Variant 72 - RE-011288" loading="lazy" />
+        <p class="variant-title">Variant 72</p>
+        <p class="variant-work-id">Work ID: RE-011288</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-73a.jpg" data-title="Variant 73 - RE-011289">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-73a.jpg" alt="Marilyn Three Quarters - Variant 73 - RE-011289" loading="lazy" />
+        <p class="variant-title">Variant 73</p>
+        <p class="variant-work-id">Work ID: RE-011289</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-74a.jpg" data-title="Variant 74 - RE-011290">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-74a.jpg" alt="Marilyn Three Quarters - Variant 74 - RE-011290" loading="lazy" />
+        <p class="variant-title">Variant 74</p>
+        <p class="variant-work-id">Work ID: RE-011290</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-75a.jpg" data-title="Variant 75 - RE-011291">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-75a.jpg" alt="Marilyn Three Quarters - Variant 75 - RE-011291" loading="lazy" />
+        <p class="variant-title">Variant 75</p>
+        <p class="variant-work-id">Work ID: RE-011291</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-76a.jpg" data-title="Variant 76 - RE-011292">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-76a.jpg" alt="Marilyn Three Quarters - Variant 76 - RE-011292" loading="lazy" />
+        <p class="variant-title">Variant 76</p>
+        <p class="variant-work-id">Work ID: RE-011292</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-77a.jpg" data-title="Variant 77 - RE-011293">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-77a.jpg" alt="Marilyn Three Quarters - Variant 77 - RE-011293" loading="lazy" />
+        <p class="variant-title">Variant 77</p>
+        <p class="variant-work-id">Work ID: RE-011293</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-78a.jpg" data-title="Variant 78 - RE-011294">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-78a.jpg" alt="Marilyn Three Quarters - Variant 78 - RE-011294" loading="lazy" />
+        <p class="variant-title">Variant 78</p>
+        <p class="variant-work-id">Work ID: RE-011294</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-79a.jpg" data-title="Variant 79 - RE-011295">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-79a.jpg" alt="Marilyn Three Quarters - Variant 79 - RE-011295" loading="lazy" />
+        <p class="variant-title">Variant 79</p>
+        <p class="variant-work-id">Work ID: RE-011295</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-80a.jpg" data-title="Variant 80 - RE-011296">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-80a.jpg" alt="Marilyn Three Quarters - Variant 80 - RE-011296" loading="lazy" />
+        <p class="variant-title">Variant 80</p>
+        <p class="variant-work-id">Work ID: RE-011296</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-81a.jpg" data-title="Variant 81 - RE-011297">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-81a.jpg" alt="Marilyn Three Quarters - Variant 81 - RE-011297" loading="lazy" />
+        <p class="variant-title">Variant 81</p>
+        <p class="variant-work-id">Work ID: RE-011297</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-82a.jpg" data-title="Variant 82 - RE-011298">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-82a.jpg" alt="Marilyn Three Quarters - Variant 82 - RE-011298" loading="lazy" />
+        <p class="variant-title">Variant 82</p>
+        <p class="variant-work-id">Work ID: RE-011298</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-83a.jpg" data-title="Variant 83 - RE-011299">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-83a.jpg" alt="Marilyn Three Quarters - Variant 83 - RE-011299" loading="lazy" />
+        <p class="variant-title">Variant 83</p>
+        <p class="variant-work-id">Work ID: RE-011299</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-84a.jpg" data-title="Variant 84 - RE-011300">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-84a.jpg" alt="Marilyn Three Quarters - Variant 84 - RE-011300" loading="lazy" />
+        <p class="variant-title">Variant 84</p>
+        <p class="variant-work-id">Work ID: RE-011300</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-85a.jpg" data-title="Variant 85 - RE-011301">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-85a.jpg" alt="Marilyn Three Quarters - Variant 85 - RE-011301" loading="lazy" />
+        <p class="variant-title">Variant 85</p>
+        <p class="variant-work-id">Work ID: RE-011301</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-86a.jpg" data-title="Variant 86 - RE-011302">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-86a.jpg" alt="Marilyn Three Quarters - Variant 86 - RE-011302" loading="lazy" />
+        <p class="variant-title">Variant 86</p>
+        <p class="variant-work-id">Work ID: RE-011302</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-87a.jpg" data-title="Variant 87 - RE-011303">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-87a.jpg" alt="Marilyn Three Quarters - Variant 87 - RE-011303" loading="lazy" />
+        <p class="variant-title">Variant 87</p>
+        <p class="variant-work-id">Work ID: RE-011303</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-88a.jpg" data-title="Variant 88 - RE-011304">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-88a.jpg" alt="Marilyn Three Quarters - Variant 88 - RE-011304" loading="lazy" />
+        <p class="variant-title">Variant 88</p>
+        <p class="variant-work-id">Work ID: RE-011304</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-89a.jpg" data-title="Variant 89 - RE-011305">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-89a.jpg" alt="Marilyn Three Quarters - Variant 89 - RE-011305" loading="lazy" />
+        <p class="variant-title">Variant 89</p>
+        <p class="variant-work-id">Work ID: RE-011305</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-90a.jpg" data-title="Variant 90 - RE-011306">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-90a.jpg" alt="Marilyn Three Quarters - Variant 90 - RE-011306" loading="lazy" />
+        <p class="variant-title">Variant 90</p>
+        <p class="variant-work-id">Work ID: RE-011306</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-91a.jpg" data-title="Variant 91 - RE-011307">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-91a.jpg" alt="Marilyn Three Quarters - Variant 91 - RE-011307" loading="lazy" />
+        <p class="variant-title">Variant 91</p>
+        <p class="variant-work-id">Work ID: RE-011307</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-92a.jpg" data-title="Variant 92 - RE-011308">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-92a.jpg" alt="Marilyn Three Quarters - Variant 92 - RE-011308" loading="lazy" />
+        <p class="variant-title">Variant 92</p>
+        <p class="variant-work-id">Work ID: RE-011308</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-93a.jpg" data-title="Variant 93 - RE-011309">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-93a.jpg" alt="Marilyn Three Quarters - Variant 93 - RE-011309" loading="lazy" />
+        <p class="variant-title">Variant 93</p>
+        <p class="variant-work-id">Work ID: RE-011309</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-94a.jpg" data-title="Variant 94 - RE-011310">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-94a.jpg" alt="Marilyn Three Quarters - Variant 94 - RE-011310" loading="lazy" />
+        <p class="variant-title">Variant 94</p>
+        <p class="variant-work-id">Work ID: RE-011310</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-95a.jpg" data-title="Variant 95 - RE-011311">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-95a.jpg" alt="Marilyn Three Quarters - Variant 95 - RE-011311" loading="lazy" />
+        <p class="variant-title">Variant 95</p>
+        <p class="variant-work-id">Work ID: RE-011311</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-96a.jpg" data-title="Variant 96 - RE-011312">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-96a.jpg" alt="Marilyn Three Quarters - Variant 96 - RE-011312" loading="lazy" />
+        <p class="variant-title">Variant 96</p>
+        <p class="variant-work-id">Work ID: RE-011312</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-97a.jpg" data-title="Variant 97 - RE-011313">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-97a.jpg" alt="Marilyn Three Quarters - Variant 97 - RE-011313" loading="lazy" />
+        <p class="variant-title">Variant 97</p>
+        <p class="variant-work-id">Work ID: RE-011313</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-98a.jpg" data-title="Variant 98 - RE-011314">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-98a.jpg" alt="Marilyn Three Quarters - Variant 98 - RE-011314" loading="lazy" />
+        <p class="variant-title">Variant 98</p>
+        <p class="variant-work-id">Work ID: RE-011314</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-99a.jpg" data-title="Variant 99 - RE-011315">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-99a.jpg" alt="Marilyn Three Quarters - Variant 99 - RE-011315" loading="lazy" />
+        <p class="variant-title">Variant 99</p>
+        <p class="variant-work-id">Work ID: RE-011315</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-100a.jpg" data-title="Variant 100 - RE-011316">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-100a.jpg" alt="Marilyn Three Quarters - Variant 100 - RE-011316" loading="lazy" />
+        <p class="variant-title">Variant 100</p>
+        <p class="variant-work-id">Work ID: RE-011316</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-101a.jpg" data-title="Variant 101 - RE-011317">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-101a.jpg" alt="Marilyn Three Quarters - Variant 101 - RE-011317" loading="lazy" />
+        <p class="variant-title">Variant 101</p>
+        <p class="variant-work-id">Work ID: RE-011317</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-102a.jpg" data-title="Variant 102 - RE-011318">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-102a.jpg" alt="Marilyn Three Quarters - Variant 102 - RE-011318" loading="lazy" />
+        <p class="variant-title">Variant 102</p>
+        <p class="variant-work-id">Work ID: RE-011318</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-103a.jpg" data-title="Variant 103 - RE-011319">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-103a.jpg" alt="Marilyn Three Quarters - Variant 103 - RE-011319" loading="lazy" />
+        <p class="variant-title">Variant 103</p>
+        <p class="variant-work-id">Work ID: RE-011319</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-104a.jpg" data-title="Variant 104 - RE-011320">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-104a.jpg" alt="Marilyn Three Quarters - Variant 104 - RE-011320" loading="lazy" />
+        <p class="variant-title">Variant 104</p>
+        <p class="variant-work-id">Work ID: RE-011320</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-105a.jpg" data-title="Variant 105 - RE-011321">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-105a.jpg" alt="Marilyn Three Quarters - Variant 105 - RE-011321" loading="lazy" />
+        <p class="variant-title">Variant 105</p>
+        <p class="variant-work-id">Work ID: RE-011321</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-106a.jpg" data-title="Variant 106 - RE-011322">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Marilyn-Three-Quarters-var-106a.jpg" alt="Marilyn Three Quarters - Variant 106 - RE-011322" loading="lazy" />
+        <p class="variant-title">Variant 106</p>
+        <p class="variant-work-id">Work ID: RE-011322</p>
+      </a>
+
+    </div>
+  </section>
 <!-- SOURCE PAINTING -->
 <section class="source-wrap" aria-label="Source painting information">
-  <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
+ <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
 
-  <div class="source-card">
-    <img
-      class="source-thumb"
-      src="../../images/Paintings/Warholesque/Screen_Test.jpg"
-      alt="Marilyn Three Quarters source painting, oil on canvas, 2003"
-      loading="lazy"
-    />
+ <div class="source-card">
+ <img
+ class="source-thumb"
+ src="../../images/Paintings/Warholesque/Screen_Test.jpg"
+ alt="Marilyn Three Quarters source painting, oil on canvas, 2003"
+ loading="lazy"
+ />
 
-    <ul class="source-meta">
-      <li><strong>Title:</strong> Screen Test</li>
-      <li><strong>Date:</strong> 2003</li>
-      <li><strong>Medium:</strong> Oil on canvas</li>
-      <li><strong>Dimensions:</strong> 24 Ã— 18 inches</li>
-    </ul>
-  </div>
+ <ul class="source-meta">
+ <li><strong>Title:</strong> Screen Test</li>
+ <li><strong>Date:</strong> 2003</li>
+ <li><strong>Medium:</strong> Oil on canvas</li>
+ <li><strong>Dimensions:</strong> 24 &times; 18 inches</li>
+ </ul>
+ </div>
 </section>
 
 <!-- Lightbox UI -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <img class="lightbox-img" id="lightboxImg" alt="">
-    <div class="lightbox-bar">
-      <div id="lightboxTitle"></div>
-      <div class="lightbox-actions">
-        <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
-        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">âœ•</button>
-      </div>
-    </div>
-  </div>
+ <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+ <img class="lightbox-img" id="lightboxImg" alt="">
+ <div class="lightbox-bar">
+ <div id="lightboxTitle"></div>
+ <div class="lightbox-actions">
+ <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ </div>
+ </div>
+ </div>
 </div>
 
 <script>
-  (function () {
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightboxImg");
-    const lbTitle = document.getElementById("lightboxTitle");
-    const lbOpen = document.getElementById("lightboxOpen");
-    const lbClose = document.getElementById("lightboxClose");
+ (function () {
+ const lb = document.getElementById("lightbox");
+ const lbImg = document.getElementById("lightboxImg");
+ const lbTitle = document.getElementById("lightboxTitle");
+ const lbOpen = document.getElementById("lightboxOpen");
+ const lbClose = document.getElementById("lightboxClose");
 
-    function openLightbox(src, title, alt) {
-      lb.classList.add("is-open");
-      lb.setAttribute("aria-hidden", "false");
-      lbImg.src = src;
-      lbImg.alt = alt || title || "Image";
-      lbTitle.textContent = title || "";
-      lbOpen.href = src;
-      document.body.style.overflow = "hidden";
-      lbClose.focus();
-    }
+ function openLightbox(src, title, alt) {
+ lb.classList.add("is-open");
+ lb.setAttribute("aria-hidden", "false");
+ lbImg.src = src;
+ lbImg.alt = alt || title || "Image";
+ lbTitle.textContent = title || "";
+ lbOpen.href = src;
+ document.body.style.overflow = "hidden";
+ lbClose.focus();
+ }
 
-    function closeLightbox() {
-      lb.classList.remove("is-open");
-      lb.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-      document.body.style.overflow = "";
-    }
+ function closeLightbox() {
+ lb.classList.remove("is-open");
+ lb.setAttribute("aria-hidden", "true");
+ lbImg.src = "";
+ document.body.style.overflow = "";
+ }
 
-    document.addEventListener("click", (e) => {
-      const link = e.target.closest(".variant-link");
-      if (link) {
-        e.preventDefault();
-        openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
-        return;
-      }
-      if (e.target === lb) closeLightbox();
-    });
+ document.addEventListener("click", (e) => {
+ const link = e.target.closest(".variant-link");
+ if (link) {
+ e.preventDefault();
+ openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+ return;
+ }
+ if (e.target === lb) closeLightbox();
+ });
 
-    lbClose.addEventListener("click", closeLightbox);
+ lbClose.addEventListener("click", closeLightbox);
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
-    });
-  })();
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+ });
+ })();
 </script>
 
 </body>
 </html>
+
+
+
+
 

@@ -1,550 +1,594 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Young Andy â€“ Warholesque â€“ Ron English Catalogue RaisonnÃ©</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Young Andy &ndash; Warholesque &ndash; Ron English Catalogue Raisonn&eacute;</title>
 
-  <link rel="stylesheet" href="../../css/styles.css" />
+ <link rel="stylesheet" href="../../css/styles.css" />
 
-  <meta name="work-type" content="warholesque-series" />
+ <meta name="work-type" content="warholesque-series" />
 
-  <style>
-    .variant-section {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 1rem;
-    }
+ <style>
+ .variant-section {
+ max-width: 1200px;
+ margin: 60px auto;
+ padding: 0 1rem;
+ }
 
-    .variant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 26px;
-    }
+ .variant-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+ gap: 26px;
+ }
 
-    .variant-item {
-      text-align: center;
-    }
+ .variant-item {
+ text-align: center;
+ }
 
-    /* Make each thumb clickable */
-    .variant-link {
-      display: block;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .variant-link:focus {
-      outline: 2px solid #111;
-      outline-offset: 3px;
-    }
+ /* Make each thumb clickable */
+ .variant-link {
+ display: block;
+ border-radius: 10px;
+ overflow: hidden;
+ }
+ .variant-link:focus {
+ outline: 2px solid #111;
+ outline-offset: 3px;
+ }
 
-    .variant-item img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 10px;
-      background: #f3f4f6;
-      display: block;
-    }
+ .variant-item img {
+ width: 100%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ border-radius: 10px;
+ background: #f3f4f6;
+ display: block;
+ }
 
-    .variant-title {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
+ .variant-title {
+ margin-top: 10px;
+ font-size: 0.9rem;
+ font-weight: 600;
+ }
 
-    /* ==========================
-       SOURCE PAINTING (page-local)
-       ========================== */
-    .source-wrap {
-      max-width: 900px;
-      margin: 26px auto 64px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+ /* ==========================
+ SOURCE PAINTING (page-local)
+ ========================== */
+ .source-wrap {
+ max-width: 900px;
+ margin: 26px auto 64px auto;
+ padding: 0 20px;
+ text-align: center;
+ }
 
-    .source-card {
-      max-width: 420px;
-      margin: 0 auto;
-      border-radius: 14px;
-      background: #fff;
-      padding: 14px 14px 16px 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
+ .source-card {
+ max-width: 420px;
+ margin: 0 auto;
+ border-radius: 14px;
+ background: #fff;
+ padding: 14px 14px 16px 14px;
+ box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+ }
 
-    .source-thumb {
-      width: 240px;
-      max-width: 80%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      margin: 10px auto 12px auto;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .source-thumb {
+ width: 240px;
+ max-width: 80%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ display: block;
+ margin: 10px auto 12px auto;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .source-meta {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      display: inline-block;
-      font-size: 0.95rem;
-    }
+ .source-meta {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ text-align: left;
+ display: inline-block;
+ font-size: 0.95rem;
+ }
 
-    .source-meta li { margin: 6px 0; }
+ .source-meta li { margin: 6px 0; }
 
-    .source-meta strong {
-      display: inline-block;
-      min-width: 110px;
-    }
+ .source-meta strong {
+ display: inline-block;
+ min-width: 110px;
+ }
 
-    /* ==========================
-       LIGHTBOX (page-local)
-       ========================== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: rgba(0, 0, 0, 0.86);
-      z-index: 9999;
-    }
-    .lightbox.is-open {
-      display: flex;
-    }
-    .lightbox-card {
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      width: 100%;
-      position: relative;
-    }
-    .lightbox-img {
-      width: 100%;
-      max-height: 92vh;
-      object-fit: contain;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
-    .lightbox-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-    .lightbox-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .lightbox-actions a,
-    .lightbox-actions button {
-      appearance: none;
-      border: 0;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      line-height: 1;
-    }
-    .lightbox-actions a:hover,
-    .lightbox-actions button:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-    .lightbox-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+ /* ==========================
+ LIGHTBOX (page-local)
+ ========================== */
+ .lightbox {
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: rgba(0, 0, 0, 0.86);
+ z-index: 9999;
+ }
+ .lightbox.is-open {
+ display: flex;
+ }
+ .lightbox-card {
+ max-width: min(1100px, 96vw);
+ max-height: 92vh;
+ width: 100%;
+ position: relative;
+ }
+ .lightbox-img {
+ width: 100%;
+ max-height: 92vh;
+ object-fit: contain;
+ display: block;
+ border-radius: 12px;
+ background: #111;
+ }
+ .lightbox-bar {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 10px;
+ color: #fff;
+ font-size: 0.95rem;
+ }
+ .lightbox-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
+ .lightbox-actions a,
+ .lightbox-actions button {
+ appearance: none;
+ border: 0;
+ background: rgba(255, 255, 255, 0.14);
+ color: #fff;
+ padding: 10px 12px;
+ border-radius: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: 600;
+ line-height: 1;
+ }
+ .lightbox-actions a:hover,
+ .lightbox-actions button:hover {
+ background: rgba(255, 255, 255, 0.22);
+ }
+ .lightbox-close {
+ width: 42px;
+ height: 42px;
+ border-radius: 999px;
+ }
+ </style>
+ <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<style>
+/* WARHOLESQUE FINAL VARIANT GALLERY - START */
+.variant-wrap {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.variant-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.variant-item {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.variant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+}
+
+.variant-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.variant-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 12px 0 0 0;
+  color: #222;
+}
+
+.variant-work-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .variant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .variant-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* WARHOLESQUE FINAL VARIANT GALLERY - END */
+</style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <h1>Young Andy</h1>
+ <h1>Young Andy</h1>
 
-  <nav class="top-nav">
+ <nav class="top-nav">
 <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
-    <a class="nav-pill" href="./index.html">Warholesque</a>
-  </nav>
+ <a class="nav-pill" href="./index.html">Warholesque</a>
+ </nav>
 </header>
 
 <main class="work-layout">
 
-  <img
-    src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-01a.jpg"
-    alt="Young Andy â€“ Warholesque â€“ Variant 01"
-    class="work-hero"
-    loading="lazy"
-  />
+ <img
+ src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-01a.jpg"
+ alt="Young Andy &ndash; Warholesque &ndash; Variant 01"
+ class="work-hero"
+ loading="lazy"
+ />
 
-  <ul class="work-meta">
-    <li><strong>Title:</strong> Young Andy</li>
-    <li><strong>Series:</strong> Warholesque</li>
-    <li><strong>Date:</strong> 2005</li>
-    <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
-    <li><strong>Dimensions:</strong> 24 Ã— 24 inches</li>
-    <li><strong>Notes:</strong> 37 colorway variants documented to date.</li>
-  </ul>
+ <ul class="work-meta">
+ <li><strong>Title:</strong> Young Andy</li>
+ <li><strong>Series:</strong> Warholesque</li>
+ <li><strong>Date:</strong> 2005</li>
+ <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+ <li><strong>Dimensions:</strong> 24 &times; 24 inches</li>
+ <li><strong>Notes:</strong> 37 colorway variants documented to date.</li>
+ </ul>
 
 </main>
 
-<section class="variant-section">
-  <h2 style="text-align:center; margin-bottom: 28px;">Variants</h2>
+  <!-- VARIANTS -->
+  <section class="variant-wrap">
+    <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
-  <div class="variant-grid" aria-label="Young Andy variants">
+    <div class="variant-grid" aria-label="Young Andy variants">
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-01a.jpg" data-title="Variant 1">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-01a.jpg" alt="Young Andy â€“ Variant 1" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-01a.jpg" data-title="Variant 1 - RE-001775">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-01a.jpg" alt="Young Andy - Variant 1 - RE-001775" loading="lazy" />
+        <p class="variant-title">Variant 1</p>
+        <p class="variant-work-id">Work ID: RE-001775</p>
       </a>
-      <div class="variant-title">Variant 1</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-02a.jpg" data-title="Variant 2">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-02a.jpg" alt="Young Andy â€“ Variant 2" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-02a.jpg" data-title="Variant 2 - RE-001780">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-02a.jpg" alt="Young Andy - Variant 2 - RE-001780" loading="lazy" />
+        <p class="variant-title">Variant 2</p>
+        <p class="variant-work-id">Work ID: RE-001780</p>
       </a>
-      <div class="variant-title">Variant 2</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-03a.jpg" data-title="Variant 3">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-03a.jpg" alt="Young Andy â€“ Variant 3" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-03a.jpg" data-title="Variant 3 - RE-001783">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-03a.jpg" alt="Young Andy - Variant 3 - RE-001783" loading="lazy" />
+        <p class="variant-title">Variant 3</p>
+        <p class="variant-work-id">Work ID: RE-001783</p>
       </a>
-      <div class="variant-title">Variant 3</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-04a.jpg" data-title="Variant 4">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-04a.jpg" alt="Young Andy â€“ Variant 4" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-04a.jpg" data-title="Variant 4 - RE-001786">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-04a.jpg" alt="Young Andy - Variant 4 - RE-001786" loading="lazy" />
+        <p class="variant-title">Variant 4</p>
+        <p class="variant-work-id">Work ID: RE-001786</p>
       </a>
-      <div class="variant-title">Variant 4</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-05a.jpg" data-title="Variant 5">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-05a.jpg" alt="Young Andy â€“ Variant 5" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-05a.jpg" data-title="Variant 5 - RE-001793">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-05a.jpg" alt="Young Andy - Variant 5 - RE-001793" loading="lazy" />
+        <p class="variant-title">Variant 5</p>
+        <p class="variant-work-id">Work ID: RE-001793</p>
       </a>
-      <div class="variant-title">Variant 5</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-06a.jpg" data-title="Variant 6">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-06a.jpg" alt="Young Andy â€“ Variant 6" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-06a.jpg" data-title="Variant 6 - RE-001794">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-06a.jpg" alt="Young Andy - Variant 6 - RE-001794" loading="lazy" />
+        <p class="variant-title">Variant 6</p>
+        <p class="variant-work-id">Work ID: RE-001794</p>
       </a>
-      <div class="variant-title">Variant 6</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-07a.jpg" data-title="Variant 7">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-07a.jpg" alt="Young Andy â€“ Variant 7" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-07a.jpg" data-title="Variant 7 - RE-001802">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-07a.jpg" alt="Young Andy - Variant 7 - RE-001802" loading="lazy" />
+        <p class="variant-title">Variant 7</p>
+        <p class="variant-work-id">Work ID: RE-001802</p>
       </a>
-      <div class="variant-title">Variant 7</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-08a.jpg" data-title="Variant 8">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-08a.jpg" alt="Young Andy â€“ Variant 8" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-08a.jpg" data-title="Variant 8 - RE-001805">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-08a.jpg" alt="Young Andy - Variant 8 - RE-001805" loading="lazy" />
+        <p class="variant-title">Variant 8</p>
+        <p class="variant-work-id">Work ID: RE-001805</p>
       </a>
-      <div class="variant-title">Variant 8</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-09a.jpg" data-title="Variant 9">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-09a.jpg" alt="Young Andy â€“ Variant 9" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-09a.jpg" data-title="Variant 9 - RE-001807">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-09a.jpg" alt="Young Andy - Variant 9 - RE-001807" loading="lazy" />
+        <p class="variant-title">Variant 9</p>
+        <p class="variant-work-id">Work ID: RE-001807</p>
       </a>
-      <div class="variant-title">Variant 9</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-10a.jpg" data-title="Variant 10">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-10a.jpg" alt="Young Andy â€“ Variant 10" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-10a.jpg" data-title="Variant 10 - RE-001810">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-10a.jpg" alt="Young Andy - Variant 10 - RE-001810" loading="lazy" />
+        <p class="variant-title">Variant 10</p>
+        <p class="variant-work-id">Work ID: RE-001810</p>
       </a>
-      <div class="variant-title">Variant 10</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-11a.jpg" data-title="Variant 11">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-11a.jpg" alt="Young Andy â€“ Variant 11" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-11a.jpg" data-title="Variant 11 - RE-011043">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-11a.jpg" alt="Young Andy - Variant 11 - RE-011043" loading="lazy" />
+        <p class="variant-title">Variant 11</p>
+        <p class="variant-work-id">Work ID: RE-011043</p>
       </a>
-      <div class="variant-title">Variant 11</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-12a.jpg" data-title="Variant 12">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-12a.jpg" alt="Young Andy â€“ Variant 12" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-12a.jpg" data-title="Variant 12 - RE-011044">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-12a.jpg" alt="Young Andy - Variant 12 - RE-011044" loading="lazy" />
+        <p class="variant-title">Variant 12</p>
+        <p class="variant-work-id">Work ID: RE-011044</p>
       </a>
-      <div class="variant-title">Variant 12</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-13a.jpg" data-title="Variant 13">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-13a.jpg" alt="Young Andy â€“ Variant 13" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-13a.jpg" data-title="Variant 13 - RE-011045">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-13a.jpg" alt="Young Andy - Variant 13 - RE-011045" loading="lazy" />
+        <p class="variant-title">Variant 13</p>
+        <p class="variant-work-id">Work ID: RE-011045</p>
       </a>
-      <div class="variant-title">Variant 13</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-14a.jpg" data-title="Variant 14">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-14a.jpg" alt="Young Andy â€“ Variant 14" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-14a.jpg" data-title="Variant 14 - RE-011046">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-14a.jpg" alt="Young Andy - Variant 14 - RE-011046" loading="lazy" />
+        <p class="variant-title">Variant 14</p>
+        <p class="variant-work-id">Work ID: RE-011046</p>
       </a>
-      <div class="variant-title">Variant 14</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-15a.jpg" data-title="Variant 15">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-15a.jpg" alt="Young Andy â€“ Variant 15" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-15a.jpg" data-title="Variant 15 - RE-011047">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-15a.jpg" alt="Young Andy - Variant 15 - RE-011047" loading="lazy" />
+        <p class="variant-title">Variant 15</p>
+        <p class="variant-work-id">Work ID: RE-011047</p>
       </a>
-      <div class="variant-title">Variant 15</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-16a.jpg" data-title="Variant 16">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-16a.jpg" alt="Young Andy â€“ Variant 16" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-16a.jpg" data-title="Variant 16 - RE-011048">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-16a.jpg" alt="Young Andy - Variant 16 - RE-011048" loading="lazy" />
+        <p class="variant-title">Variant 16</p>
+        <p class="variant-work-id">Work ID: RE-011048</p>
       </a>
-      <div class="variant-title">Variant 16</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-17a.jpg" data-title="Variant 17">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-17a.jpg" alt="Young Andy â€“ Variant 17" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-17a.jpg" data-title="Variant 17 - RE-011049">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-17a.jpg" alt="Young Andy - Variant 17 - RE-011049" loading="lazy" />
+        <p class="variant-title">Variant 17</p>
+        <p class="variant-work-id">Work ID: RE-011049</p>
       </a>
-      <div class="variant-title">Variant 17</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-18a.jpg" data-title="Variant 18">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-18a.jpg" alt="Young Andy â€“ Variant 18" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-18a.jpg" data-title="Variant 18 - RE-011050">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-18a.jpg" alt="Young Andy - Variant 18 - RE-011050" loading="lazy" />
+        <p class="variant-title">Variant 18</p>
+        <p class="variant-work-id">Work ID: RE-011050</p>
       </a>
-      <div class="variant-title">Variant 18</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-19a.jpg" data-title="Variant 19">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-19a.jpg" alt="Young Andy â€“ Variant 19" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-19a.jpg" data-title="Variant 19 - RE-011051">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-19a.jpg" alt="Young Andy - Variant 19 - RE-011051" loading="lazy" />
+        <p class="variant-title">Variant 19</p>
+        <p class="variant-work-id">Work ID: RE-011051</p>
       </a>
-      <div class="variant-title">Variant 19</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-20a.jpg" data-title="Variant 20">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-20a.jpg" alt="Young Andy â€“ Variant 20" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-20a.jpg" data-title="Variant 20 - RE-011052">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-20a.jpg" alt="Young Andy - Variant 20 - RE-011052" loading="lazy" />
+        <p class="variant-title">Variant 20</p>
+        <p class="variant-work-id">Work ID: RE-011052</p>
       </a>
-      <div class="variant-title">Variant 20</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-21a.jpg" data-title="Variant 21">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-21a.jpg" alt="Young Andy â€“ Variant 21" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-21a.jpg" data-title="Variant 21 - RE-011053">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-21a.jpg" alt="Young Andy - Variant 21 - RE-011053" loading="lazy" />
+        <p class="variant-title">Variant 21</p>
+        <p class="variant-work-id">Work ID: RE-011053</p>
       </a>
-      <div class="variant-title">Variant 21</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-22a.jpg" data-title="Variant 22">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-22a.jpg" alt="Young Andy â€“ Variant 22" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-22a.jpg" data-title="Variant 22 - RE-011054">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-22a.jpg" alt="Young Andy - Variant 22 - RE-011054" loading="lazy" />
+        <p class="variant-title">Variant 22</p>
+        <p class="variant-work-id">Work ID: RE-011054</p>
       </a>
-      <div class="variant-title">Variant 22</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-23a.jpg" data-title="Variant 23">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-23a.jpg" alt="Young Andy â€“ Variant 23" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-23a.jpg" data-title="Variant 23 - RE-011055">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-23a.jpg" alt="Young Andy - Variant 23 - RE-011055" loading="lazy" />
+        <p class="variant-title">Variant 23</p>
+        <p class="variant-work-id">Work ID: RE-011055</p>
       </a>
-      <div class="variant-title">Variant 23</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-24a.jpg" data-title="Variant 24">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-24a.jpg" alt="Young Andy â€“ Variant 24" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-24a.jpg" data-title="Variant 24 - RE-011056">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-24a.jpg" alt="Young Andy - Variant 24 - RE-011056" loading="lazy" />
+        <p class="variant-title">Variant 24</p>
+        <p class="variant-work-id">Work ID: RE-011056</p>
       </a>
-      <div class="variant-title">Variant 24</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-25a.jpg" data-title="Variant 25">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-25a.jpg" alt="Young Andy â€“ Variant 25" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-25a.jpg" data-title="Variant 25 - RE-011057">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-25a.jpg" alt="Young Andy - Variant 25 - RE-011057" loading="lazy" />
+        <p class="variant-title">Variant 25</p>
+        <p class="variant-work-id">Work ID: RE-011057</p>
       </a>
-      <div class="variant-title">Variant 25</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-26a.jpg" data-title="Variant 26">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-26a.jpg" alt="Young Andy â€“ Variant 26" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-26a.jpg" data-title="Variant 26 - RE-011058">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-26a.jpg" alt="Young Andy - Variant 26 - RE-011058" loading="lazy" />
+        <p class="variant-title">Variant 26</p>
+        <p class="variant-work-id">Work ID: RE-011058</p>
       </a>
-      <div class="variant-title">Variant 26</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-27a.jpg" data-title="Variant 27">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-27a.jpg" alt="Young Andy â€“ Variant 27" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-27a.jpg" data-title="Variant 27 - RE-011059">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-27a.jpg" alt="Young Andy - Variant 27 - RE-011059" loading="lazy" />
+        <p class="variant-title">Variant 27</p>
+        <p class="variant-work-id">Work ID: RE-011059</p>
       </a>
-      <div class="variant-title">Variant 27</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-28a.jpg" data-title="Variant 28">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-28a.jpg" alt="Young Andy â€“ Variant 28" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-28a.jpg" data-title="Variant 28 - RE-011060">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-28a.jpg" alt="Young Andy - Variant 28 - RE-011060" loading="lazy" />
+        <p class="variant-title">Variant 28</p>
+        <p class="variant-work-id">Work ID: RE-011060</p>
       </a>
-      <div class="variant-title">Variant 28</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-29a.jpg" data-title="Variant 29">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-29a.jpg" alt="Young Andy â€“ Variant 29" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-29a.jpg" data-title="Variant 29 - RE-011061">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-29a.jpg" alt="Young Andy - Variant 29 - RE-011061" loading="lazy" />
+        <p class="variant-title">Variant 29</p>
+        <p class="variant-work-id">Work ID: RE-011061</p>
       </a>
-      <div class="variant-title">Variant 29</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-30a.jpg" data-title="Variant 30">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-30a.jpg" alt="Young Andy â€“ Variant 30" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-30a.jpg" data-title="Variant 30 - RE-011062">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-30a.jpg" alt="Young Andy - Variant 30 - RE-011062" loading="lazy" />
+        <p class="variant-title">Variant 30</p>
+        <p class="variant-work-id">Work ID: RE-011062</p>
       </a>
-      <div class="variant-title">Variant 30</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-31a.jpg" data-title="Variant 31">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-31a.jpg" alt="Young Andy â€“ Variant 31" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-31a.jpg" data-title="Variant 31 - RE-011063">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-31a.jpg" alt="Young Andy - Variant 31 - RE-011063" loading="lazy" />
+        <p class="variant-title">Variant 31</p>
+        <p class="variant-work-id">Work ID: RE-011063</p>
       </a>
-      <div class="variant-title">Variant 31</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-32a.jpg" data-title="Variant 32">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-32a.jpg" alt="Young Andy â€“ Variant 32" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-32a.jpg" data-title="Variant 32 - RE-011064">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-32a.jpg" alt="Young Andy - Variant 32 - RE-011064" loading="lazy" />
+        <p class="variant-title">Variant 32</p>
+        <p class="variant-work-id">Work ID: RE-011064</p>
       </a>
-      <div class="variant-title">Variant 32</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-33a.jpg" data-title="Variant 33">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-33a.jpg" alt="Young Andy â€“ Variant 33" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-33a.jpg" data-title="Variant 33 - RE-011065">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-33a.jpg" alt="Young Andy - Variant 33 - RE-011065" loading="lazy" />
+        <p class="variant-title">Variant 33</p>
+        <p class="variant-work-id">Work ID: RE-011065</p>
       </a>
-      <div class="variant-title">Variant 33</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-34a.jpg" data-title="Variant 34">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-34a.jpg" alt="Young Andy â€“ Variant 34" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-34a.jpg" data-title="Variant 34 - RE-011066">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-34a.jpg" alt="Young Andy - Variant 34 - RE-011066" loading="lazy" />
+        <p class="variant-title">Variant 34</p>
+        <p class="variant-work-id">Work ID: RE-011066</p>
       </a>
-      <div class="variant-title">Variant 34</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-35a.jpg" data-title="Variant 35">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-35a.jpg" alt="Young Andy â€“ Variant 35" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-35a.jpg" data-title="Variant 35 - RE-011067">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-35a.jpg" alt="Young Andy - Variant 35 - RE-011067" loading="lazy" />
+        <p class="variant-title">Variant 35</p>
+        <p class="variant-work-id">Work ID: RE-011067</p>
       </a>
-      <div class="variant-title">Variant 35</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-36a.jpg" data-title="Variant 36">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-36a.jpg" alt="Young Andy â€“ Variant 36" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-36a.jpg" data-title="Variant 36 - RE-011068">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-36a.jpg" alt="Young Andy - Variant 36 - RE-011068" loading="lazy" />
+        <p class="variant-title">Variant 36</p>
+        <p class="variant-work-id">Work ID: RE-011068</p>
       </a>
-      <div class="variant-title">Variant 36</div>
-    </div>
 
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-37a.jpg" data-title="Variant 37">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-37a.jpg" alt="Young Andy â€“ Variant 37" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-37a.jpg" data-title="Variant 37 - RE-011069">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Young-Andy-var-37a.jpg" alt="Young Andy - Variant 37 - RE-011069" loading="lazy" />
+        <p class="variant-title">Variant 37</p>
+        <p class="variant-work-id">Work ID: RE-011069</p>
       </a>
-      <div class="variant-title">Variant 37</div>
+
     </div>
-
-  </div>
-</section>
-
+  </section>
 <!-- SOURCE PAINTING -->
 <section class="source-wrap" aria-label="Source painting information">
-  <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
+ <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
 
-  <div class="source-card">
-    <img
-      class="source-thumb"
-      src="../../images/Paintings/Warholesque/Young_Andy.jpg"
-      alt="Young Andy source painting, oil on canvas, 2005"
-      loading="lazy"
-    />
+ <div class="source-card">
+ <img
+ class="source-thumb"
+ src="../../images/Paintings/Warholesque/Young_Andy.jpg"
+ alt="Young Andy source painting, oil on canvas, 2005"
+ loading="lazy"
+ />
 
-    <ul class="source-meta">
-      <li><strong>Title:</strong> Young Andy</li>
-      <li><strong>Date:</strong> 2005</li>
-      <li><strong>Medium:</strong> Oil on canvas</li>
-      <li><strong>Dimensions:</strong> 24 Ã— 24 inches</li>
-    </ul>
-  </div>
+ <ul class="source-meta">
+ <li><strong>Title:</strong> Young Andy</li>
+ <li><strong>Date:</strong> 2005</li>
+ <li><strong>Medium:</strong> Oil on canvas</li>
+ <li><strong>Dimensions:</strong> 24 &times; 24 inches</li>
+ </ul>
+ </div>
 </section>
 
 <!-- Lightbox UI -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <img class="lightbox-img" id="lightboxImg" alt="">
-    <div class="lightbox-bar">
-      <div id="lightboxTitle"></div>
-      <div class="lightbox-actions">
-        <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
-        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">âœ•</button>
-      </div>
-    </div>
-  </div>
+ <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+ <img class="lightbox-img" id="lightboxImg" alt="">
+ <div class="lightbox-bar">
+ <div id="lightboxTitle"></div>
+ <div class="lightbox-actions">
+ <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ </div>
+ </div>
+ </div>
 </div>
 
 <script>
-  (function () {
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightboxImg");
-    const lbTitle = document.getElementById("lightboxTitle");
-    const lbOpen = document.getElementById("lightboxOpen");
-    const lbClose = document.getElementById("lightboxClose");
+ (function () {
+ const lb = document.getElementById("lightbox");
+ const lbImg = document.getElementById("lightboxImg");
+ const lbTitle = document.getElementById("lightboxTitle");
+ const lbOpen = document.getElementById("lightboxOpen");
+ const lbClose = document.getElementById("lightboxClose");
 
-    function openLightbox(src, title, alt) {
-      lb.classList.add("is-open");
-      lb.setAttribute("aria-hidden", "false");
-      lbImg.src = src;
-      lbImg.alt = alt || title || "Image";
-      lbTitle.textContent = title || "";
-      lbOpen.href = src;
-      document.body.style.overflow = "hidden";
-      lbClose.focus();
-    }
+ function openLightbox(src, title, alt) {
+ lb.classList.add("is-open");
+ lb.setAttribute("aria-hidden", "false");
+ lbImg.src = src;
+ lbImg.alt = alt || title || "Image";
+ lbTitle.textContent = title || "";
+ lbOpen.href = src;
+ document.body.style.overflow = "hidden";
+ lbClose.focus();
+ }
 
-    function closeLightbox() {
-      lb.classList.remove("is-open");
-      lb.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-      document.body.style.overflow = "";
-    }
+ function closeLightbox() {
+ lb.classList.remove("is-open");
+ lb.setAttribute("aria-hidden", "true");
+ lbImg.src = "";
+ document.body.style.overflow = "";
+ }
 
-    document.addEventListener("click", (e) => {
-      const link = e.target.closest(".variant-link");
-      if (link) {
-        e.preventDefault();
-        openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
-        return;
-      }
-      if (e.target === lb) closeLightbox();
-    });
+ document.addEventListener("click", (e) => {
+ const link = e.target.closest(".variant-link");
+ if (link) {
+ e.preventDefault();
+ openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+ return;
+ }
+ if (e.target === lb) closeLightbox();
+ });
 
-    lbClose.addEventListener("click", closeLightbox);
+ lbClose.addEventListener("click", closeLightbox);
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
-    });
-  })();
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+ });
+ })();
 </script>
 
 </body>
 </html>
+
+
+
+
 

@@ -1,327 +1,413 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lady Lick â€“ Warholesque â€“ Ron English Catalogue RaisonnÃ©</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Lady Lick &ndash; Warholesque &ndash; Ron English Catalogue Raisonn&eacute;</title>
 
-  <link rel="stylesheet" href="../../css/styles.css" />
-  <meta name="work-type" content="warholesque-series" />
+ <link rel="stylesheet" href="../../css/styles.css" />
+ <meta name="work-type" content="warholesque-series" />
 
-  <style>
-    /* keep hero/meta consistent across pages */
-    .work-layout {
-      max-width: 800px;
-      margin: 2.5rem auto 2.75rem auto;
-      text-align: center;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+ <style>
+ /* keep hero/meta consistent across pages */
+ .work-layout {
+ max-width: 800px;
+ margin: 2.5rem auto 2.75rem auto;
+ text-align: center;
+ padding-left: 20px;
+ padding-right: 20px;
+ }
 
-    /* variants can be wider */
-    .variant-wrap {
-      max-width: 1100px;
-      margin: 0 auto 36px auto;
-      padding: 0 20px;
-    }
+ /* variants can be wider */
+ .variant-wrap {
+ max-width: 1100px;
+ margin: 0 auto 36px auto;
+ padding: 0 20px;
+ }
 
-    .variant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 26px;
-    }
+ .variant-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+ gap: 26px;
+ }
 
-    .variant-item {
-      text-decoration: none;
-      color: inherit;
-      text-align: center;
-      cursor: pointer;
-    }
+ .variant-item {
+ text-decoration: none;
+ color: inherit;
+ text-align: center;
+ cursor: pointer;
+ }
 
-    .variant-item img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .variant-item img {
+ width: 100%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ display: block;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .variant-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin: 10px 0 0 0;
-      color: #222;
-    }
+ .variant-title {
+ font-size: 0.9rem;
+ font-weight: 600;
+ margin: 10px 0 0 0;
+ color: #222;
+ }
 
-    /* ==========================
-       SOURCE PAINTING (smaller)
-       ========================== */
-    .source-wrap {
-      max-width: 900px;
-      margin: 26px auto 64px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+ /* ==========================
+ SOURCE PAINTING (smaller)
+ ========================== */
+ .source-wrap {
+ max-width: 900px;
+ margin: 26px auto 64px auto;
+ padding: 0 20px;
+ text-align: center;
+ }
 
-    .source-card {
-      max-width: 420px;
-      margin: 0 auto;
-      border-radius: 14px;
-      background: #fff;
-      padding: 14px 14px 16px 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
+ .source-card {
+ max-width: 420px;
+ margin: 0 auto;
+ border-radius: 14px;
+ background: #fff;
+ padding: 14px 14px 16px 14px;
+ box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+ }
 
-    .source-thumb {
-      width: 240px;
-      max-width: 80%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      margin: 10px auto 12px auto;
-      border-radius: 10px;
-      background: #f3f4f6;
-    }
+ .source-thumb {
+ width: 240px;
+ max-width: 80%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ display: block;
+ margin: 10px auto 12px auto;
+ border-radius: 10px;
+ background: #f3f4f6;
+ }
 
-    .source-meta {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-      display: inline-block;
-      font-size: 0.95rem;
-    }
+ .source-meta {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ text-align: left;
+ display: inline-block;
+ font-size: 0.95rem;
+ }
 
-    .source-meta li { margin: 6px 0; }
+ .source-meta li { margin: 6px 0; }
 
-    .source-meta strong {
-      display: inline-block;
-      min-width: 110px;
-    }
+ .source-meta strong {
+ display: inline-block;
+ min-width: 110px;
+ }
 
-    .source-note {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #444;
-    }
+ .source-note {
+ margin-top: 10px;
+ font-size: 0.9rem;
+ color: #444;
+ }
 
-    /* ==========================
-       LIGHTBOX (page-local)
-       ========================== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: rgba(0, 0, 0, 0.86);
-      z-index: 9999;
-    }
-    .lightbox.is-open { display: flex; }
-    .lightbox-card {
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      width: 100%;
-      position: relative;
-    }
-    .lightbox-img {
-      width: 100%;
-      max-height: 92vh;
-      object-fit: contain;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
-    .lightbox-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-    }
-    .lightbox-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .lightbox-actions a,
-    .lightbox-actions button {
-      appearance: none;
-      border: 0;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      line-height: 1;
-    }
-    .lightbox-actions a:hover,
-    .lightbox-actions button:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-    .lightbox-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-    }
-    .variant-link:focus { outline: 2px solid #111; outline-offset: 3px; }
-  </style>
-  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+ /* ==========================
+ LIGHTBOX (page-local)
+ ========================== */
+ .lightbox {
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: rgba(0, 0, 0, 0.86);
+ z-index: 9999;
+ }
+ .lightbox.is-open { display: flex; }
+ .lightbox-card {
+ max-width: min(1100px, 96vw);
+ max-height: 92vh;
+ width: 100%;
+ position: relative;
+ }
+ .lightbox-img {
+ width: 100%;
+ max-height: 92vh;
+ object-fit: contain;
+ display: block;
+ border-radius: 12px;
+ background: #111;
+ }
+ .lightbox-bar {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 10px;
+ color: #fff;
+ font-size: 0.95rem;
+ }
+ .lightbox-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
+ .lightbox-actions a,
+ .lightbox-actions button {
+ appearance: none;
+ border: 0;
+ background: rgba(255, 255, 255, 0.14);
+ color: #fff;
+ padding: 10px 12px;
+ border-radius: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: 600;
+ line-height: 1;
+ }
+ .lightbox-actions a:hover,
+ .lightbox-actions button:hover {
+ background: rgba(255, 255, 255, 0.22);
+ }
+ .lightbox-close {
+ width: 42px;
+ height: 42px;
+ border-radius: 999px;
+ }
+ .variant-link:focus { outline: 2px solid #111; outline-offset: 3px; }
+ </style>
+ <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<style>
+/* WARHOLESQUE FINAL VARIANT GALLERY - START */
+.variant-wrap {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.variant-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.variant-item {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.variant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+}
+
+.variant-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.variant-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 12px 0 0 0;
+  color: #222;
+}
+
+.variant-work-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .variant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .variant-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* WARHOLESQUE FINAL VARIANT GALLERY - END */
+</style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <h1>Lady Lick</h1>
+ <h1>Lady Lick</h1>
 
-  <nav class="top-nav">
+ <nav class="top-nav">
 <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
-    <a class="nav-pill" href="./index.html">Warholesque</a>
-  </nav>
+ <a class="nav-pill" href="./index.html">Warholesque</a>
+ </nav>
 </header>
 
 <main class="work-layout">
 
-  <img
-    src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-01a.jpg"
-    alt="Lady Lick (Warholesque) â€“ Variant 1"
-    class="work-hero"
-    loading="lazy"
-  />
+ <img
+ src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-01a.jpg"
+ alt="Lady Lick (Warholesque) &ndash; Variant 1"
+ class="work-hero"
+ loading="lazy"
+ />
 
-  <ul class="work-meta">
-    <li><strong>Title:</strong> Lady Lick</li>
-    <li><strong>Series:</strong> Warholesque</li>
-    <li><strong>Date:</strong> 2010</li>
-    <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
-    <li><strong>Dimensions:</strong> 50 Ã— 60 inches</li>
-    <li><strong>Notes:</strong> 5 colorway variants documented to date. Dimensions are based on documentary evidence and should be treated as provisional pending confirmation.</li>
-  </ul>
+ <ul class="work-meta">
+ <li><strong>Title:</strong> Lady Lick</li>
+ <li><strong>Series:</strong> Warholesque</li>
+ <li><strong>Date:</strong> 2010</li>
+ <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+ <li><strong>Dimensions:</strong> 50 &times; 60 inches</li>
+ <li><strong>Notes:</strong> 5 colorway variants documented to date. Dimensions are based on documentary evidence and should be treated as provisional pending confirmation.</li>
+ </ul>
 
 </main>
 
-<section class="variant-wrap">
-  <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
+  <!-- VARIANTS -->
+  <section class="variant-wrap">
+    <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
-  <div class="variant-grid" aria-label="Lady Lick variants">
+    <div class="variant-grid" aria-label="Lady Lick variants">
 
-    <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-01a.jpg" data-title="Variant 1">
-      <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-01a.jpg" alt="Lady Lick â€“ Variant 1" loading="lazy" />
-      <p class="variant-title">Variant 1</p>
-    </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-01a.jpg" data-title="Variant 1 - RE-011343">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-01a.jpg" alt="Lady Lick - Variant 1 - RE-011343" loading="lazy" />
+        <p class="variant-title">Variant 1</p>
+        <p class="variant-work-id">Work ID: RE-011343</p>
+      </a>
 
-    <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-02a.jpg" data-title="Variant 2">
-      <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-02a.jpg" alt="Lady Lick â€“ Variant 2" loading="lazy" />
-      <p class="variant-title">Variant 2</p>
-    </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-02a.jpg" data-title="Variant 2 - RE-011344">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-02a.jpg" alt="Lady Lick - Variant 2 - RE-011344" loading="lazy" />
+        <p class="variant-title">Variant 2</p>
+        <p class="variant-work-id">Work ID: RE-011344</p>
+      </a>
 
-    <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-03a.jpg" data-title="Variant 3">
-      <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-03a.jpg" alt="Lady Lick â€“ Variant 3" loading="lazy" />
-      <p class="variant-title">Variant 3</p>
-    </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-03a.jpg" data-title="Variant 3 - RE-011345">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-03a.jpg" alt="Lady Lick - Variant 3 - RE-011345" loading="lazy" />
+        <p class="variant-title">Variant 3</p>
+        <p class="variant-work-id">Work ID: RE-011345</p>
+      </a>
 
-    <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-04a.jpg" data-title="Variant 4">
-      <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-04a.jpg" alt="Lady Lick â€“ Variant 4" loading="lazy" />
-      <p class="variant-title">Variant 4</p>
-    </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-04a.jpg" data-title="Variant 4 - RE-011346">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-04a.jpg" alt="Lady Lick - Variant 4 - RE-011346" loading="lazy" />
+        <p class="variant-title">Variant 4</p>
+        <p class="variant-work-id">Work ID: RE-011346</p>
+      </a>
 
-    <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-05a.jpg" data-title="Variant 5">
-      <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-05a.jpg" alt="Lady Lick â€“ Variant 5" loading="lazy" />
-      <p class="variant-title">Variant 5</p>
-    </a>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-05a.jpg" data-title="Variant 5 - RE-011347">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Lady-Lick-var-05a.jpg" alt="Lady Lick - Variant 5 - RE-011347" loading="lazy" />
+        <p class="variant-title">Variant 5</p>
+        <p class="variant-work-id">Work ID: RE-011347</p>
+      </a>
 
-  </div>
-</section>
-
+    </div>
+  </section>
 <!-- SOURCE PAINTING -->
 <section class="source-wrap" aria-label="Source painting information">
-  <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
+ <h2 style="text-align:center; margin: 0 0 14px 0;">Source painting</h2>
 
-  <div class="source-card">
-    <img
-      class="source-thumb"
-      src="../../images/Paintings/Warholesque/Lady-Lick-original.jpg"
-      alt="Lady Lick source painting, oil on canvas, 2010"
-      loading="lazy"
-    />
+ <div class="source-card">
+ <img
+ class="source-thumb"
+ src="../../images/Paintings/Warholesque/Lady-Lick-original.jpg"
+ alt="Lady Lick source painting, oil on canvas, 2010"
+ loading="lazy"
+ />
 
-    <ul class="source-meta">
-      <li><strong>Title:</strong> Lady Lick</li>
-      <li><strong>Date:</strong> 2010</li>
-      <li><strong>Medium:</strong> Oil on canvas</li>
-      <li><strong>Dimensions:</strong> 50 Ã— 60 inches</li>
-    </ul>
+ <ul class="source-meta">
+ <li><strong>Title:</strong> Lady Lick</li>
+ <li><strong>Date:</strong> 2010</li>
+ <li><strong>Medium:</strong> Oil on canvas</li>
+ <li><strong>Dimensions:</strong> 50 &times; 60 inches</li>
+ </ul>
 
-    <p class="source-note">
-      Dimensions are based on documentary evidence and are not fully confirmed.
-    </p>
-  </div>
+ <p class="source-note">
+ Dimensions are based on documentary evidence and are not fully confirmed.
+ </p>
+ </div>
 </section>
 
 <!-- Lightbox UI -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <img class="lightbox-img" id="lightboxImg" alt="">
-    <div class="lightbox-bar">
-      <div id="lightboxTitle"></div>
-      <div class="lightbox-actions">
-        <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
-        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">âœ•</button>
-      </div>
-    </div>
-  </div>
+ <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+ <img class="lightbox-img" id="lightboxImg" alt="">
+ <div class="lightbox-bar">
+ <div id="lightboxTitle"></div>
+ <div class="lightbox-actions">
+ <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ </div>
+ </div>
+ </div>
 </div>
 
 <script>
-  (function () {
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightboxImg");
-    const lbTitle = document.getElementById("lightboxTitle");
-    const lbOpen = document.getElementById("lightboxOpen");
-    const lbClose = document.getElementById("lightboxClose");
+ (function () {
+ const lb = document.getElementById("lightbox");
+ const lbImg = document.getElementById("lightboxImg");
+ const lbTitle = document.getElementById("lightboxTitle");
+ const lbOpen = document.getElementById("lightboxOpen");
+ const lbClose = document.getElementById("lightboxClose");
 
-    function openLightbox(src, title, alt) {
-      lb.classList.add("is-open");
-      lb.setAttribute("aria-hidden", "false");
-      lbImg.src = src;
-      lbImg.alt = alt || title || "Image";
-      lbTitle.textContent = title || "";
-      lbOpen.href = src;
-      document.body.style.overflow = "hidden";
-      lbClose.focus();
-    }
+ function openLightbox(src, title, alt) {
+ lb.classList.add("is-open");
+ lb.setAttribute("aria-hidden", "false");
+ lbImg.src = src;
+ lbImg.alt = alt || title || "Image";
+ lbTitle.textContent = title || "";
+ lbOpen.href = src;
+ document.body.style.overflow = "hidden";
+ lbClose.focus();
+ }
 
-    function closeLightbox() {
-      lb.classList.remove("is-open");
-      lb.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-      document.body.style.overflow = "";
-    }
+ function closeLightbox() {
+ lb.classList.remove("is-open");
+ lb.setAttribute("aria-hidden", "true");
+ lbImg.src = "";
+ document.body.style.overflow = "";
+ }
 
-    document.addEventListener("click", (e) => {
-      const link = e.target.closest(".variant-link");
-      if (link) {
-        e.preventDefault();
-        openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
-        return;
-      }
-      if (e.target === lb) closeLightbox();
-    });
+ document.addEventListener("click", (e) => {
+ const link = e.target.closest(".variant-link");
+ if (link) {
+ e.preventDefault();
+ openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+ return;
+ }
+ if (e.target === lb) closeLightbox();
+ });
 
-    lbClose.addEventListener("click", closeLightbox);
+ lbClose.addEventListener("click", closeLightbox);
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
-    });
-  })();
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+ });
+ })();
 </script>
 
 </body>
 </html>
+
+
+
+
 

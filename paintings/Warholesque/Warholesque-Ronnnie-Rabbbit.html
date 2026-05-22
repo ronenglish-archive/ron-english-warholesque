@@ -1,763 +1,709 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ronnnie Rabbbit â€“ Warholesque â€“ Ron English Catalogue RaisonnÃ©</title>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Ronnnie Rabbbit &ndash; Warholesque &ndash; Ron English Catalogue Raisonn&eacute;</title>
 
-  <link rel="stylesheet" href="../../css/styles.css" />
+ <link rel="stylesheet" href="../../css/styles.css" />
 
-  <meta name="work-type" content="warholesque-series" />
+ <meta name="work-type" content="warholesque-series" />
 
-  <style>
-    .variant-section {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 1rem;
-    }
+ <style>
+ .variant-section {
+ max-width: 1200px;
+ margin: 60px auto;
+ padding: 0 1rem;
+ }
 
-    .variant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 26px;
-    }
+ .variant-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+ gap: 26px;
+ }
 
-    .variant-item { text-align: center; }
+ .variant-item { text-align: center; }
 
-    .variant-link {
-      display: block;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+ .variant-link {
+ display: block;
+ border-radius: 10px;
+ overflow: hidden;
+ }
 
-    .variant-link:focus {
-      outline: 2px solid #111;
-      outline-offset: 3px;
-    }
+ .variant-link:focus {
+ outline: 2px solid #111;
+ outline-offset: 3px;
+ }
 
-    .variant-item img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 10px;
-      background: #f3f4f6;
-      display: block;
-    }
+ .variant-item img {
+ width: 100%;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ border-radius: 10px;
+ background: #f3f4f6;
+ display: block;
+ }
 
-    .variant-title {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
+ .variant-title {
+ margin-top: 10px;
+ font-size: 0.9rem;
+ font-weight: 600;
+ }
 
-    /* LIGHTBOX */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: rgba(0, 0, 0, 0.86);
-      z-index: 9999;
-    }
+ /* LIGHTBOX */
+ .lightbox {
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: rgba(0, 0, 0, 0.86);
+ z-index: 9999;
+ }
 
-    .lightbox.is-open { display: flex; }
+ .lightbox.is-open { display: flex; }
 
-    .lightbox-card {
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      width: 100%;
-      position: relative;
-    }
+ .lightbox-card {
+ max-width: min(1100px, 96vw);
+ max-height: 92vh;
+ width: 100%;
+ position: relative;
+ }
 
-    .lightbox-img {
-      width: 100%;
-      max-height: 92vh;
-      object-fit: contain;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
+ .lightbox-img {
+ width: 100%;
+ max-height: 92vh;
+ object-fit: contain;
+ display: block;
+ border-radius: 12px;
+ background: #111;
+ }
 
-    .lightbox-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 0.95rem;
-    }
+ .lightbox-bar {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 10px;
+ color: #fff;
+ font-size: 0.95rem;
+ }
 
-    .lightbox-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
+ .lightbox-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
 
-    .lightbox-actions a,
-    .lightbox-actions button {
-      appearance: none;
-      border: 0;
-      background: rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      line-height: 1;
-    }
+ .lightbox-actions a,
+ .lightbox-actions button {
+ appearance: none;
+ border: 0;
+ background: rgba(255, 255, 255, 0.14);
+ color: #fff;
+ padding: 10px 12px;
+ border-radius: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: 600;
+ line-height: 1;
+ }
 
-    .lightbox-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-    }
-  </style>
-  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+ .lightbox-close {
+ width: 42px;
+ height: 42px;
+ border-radius: 999px;
+ }
+ </style>
+ <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<style>
+/* WARHOLESQUE FINAL VARIANT GALLERY - START */
+.variant-wrap {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.variant-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.variant-item {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.variant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.11);
+}
+
+.variant-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.variant-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 12px 0 0 0;
+  color: #222;
+}
+
+.variant-work-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .variant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .variant-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* WARHOLESQUE FINAL VARIANT GALLERY - END */
+</style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <h1>Ronnnie Rabbbit</h1>
+ <h1>Ronnnie Rabbbit</h1>
 
-  <nav class="top-nav">
+ <nav class="top-nav">
 <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Home</a>
-    <a class="nav-pill" href="./index.html">Warholesque</a>
-  </nav>
+ <a class="nav-pill" href="./index.html">Warholesque</a>
+ </nav>
 </header>
 
 <main class="work-layout">
 
-  <img
-    src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-01a.jpg"
-    alt="Ronnnie Rabbbit â€“ Warholesque â€“ Variant 01"
-    class="work-hero"
-    loading="lazy"
-  />
+ <img
+ src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-01a.jpg"
+ alt="Ronnnie Rabbbit &ndash; Warholesque &ndash; Variant 01"
+ class="work-hero"
+ loading="lazy"
+ />
 
-  <ul class="work-meta">
-    <li><strong>Title:</strong> Ronnnie Rabbbit</li>
-    <li><strong>Series:</strong> Warholesque</li>
-    <li><strong>Date:</strong> 2006</li>
-    <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
-    <li><strong>Dimensions:</strong> 24 Ã— 36 inches</li>
-    <li><strong>Notes:</strong> 68 colorway variants documented to date.</li>
-  </ul>
+ <ul class="work-meta">
+ <li><strong>Title:</strong> Ronnnie Rabbbit</li>
+ <li><strong>Series:</strong> Warholesque</li>
+ <li><strong>Date:</strong> 2006</li>
+ <li><strong>Medium:</strong> Silkscreen ink on canvas</li>
+ <li><strong>Dimensions:</strong> 24 &times; 36 inches</li>
+ <li><strong>Notes:</strong> 68 colorway variants documented to date.</li>
+ </ul>
 
 </main>
 
-<section class="variant-section">
-  <h2 style="text-align:center; margin-bottom: 28px;">Variants</h2>
+  <!-- VARIANTS -->
+  <section class="variant-wrap">
+    <h2 style="text-align:center; margin: 0 0 18px 0;">Variants</h2>
 
-  <div class="variant-grid" aria-label="Ronnnie Rabbbit variants">
+    <div class="variant-grid" aria-label="Ronnnie Rabbbit variants">
 
-    <!-- Variant 01 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-01a.jpg" data-title="Variant 1">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-01a.jpg" alt="Ronnnie Rabbbit â€“ Variant 1" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-01a.jpg" data-title="Variant 1 - RE-011595">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-01a.jpg" alt="Ronnnie Rabbbit - Variant 1 - RE-011595" loading="lazy" />
+        <p class="variant-title">Variant 1</p>
+        <p class="variant-work-id">Work ID: RE-011595</p>
       </a>
-      <div class="variant-title">Variant 1</div>
-    </div>
 
-    <!-- Variant 02 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-02a.jpg" data-title="Variant 2">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-02a.jpg" alt="Ronnnie Rabbbit â€“ Variant 2" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-02a.jpg" data-title="Variant 2 - RE-011596">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-02a.jpg" alt="Ronnnie Rabbbit - Variant 2 - RE-011596" loading="lazy" />
+        <p class="variant-title">Variant 2</p>
+        <p class="variant-work-id">Work ID: RE-011596</p>
       </a>
-      <div class="variant-title">Variant 2</div>
-    </div>
 
-    <!-- Variant 03 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-03a.jpg" data-title="Variant 3">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-03a.jpg" alt="Ronnnie Rabbbit â€“ Variant 3" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-03a.jpg" data-title="Variant 3 - RE-011597">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-03a.jpg" alt="Ronnnie Rabbbit - Variant 3 - RE-011597" loading="lazy" />
+        <p class="variant-title">Variant 3</p>
+        <p class="variant-work-id">Work ID: RE-011597</p>
       </a>
-      <div class="variant-title">Variant 3</div>
-    </div>
 
-    <!-- Variant 04 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-04a.jpg" data-title="Variant 4">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-04a.jpg" alt="Ronnnie Rabbbit â€“ Variant 4" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-04a.jpg" data-title="Variant 4 - RE-011598">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-04a.jpg" alt="Ronnnie Rabbbit - Variant 4 - RE-011598" loading="lazy" />
+        <p class="variant-title">Variant 4</p>
+        <p class="variant-work-id">Work ID: RE-011598</p>
       </a>
-      <div class="variant-title">Variant 4</div>
-    </div>
 
-    <!-- Variant 05 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-05a.jpg" data-title="Variant 5">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-05a.jpg" alt="Ronnnie Rabbbit â€“ Variant 5" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-05a.jpg" data-title="Variant 5 - RE-011599">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-05a.jpg" alt="Ronnnie Rabbbit - Variant 5 - RE-011599" loading="lazy" />
+        <p class="variant-title">Variant 5</p>
+        <p class="variant-work-id">Work ID: RE-011599</p>
       </a>
-      <div class="variant-title">Variant 5</div>
-    </div>
 
-    <!-- Variant 06 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-06a.jpg" data-title="Variant 6">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-06a.jpg" alt="Ronnnie Rabbbit â€“ Variant 6" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-06a.jpg" data-title="Variant 6 - RE-011600">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-06a.jpg" alt="Ronnnie Rabbbit - Variant 6 - RE-011600" loading="lazy" />
+        <p class="variant-title">Variant 6</p>
+        <p class="variant-work-id">Work ID: RE-011600</p>
       </a>
-      <div class="variant-title">Variant 6</div>
-    </div>
-    <!-- Variant 07 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-07a.jpg" data-title="Variant 7">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-07a.jpg" alt="Ronnnie Rabbbit â€“ Variant 7" loading="lazy">
-      </a>
-      <div class="variant-title">Variant 7</div>
-    </div>
 
-    <!-- Variant 08 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-08a.jpg" data-title="Variant 8">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-08a.jpg" alt="Ronnnie Rabbbit â€“ Variant 8" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-07a.jpg" data-title="Variant 7 - RE-011601">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-07a.jpg" alt="Ronnnie Rabbbit - Variant 7 - RE-011601" loading="lazy" />
+        <p class="variant-title">Variant 7</p>
+        <p class="variant-work-id">Work ID: RE-011601</p>
       </a>
-      <div class="variant-title">Variant 8</div>
-    </div>
 
-    <!-- Variant 09 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-09a.jpg" data-title="Variant 9">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-09a.jpg" alt="Ronnnie Rabbbit â€“ Variant 9" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-08a.jpg" data-title="Variant 8 - RE-011602">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-08a.jpg" alt="Ronnnie Rabbbit - Variant 8 - RE-011602" loading="lazy" />
+        <p class="variant-title">Variant 8</p>
+        <p class="variant-work-id">Work ID: RE-011602</p>
       </a>
-      <div class="variant-title">Variant 9</div>
-    </div>
 
-    <!-- Variant 10 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-10a.jpg" data-title="Variant 10">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-10a.jpg" alt="Ronnnie Rabbbit â€“ Variant 10" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-09a.jpg" data-title="Variant 9 - RE-011603">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-09a.jpg" alt="Ronnnie Rabbbit - Variant 9 - RE-011603" loading="lazy" />
+        <p class="variant-title">Variant 9</p>
+        <p class="variant-work-id">Work ID: RE-011603</p>
       </a>
-      <div class="variant-title">Variant 10</div>
-    </div>
 
-    <!-- Variant 11 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-11a.jpg" data-title="Variant 11">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-11a.jpg" alt="Ronnnie Rabbbit â€“ Variant 11" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-10a.jpg" data-title="Variant 10 - RE-011604">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-10a.jpg" alt="Ronnnie Rabbbit - Variant 10 - RE-011604" loading="lazy" />
+        <p class="variant-title">Variant 10</p>
+        <p class="variant-work-id">Work ID: RE-011604</p>
       </a>
-      <div class="variant-title">Variant 11</div>
-    </div>
 
-    <!-- Variant 12 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-12a.jpg" data-title="Variant 12">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-12a.jpg" alt="Ronnnie Rabbbit â€“ Variant 12" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-11a.jpg" data-title="Variant 11 - RE-011605">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-11a.jpg" alt="Ronnnie Rabbbit - Variant 11 - RE-011605" loading="lazy" />
+        <p class="variant-title">Variant 11</p>
+        <p class="variant-work-id">Work ID: RE-011605</p>
       </a>
-      <div class="variant-title">Variant 12</div>
-    </div>
 
-    <!-- Variant 13 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-13a.jpg" data-title="Variant 13">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-13a.jpg" alt="Ronnnie Rabbbit â€“ Variant 13" loading="lazy">
-      </a>
-      <div class="variant-title">Variant 13</div>
-    </div>
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-12a.jpg" data-title="Variant 12 - RE-011606">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-12a.jpg" alt="Ronnnie Rabbbit - Variant 12 - RE-011606" loading="lazy" />
+        <p class="variant-title">Variant 12</p>
+        <p class="variant-work-id">Work ID: RE-011606</p>
+      </a>
 
-    <!-- Variant 14 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-14a.jpg" data-title="Variant 14">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-14a.jpg" alt="Ronnnie Rabbbit â€“ Variant 14" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-13a.jpg" data-title="Variant 13 - RE-011607">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-13a.jpg" alt="Ronnnie Rabbbit - Variant 13 - RE-011607" loading="lazy" />
+        <p class="variant-title">Variant 13</p>
+        <p class="variant-work-id">Work ID: RE-011607</p>
       </a>
-      <div class="variant-title">Variant 14</div>
-    </div>
 
-    <!-- Variant 15 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-15a.jpg" data-title="Variant 15">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-15a.jpg" alt="Ronnnie Rabbbit â€“ Variant 15" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-14a.jpg" data-title="Variant 14 - RE-011608">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-14a.jpg" alt="Ronnnie Rabbbit - Variant 14 - RE-011608" loading="lazy" />
+        <p class="variant-title">Variant 14</p>
+        <p class="variant-work-id">Work ID: RE-011608</p>
       </a>
-      <div class="variant-title">Variant 15</div>
-    </div>
 
-    <!-- Variant 16 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-16a.jpg" data-title="Variant 16">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-16a.jpg" alt="Ronnnie Rabbbit â€“ Variant 16" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-15a.jpg" data-title="Variant 15 - RE-011609">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-15a.jpg" alt="Ronnnie Rabbbit - Variant 15 - RE-011609" loading="lazy" />
+        <p class="variant-title">Variant 15</p>
+        <p class="variant-work-id">Work ID: RE-011609</p>
       </a>
-      <div class="variant-title">Variant 16</div>
-    </div>
 
-    <!-- Variant 17 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-17a.jpg" data-title="Variant 17">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-17a.jpg" alt="Ronnnie Rabbbit â€“ Variant 17" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-16a.jpg" data-title="Variant 16 - RE-011610">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-16a.jpg" alt="Ronnnie Rabbbit - Variant 16 - RE-011610" loading="lazy" />
+        <p class="variant-title">Variant 16</p>
+        <p class="variant-work-id">Work ID: RE-011610</p>
       </a>
-      <div class="variant-title">Variant 17</div>
-    </div>
 
-    <!-- Variant 18 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-18a.jpg" data-title="Variant 18">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-18a.jpg" alt="Ronnnie Rabbbit â€“ Variant 18" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-17a.jpg" data-title="Variant 17 - RE-011611">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-17a.jpg" alt="Ronnnie Rabbbit - Variant 17 - RE-011611" loading="lazy" />
+        <p class="variant-title">Variant 17</p>
+        <p class="variant-work-id">Work ID: RE-011611</p>
       </a>
-      <div class="variant-title">Variant 18</div>
-    </div>
 
-    <!-- Variant 19 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-19a.jpg" data-title="Variant 19">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-19a.jpg" alt="Ronnnie Rabbbit â€“ Variant 19" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-18a.jpg" data-title="Variant 18 - RE-011612">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-18a.jpg" alt="Ronnnie Rabbbit - Variant 18 - RE-011612" loading="lazy" />
+        <p class="variant-title">Variant 18</p>
+        <p class="variant-work-id">Work ID: RE-011612</p>
       </a>
-      <div class="variant-title">Variant 19</div>
-    </div>
 
-    <!-- Variant 20 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-20a.jpg" data-title="Variant 20">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-20a.jpg" alt="Ronnnie Rabbbit â€“ Variant 20" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-19a.jpg" data-title="Variant 19 - RE-011613">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-19a.jpg" alt="Ronnnie Rabbbit - Variant 19 - RE-011613" loading="lazy" />
+        <p class="variant-title">Variant 19</p>
+        <p class="variant-work-id">Work ID: RE-011613</p>
       </a>
-      <div class="variant-title">Variant 20</div>
-    </div>
 
-    <!-- Variant 21 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-21a.jpg" data-title="Variant 21">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-21a.jpg" alt="Ronnnie Rabbbit â€“ Variant 21" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-20a.jpg" data-title="Variant 20 - RE-011614">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-20a.jpg" alt="Ronnnie Rabbbit - Variant 20 - RE-011614" loading="lazy" />
+        <p class="variant-title">Variant 20</p>
+        <p class="variant-work-id">Work ID: RE-011614</p>
       </a>
-      <div class="variant-title">Variant 21</div>
-    </div>
 
-    <!-- Variant 22 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-22a.jpg" data-title="Variant 22">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-22a.jpg" alt="Ronnnie Rabbbit â€“ Variant 22" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-21a.jpg" data-title="Variant 21 - RE-011615">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-21a.jpg" alt="Ronnnie Rabbbit - Variant 21 - RE-011615" loading="lazy" />
+        <p class="variant-title">Variant 21</p>
+        <p class="variant-work-id">Work ID: RE-011615</p>
       </a>
-      <div class="variant-title">Variant 22</div>
-    </div>
 
-    <!-- Variant 23 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-23a.jpg" data-title="Variant 23">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-23a.jpg" alt="Ronnnie Rabbbit â€“ Variant 23" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-22a.jpg" data-title="Variant 22 - RE-011616">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-22a.jpg" alt="Ronnnie Rabbbit - Variant 22 - RE-011616" loading="lazy" />
+        <p class="variant-title">Variant 22</p>
+        <p class="variant-work-id">Work ID: RE-011616</p>
       </a>
-      <div class="variant-title">Variant 23</div>
-    </div>
 
-    <!-- Variant 24 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-24a.jpg" data-title="Variant 24">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-24a.jpg" alt="Ronnnie Rabbbit â€“ Variant 24" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-23a.jpg" data-title="Variant 23 - RE-011617">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-23a.jpg" alt="Ronnnie Rabbbit - Variant 23 - RE-011617" loading="lazy" />
+        <p class="variant-title">Variant 23</p>
+        <p class="variant-work-id">Work ID: RE-011617</p>
       </a>
-      <div class="variant-title">Variant 24</div>
-    </div>
 
-    <!-- Variant 25 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-25a.jpg" data-title="Variant 25">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-25a.jpg" alt="Ronnnie Rabbbit â€“ Variant 25" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-24a.jpg" data-title="Variant 24 - RE-011618">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-24a.jpg" alt="Ronnnie Rabbbit - Variant 24 - RE-011618" loading="lazy" />
+        <p class="variant-title">Variant 24</p>
+        <p class="variant-work-id">Work ID: RE-011618</p>
       </a>
-      <div class="variant-title">Variant 25</div>
-    </div>
 
-    <!-- Variant 26 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-26a.jpg" data-title="Variant 26">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-26a.jpg" alt="Ronnnie Rabbbit â€“ Variant 26" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-25a.jpg" data-title="Variant 25 - RE-011619">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-25a.jpg" alt="Ronnnie Rabbbit - Variant 25 - RE-011619" loading="lazy" />
+        <p class="variant-title">Variant 25</p>
+        <p class="variant-work-id">Work ID: RE-011619</p>
       </a>
-      <div class="variant-title">Variant 26</div>
-    </div>
 
-    <!-- Variant 27 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-27a.jpg" data-title="Variant 27">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-27a.jpg" alt="Ronnnie Rabbbit â€“ Variant 27" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-26a.jpg" data-title="Variant 26 - RE-011620">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-26a.jpg" alt="Ronnnie Rabbbit - Variant 26 - RE-011620" loading="lazy" />
+        <p class="variant-title">Variant 26</p>
+        <p class="variant-work-id">Work ID: RE-011620</p>
       </a>
-      <div class="variant-title">Variant 27</div>
-    </div>
 
-    <!-- Variant 28 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-28a.jpg" data-title="Variant 28">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-28a.jpg" alt="Ronnnie Rabbbit â€“ Variant 28" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-27a.jpg" data-title="Variant 27 - RE-011621">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-27a.jpg" alt="Ronnnie Rabbbit - Variant 27 - RE-011621" loading="lazy" />
+        <p class="variant-title">Variant 27</p>
+        <p class="variant-work-id">Work ID: RE-011621</p>
       </a>
-      <div class="variant-title">Variant 28</div>
-    </div>
 
-    <!-- Variant 29 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-29a.jpg" data-title="Variant 29">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-29a.jpg" alt="Ronnnie Rabbbit â€“ Variant 29" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-28a.jpg" data-title="Variant 28 - RE-011622">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-28a.jpg" alt="Ronnnie Rabbbit - Variant 28 - RE-011622" loading="lazy" />
+        <p class="variant-title">Variant 28</p>
+        <p class="variant-work-id">Work ID: RE-011622</p>
       </a>
-      <div class="variant-title">Variant 29</div>
-    </div>
 
-    <!-- Variant 30 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-30a.jpg" data-title="Variant 30">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-30a.jpg" alt="Ronnnie Rabbbit â€“ Variant 30" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-29a.jpg" data-title="Variant 29 - RE-011623">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-29a.jpg" alt="Ronnnie Rabbbit - Variant 29 - RE-011623" loading="lazy" />
+        <p class="variant-title">Variant 29</p>
+        <p class="variant-work-id">Work ID: RE-011623</p>
       </a>
-      <div class="variant-title">Variant 30</div>
-    </div>
 
-    <!-- Variant 31 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-31a.jpg" data-title="Variant 31">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-31a.jpg" alt="Ronnnie Rabbbit â€“ Variant 31" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-30a.jpg" data-title="Variant 30 - RE-011624">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-30a.jpg" alt="Ronnnie Rabbbit - Variant 30 - RE-011624" loading="lazy" />
+        <p class="variant-title">Variant 30</p>
+        <p class="variant-work-id">Work ID: RE-011624</p>
       </a>
-      <div class="variant-title">Variant 31</div>
-    </div>
-        <!-- Variant 32 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-32a.jpg" data-title="Variant 32">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-32a.jpg" alt="Ronnnie Rabbbit â€“ Variant 32" loading="lazy">
-      </a>
-      <div class="variant-title">Variant 32</div>
-    </div>
 
-    <!-- Variant 33 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-33a.jpg" data-title="Variant 33">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-33a.jpg" alt="Ronnnie Rabbbit â€“ Variant 33" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-31a.jpg" data-title="Variant 31 - RE-011625">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-31a.jpg" alt="Ronnnie Rabbbit - Variant 31 - RE-011625" loading="lazy" />
+        <p class="variant-title">Variant 31</p>
+        <p class="variant-work-id">Work ID: RE-011625</p>
       </a>
-      <div class="variant-title">Variant 33</div>
-    </div>
 
-    <!-- Variant 34 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-34a.jpg" data-title="Variant 34">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-34a.jpg" alt="Ronnnie Rabbbit â€“ Variant 34" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-32a.jpg" data-title="Variant 32 - RE-011626">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-32a.jpg" alt="Ronnnie Rabbbit - Variant 32 - RE-011626" loading="lazy" />
+        <p class="variant-title">Variant 32</p>
+        <p class="variant-work-id">Work ID: RE-011626</p>
       </a>
-      <div class="variant-title">Variant 34</div>
-    </div>
 
-    <!-- Variant 35 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-35a.jpg" data-title="Variant 35">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-35a.jpg" alt="Ronnnie Rabbbit â€“ Variant 35" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-33a.jpg" data-title="Variant 33 - RE-011627">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-33a.jpg" alt="Ronnnie Rabbbit - Variant 33 - RE-011627" loading="lazy" />
+        <p class="variant-title">Variant 33</p>
+        <p class="variant-work-id">Work ID: RE-011627</p>
       </a>
-      <div class="variant-title">Variant 35</div>
-    </div>
 
-    <!-- Variant 36 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-36a.jpg" data-title="Variant 36">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-36a.jpg" alt="Ronnnie Rabbbit â€“ Variant 36" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-34a.jpg" data-title="Variant 34 - RE-011628">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-34a.jpg" alt="Ronnnie Rabbbit - Variant 34 - RE-011628" loading="lazy" />
+        <p class="variant-title">Variant 34</p>
+        <p class="variant-work-id">Work ID: RE-011628</p>
       </a>
-      <div class="variant-title">Variant 36</div>
-    </div>
 
-    <!-- Variant 37 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-37a.jpg" data-title="Variant 37">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-37a.jpg" alt="Ronnnie Rabbbit â€“ Variant 37" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-35a.jpg" data-title="Variant 35 - RE-011629">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-35a.jpg" alt="Ronnnie Rabbbit - Variant 35 - RE-011629" loading="lazy" />
+        <p class="variant-title">Variant 35</p>
+        <p class="variant-work-id">Work ID: RE-011629</p>
       </a>
-      <div class="variant-title">Variant 37</div>
-    </div>
 
-    <!-- Variant 38 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-38a.jpg" data-title="Variant 38">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-38a.jpg" alt="Ronnnie Rabbbit â€“ Variant 38" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-36a.jpg" data-title="Variant 36 - RE-011630">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-36a.jpg" alt="Ronnnie Rabbbit - Variant 36 - RE-011630" loading="lazy" />
+        <p class="variant-title">Variant 36</p>
+        <p class="variant-work-id">Work ID: RE-011630</p>
       </a>
-      <div class="variant-title">Variant 38</div>
-    </div>
 
-    <!-- Variant 39 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-39a.jpg" data-title="Variant 39">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-39a.jpg" alt="Ronnnie Rabbbit â€“ Variant 39" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-37a.jpg" data-title="Variant 37 - RE-011631">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-37a.jpg" alt="Ronnnie Rabbbit - Variant 37 - RE-011631" loading="lazy" />
+        <p class="variant-title">Variant 37</p>
+        <p class="variant-work-id">Work ID: RE-011631</p>
       </a>
-      <div class="variant-title">Variant 39</div>
-    </div>
 
-    <!-- Variant 40 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-40a.jpg" data-title="Variant 40">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-40a.jpg" alt="Ronnnie Rabbbit â€“ Variant 40" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-38a.jpg" data-title="Variant 38 - RE-011632">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-38a.jpg" alt="Ronnnie Rabbbit - Variant 38 - RE-011632" loading="lazy" />
+        <p class="variant-title">Variant 38</p>
+        <p class="variant-work-id">Work ID: RE-011632</p>
       </a>
-      <div class="variant-title">Variant 40</div>
-    </div>
 
-    <!-- Variant 41 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-41a.jpg" data-title="Variant 41">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-41a.jpg" alt="Ronnnie Rabbbit â€“ Variant 41" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-39a.jpg" data-title="Variant 39 - RE-011633">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-39a.jpg" alt="Ronnnie Rabbbit - Variant 39 - RE-011633" loading="lazy" />
+        <p class="variant-title">Variant 39</p>
+        <p class="variant-work-id">Work ID: RE-011633</p>
       </a>
-      <div class="variant-title">Variant 41</div>
-    </div>
 
-    <!-- Variant 42 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-42a.jpg" data-title="Variant 42">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-42a.jpg" alt="Ronnnie Rabbbit â€“ Variant 42" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-40a.jpg" data-title="Variant 40 - RE-011634">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-40a.jpg" alt="Ronnnie Rabbbit - Variant 40 - RE-011634" loading="lazy" />
+        <p class="variant-title">Variant 40</p>
+        <p class="variant-work-id">Work ID: RE-011634</p>
       </a>
-      <div class="variant-title">Variant 42</div>
-    </div>
 
-    <!-- Variant 43 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-43a.jpg" data-title="Variant 43">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-43a.jpg" alt="Ronnnie Rabbbit â€“ Variant 43" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-41a.jpg" data-title="Variant 41 - RE-011635">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-41a.jpg" alt="Ronnnie Rabbbit - Variant 41 - RE-011635" loading="lazy" />
+        <p class="variant-title">Variant 41</p>
+        <p class="variant-work-id">Work ID: RE-011635</p>
       </a>
-      <div class="variant-title">Variant 43</div>
-    </div>
 
-    <!-- Variant 44 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-44a.jpg" data-title="Variant 44">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-44a.jpg" alt="Ronnnie Rabbbit â€“ Variant 44" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-42a.jpg" data-title="Variant 42 - RE-011636">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-42a.jpg" alt="Ronnnie Rabbbit - Variant 42 - RE-011636" loading="lazy" />
+        <p class="variant-title">Variant 42</p>
+        <p class="variant-work-id">Work ID: RE-011636</p>
       </a>
-      <div class="variant-title">Variant 44</div>
-    </div>
 
-    <!-- Variant 45 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-45a.jpg" data-title="Variant 45">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-45a.jpg" alt="Ronnnie Rabbbit â€“ Variant 45" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-43a.jpg" data-title="Variant 43 - RE-011637">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-43a.jpg" alt="Ronnnie Rabbbit - Variant 43 - RE-011637" loading="lazy" />
+        <p class="variant-title">Variant 43</p>
+        <p class="variant-work-id">Work ID: RE-011637</p>
       </a>
-      <div class="variant-title">Variant 45</div>
-    </div>
 
-    <!-- Variant 46 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-46a.jpg" data-title="Variant 46">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-46a.jpg" alt="Ronnnie Rabbbit â€“ Variant 46" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-44a.jpg" data-title="Variant 44 - RE-011638">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-44a.jpg" alt="Ronnnie Rabbbit - Variant 44 - RE-011638" loading="lazy" />
+        <p class="variant-title">Variant 44</p>
+        <p class="variant-work-id">Work ID: RE-011638</p>
       </a>
-      <div class="variant-title">Variant 46</div>
-    </div>
 
-    <!-- Variant 47 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-47a.jpg" data-title="Variant 47">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-47a.jpg" alt="Ronnnie Rabbbit â€“ Variant 47" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-45a.jpg" data-title="Variant 45 - RE-011639">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-45a.jpg" alt="Ronnnie Rabbbit - Variant 45 - RE-011639" loading="lazy" />
+        <p class="variant-title">Variant 45</p>
+        <p class="variant-work-id">Work ID: RE-011639</p>
       </a>
-      <div class="variant-title">Variant 47</div>
-    </div>
 
-    <!-- Variant 48 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-48a.jpg" data-title="Variant 48">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-48a.jpg" alt="Ronnnie Rabbbit â€“ Variant 48" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-46a.jpg" data-title="Variant 46 - RE-011640">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-46a.jpg" alt="Ronnnie Rabbbit - Variant 46 - RE-011640" loading="lazy" />
+        <p class="variant-title">Variant 46</p>
+        <p class="variant-work-id">Work ID: RE-011640</p>
       </a>
-      <div class="variant-title">Variant 48</div>
-    </div>
 
-    <!-- Variant 49 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-49a.jpg" data-title="Variant 49">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-49a.jpg" alt="Ronnnie Rabbbit â€“ Variant 49" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-47a.jpg" data-title="Variant 47 - RE-011641">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-47a.jpg" alt="Ronnnie Rabbbit - Variant 47 - RE-011641" loading="lazy" />
+        <p class="variant-title">Variant 47</p>
+        <p class="variant-work-id">Work ID: RE-011641</p>
       </a>
-      <div class="variant-title">Variant 49</div>
-    </div>
 
-    <!-- Variant 50 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-50a.jpg" data-title="Variant 50">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-50a.jpg" alt="Ronnnie Rabbbit â€“ Variant 50" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-48a.jpg" data-title="Variant 48 - RE-011642">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-48a.jpg" alt="Ronnnie Rabbbit - Variant 48 - RE-011642" loading="lazy" />
+        <p class="variant-title">Variant 48</p>
+        <p class="variant-work-id">Work ID: RE-011642</p>
       </a>
-      <div class="variant-title">Variant 50</div>
-    </div>
 
-    <!-- Variant 51 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-51a.jpg" data-title="Variant 51">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-51a.jpg" alt="Ronnnie Rabbbit â€“ Variant 51" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-49a.jpg" data-title="Variant 49 - RE-011643">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-49a.jpg" alt="Ronnnie Rabbbit - Variant 49 - RE-011643" loading="lazy" />
+        <p class="variant-title">Variant 49</p>
+        <p class="variant-work-id">Work ID: RE-011643</p>
       </a>
-      <div class="variant-title">Variant 51</div>
-    </div>
 
-    <!-- Variant 52 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-52a.jpg" data-title="Variant 52">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-52a.jpg" alt="Ronnnie Rabbbit â€“ Variant 52" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-50a.jpg" data-title="Variant 50 - RE-011644">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-50a.jpg" alt="Ronnnie Rabbbit - Variant 50 - RE-011644" loading="lazy" />
+        <p class="variant-title">Variant 50</p>
+        <p class="variant-work-id">Work ID: RE-011644</p>
       </a>
-      <div class="variant-title">Variant 52</div>
-    </div>
 
-    <!-- Variant 53 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-53a.jpg" data-title="Variant 53">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-53a.jpg" alt="Ronnnie Rabbbit â€“ Variant 53" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-51a.jpg" data-title="Variant 51 - RE-011645">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-51a.jpg" alt="Ronnnie Rabbbit - Variant 51 - RE-011645" loading="lazy" />
+        <p class="variant-title">Variant 51</p>
+        <p class="variant-work-id">Work ID: RE-011645</p>
       </a>
-      <div class="variant-title">Variant 53</div>
-    </div>
 
-    <!-- Variant 54 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-54a.jpg" data-title="Variant 54">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-54a.jpg" alt="Ronnnie Rabbbit â€“ Variant 54" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-52a.jpg" data-title="Variant 52 - RE-011646">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-52a.jpg" alt="Ronnnie Rabbbit - Variant 52 - RE-011646" loading="lazy" />
+        <p class="variant-title">Variant 52</p>
+        <p class="variant-work-id">Work ID: RE-011646</p>
       </a>
-      <div class="variant-title">Variant 54</div>
-    </div>
 
-    <!-- Variant 55 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-55a.jpg" data-title="Variant 55">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-55a.jpg" alt="Ronnnie Rabbbit â€“ Variant 55" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-53a.jpg" data-title="Variant 53 - RE-011647">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-53a.jpg" alt="Ronnnie Rabbbit - Variant 53 - RE-011647" loading="lazy" />
+        <p class="variant-title">Variant 53</p>
+        <p class="variant-work-id">Work ID: RE-011647</p>
       </a>
-      <div class="variant-title">Variant 55</div>
-    </div>
 
-    <!-- Variant 56 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-56a.jpg" data-title="Variant 56">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-56a.jpg" alt="Ronnnie Rabbbit â€“ Variant 56" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-54a.jpg" data-title="Variant 54 - RE-011648">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-54a.jpg" alt="Ronnnie Rabbbit - Variant 54 - RE-011648" loading="lazy" />
+        <p class="variant-title">Variant 54</p>
+        <p class="variant-work-id">Work ID: RE-011648</p>
       </a>
-      <div class="variant-title">Variant 56</div>
-    </div>
 
-    <!-- Variant 57 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-57a.jpg" data-title="Variant 57">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-57a.jpg" alt="Ronnnie Rabbbit â€“ Variant 57" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-55a.jpg" data-title="Variant 55 - RE-011649">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-55a.jpg" alt="Ronnnie Rabbbit - Variant 55 - RE-011649" loading="lazy" />
+        <p class="variant-title">Variant 55</p>
+        <p class="variant-work-id">Work ID: RE-011649</p>
       </a>
-      <div class="variant-title">Variant 57</div>
-    </div>
 
-    <!-- Variant 58 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-58a.jpg" data-title="Variant 58">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-58a.jpg" alt="Ronnnie Rabbbit â€“ Variant 58" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-56a.jpg" data-title="Variant 56 - RE-011650">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-56a.jpg" alt="Ronnnie Rabbbit - Variant 56 - RE-011650" loading="lazy" />
+        <p class="variant-title">Variant 56</p>
+        <p class="variant-work-id">Work ID: RE-011650</p>
       </a>
-      <div class="variant-title">Variant 58</div>
-    </div>
 
-    <!-- Variant 59 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-59a.jpg" data-title="Variant 59">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-59a.jpg" alt="Ronnnie Rabbbit â€“ Variant 59" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-57a.jpg" data-title="Variant 57 - RE-011651">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-57a.jpg" alt="Ronnnie Rabbbit - Variant 57 - RE-011651" loading="lazy" />
+        <p class="variant-title">Variant 57</p>
+        <p class="variant-work-id">Work ID: RE-011651</p>
       </a>
-      <div class="variant-title">Variant 59</div>
-    </div>
 
-    <!-- Variant 60 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-60a.jpg" data-title="Variant 60">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-60a.jpg" alt="Ronnnie Rabbbit â€“ Variant 60" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-58a.jpg" data-title="Variant 58 - RE-011652">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-58a.jpg" alt="Ronnnie Rabbbit - Variant 58 - RE-011652" loading="lazy" />
+        <p class="variant-title">Variant 58</p>
+        <p class="variant-work-id">Work ID: RE-011652</p>
       </a>
-      <div class="variant-title">Variant 60</div>
-    </div>
 
-    <!-- Variant 61 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-61a.jpg" data-title="Variant 61">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-61a.jpg" alt="Ronnnie Rabbbit â€“ Variant 61" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-59a.jpg" data-title="Variant 59 - RE-011653">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-59a.jpg" alt="Ronnnie Rabbbit - Variant 59 - RE-011653" loading="lazy" />
+        <p class="variant-title">Variant 59</p>
+        <p class="variant-work-id">Work ID: RE-011653</p>
       </a>
-      <div class="variant-title">Variant 61</div>
-    </div>
 
-    <!-- Variant 62 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-62a.jpg" data-title="Variant 62">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-62a.jpg" alt="Ronnnie Rabbbit â€“ Variant 62" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-60a.jpg" data-title="Variant 60 - RE-011654">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-60a.jpg" alt="Ronnnie Rabbbit - Variant 60 - RE-011654" loading="lazy" />
+        <p class="variant-title">Variant 60</p>
+        <p class="variant-work-id">Work ID: RE-011654</p>
       </a>
-      <div class="variant-title">Variant 62</div>
-    </div>
 
-    <!-- Variant 63 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-63a.jpg" data-title="Variant 63">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-63a.jpg" alt="Ronnnie Rabbbit â€“ Variant 63" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-61a.jpg" data-title="Variant 61 - RE-011655">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-61a.jpg" alt="Ronnnie Rabbbit - Variant 61 - RE-011655" loading="lazy" />
+        <p class="variant-title">Variant 61</p>
+        <p class="variant-work-id">Work ID: RE-011655</p>
       </a>
-      <div class="variant-title">Variant 63</div>
-    </div>
 
-    <!-- Variant 64 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-64a.jpg" data-title="Variant 64">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-64a.jpg" alt="Ronnnie Rabbbit â€“ Variant 64" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-62a.jpg" data-title="Variant 62 - RE-011656">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-62a.jpg" alt="Ronnnie Rabbbit - Variant 62 - RE-011656" loading="lazy" />
+        <p class="variant-title">Variant 62</p>
+        <p class="variant-work-id">Work ID: RE-011656</p>
       </a>
-      <div class="variant-title">Variant 64</div>
-    </div>
 
-    <!-- Variant 65 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-65a.jpg" data-title="Variant 65">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-65a.jpg" alt="Ronnnie Rabbbit â€“ Variant 65" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-63a.jpg" data-title="Variant 63 - RE-011657">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-63a.jpg" alt="Ronnnie Rabbbit - Variant 63 - RE-011657" loading="lazy" />
+        <p class="variant-title">Variant 63</p>
+        <p class="variant-work-id">Work ID: RE-011657</p>
       </a>
-      <div class="variant-title">Variant 65</div>
-    </div>
 
-    <!-- Variant 66 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-66a.jpg" data-title="Variant 66">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-66a.jpg" alt="Ronnnie Rabbbit â€“ Variant 66" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-64a.jpg" data-title="Variant 64 - RE-011658">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-64a.jpg" alt="Ronnnie Rabbbit - Variant 64 - RE-011658" loading="lazy" />
+        <p class="variant-title">Variant 64</p>
+        <p class="variant-work-id">Work ID: RE-011658</p>
       </a>
-      <div class="variant-title">Variant 66</div>
-    </div>
 
-    <!-- Variant 67 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-67a.jpg" data-title="Variant 67">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-67a.jpg" alt="Ronnnie Rabbbit â€“ Variant 67" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-65a.jpg" data-title="Variant 65 - RE-011659">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-65a.jpg" alt="Ronnnie Rabbbit - Variant 65 - RE-011659" loading="lazy" />
+        <p class="variant-title">Variant 65</p>
+        <p class="variant-work-id">Work ID: RE-011659</p>
       </a>
-      <div class="variant-title">Variant 67</div>
-    </div>
 
-    <!-- Variant 68 -->
-    <div class="variant-item">
-      <a class="variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-68a.jpg" data-title="Variant 68">
-        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-68a.jpg" alt="Ronnnie Rabbbit â€“ Variant 68" loading="lazy">
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-66a.jpg" data-title="Variant 66 - RE-011660">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-66a.jpg" alt="Ronnnie Rabbbit - Variant 66 - RE-011660" loading="lazy" />
+        <p class="variant-title">Variant 66</p>
+        <p class="variant-work-id">Work ID: RE-011660</p>
       </a>
-      <div class="variant-title">Variant 68</div>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-67a.jpg" data-title="Variant 67 - RE-011661">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-67a.jpg" alt="Ronnnie Rabbbit - Variant 67 - RE-011661" loading="lazy" />
+        <p class="variant-title">Variant 67</p>
+        <p class="variant-work-id">Work ID: RE-011661</p>
+      </a>
+
+      <a class="variant-item variant-link" href="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-68a.jpg" data-title="Variant 68 - RE-011662">
+        <img src="../../images/Paintings/Warholesque/Warholesque-Ronnie-var-68a.jpg" alt="Ronnnie Rabbbit - Variant 68 - RE-011662" loading="lazy" />
+        <p class="variant-title">Variant 68</p>
+        <p class="variant-work-id">Work ID: RE-011662</p>
+      </a>
+
     </div>
-    
-  </div>
-</section>
-
-<!-- Lightbox -->
+  </section>
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <img class="lightbox-img" id="lightboxImg" alt="">
-    <div class="lightbox-bar">
-      <div id="lightboxTitle"></div>
-      <div class="lightbox-actions">
-        <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
-        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">âœ•</button>
-      </div>
-    </div>
-  </div>
+ <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+ <img class="lightbox-img" id="lightboxImg" alt="">
+ <div class="lightbox-bar">
+ <div id="lightboxTitle"></div>
+ <div class="lightbox-actions">
+ <a id="lightboxOpen" href="#" target="_blank" rel="noopener">Open original</a>
+ <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+ </div>
+ </div>
+ </div>
 </div>
 
 <script>
 (function () {
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lightboxImg");
-  const lbTitle = document.getElementById("lightboxTitle");
-  const lbOpen = document.getElementById("lightboxOpen");
-  const lbClose = document.getElementById("lightboxClose");
+ const lb = document.getElementById("lightbox");
+ const lbImg = document.getElementById("lightboxImg");
+ const lbTitle = document.getElementById("lightboxTitle");
+ const lbOpen = document.getElementById("lightboxOpen");
+ const lbClose = document.getElementById("lightboxClose");
 
-  function openLightbox(src, title, alt) {
-    lb.classList.add("is-open");
-    lb.setAttribute("aria-hidden", "false");
-    lbImg.src = src;
-    lbImg.alt = alt || title || "Image";
-    lbTitle.textContent = title || "";
-    lbOpen.href = src;
-    document.body.style.overflow = "hidden";
-    lbClose.focus();
-  }
+ function openLightbox(src, title, alt) {
+ lb.classList.add("is-open");
+ lb.setAttribute("aria-hidden", "false");
+ lbImg.src = src;
+ lbImg.alt = alt || title || "Image";
+ lbTitle.textContent = title || "";
+ lbOpen.href = src;
+ document.body.style.overflow = "hidden";
+ lbClose.focus();
+ }
 
-  function closeLightbox() {
-    lb.classList.remove("is-open");
-    lb.setAttribute("aria-hidden", "true");
-    lbImg.src = "";
-    document.body.style.overflow = "";
-  }
+ function closeLightbox() {
+ lb.classList.remove("is-open");
+ lb.setAttribute("aria-hidden", "true");
+ lbImg.src = "";
+ document.body.style.overflow = "";
+ }
 
-  document.addEventListener("click", (e) => {
-    const link = e.target.closest(".variant-link");
-    if (link) {
-      e.preventDefault();
-      openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
-      return;
-    }
-    if (e.target === lb) closeLightbox();
-  });
+ document.addEventListener("click", (e) => {
+ const link = e.target.closest(".variant-link");
+ if (link) {
+ e.preventDefault();
+ openLightbox(link.href, link.dataset.title, link.querySelector("img")?.alt);
+ return;
+ }
+ if (e.target === lb) closeLightbox();
+ });
 
-  lbClose.addEventListener("click", closeLightbox);
+ lbClose.addEventListener("click", closeLightbox);
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
-  });
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+ });
 })();
 </script>
 
 </body>
 </html>
+
+
+
+
 
