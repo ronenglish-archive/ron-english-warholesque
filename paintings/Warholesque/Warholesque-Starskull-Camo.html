@@ -194,6 +194,60 @@
 }
 /* WARHOLESQUE FINAL VARIANT GALLERY - END */
 </style>
+<style>
+/* WARHOLESQUE FINAL-ROW CENTERING - START */
+/* Preserve the established grid/card sizing; center only an incomplete final row. */
+@media (min-width: 1094px) {
+  .variant-grid { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+}
+@media (min-width: 878px) and (max-width: 1093px) {
+  .variant-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+}
+@media (min-width: 721px) and (max-width: 877px) {
+  .variant-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+/* Desktop/wide: five columns. */
+@media (min-width: 1094px) {
+  .variant-grid > .variant-item:last-child:nth-child(5n + 1) { grid-column: 3; }
+  .variant-grid > .variant-item:nth-last-child(2):nth-child(5n + 1) { grid-column: 3 / span 1; transform: translateX(-50%); }
+  .variant-grid > .variant-item:nth-last-child(1):nth-child(5n + 2) { transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(3):nth-child(5n + 1) { grid-column: 2; }
+  .variant-grid > .variant-item:nth-last-child(2):nth-child(5n + 2) { grid-column: 3; }
+  .variant-grid > .variant-item:nth-last-child(1):nth-child(5n + 3) { grid-column: 4; }
+  .variant-grid > .variant-item:nth-last-child(4):nth-child(5n + 1) { grid-column: 1; transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(3):nth-child(5n + 2) { transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(2):nth-child(5n + 3) { transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(1):nth-child(5n + 4) { transform: translateX(50%); }
+}
+
+/* Medium desktop: four columns. */
+@media (min-width: 878px) and (max-width: 1093px) {
+  .variant-grid > .variant-item:last-child:nth-child(4n + 1) { grid-column: 2 / span 2; width: calc(50% - 13px) !important; justify-self: center; }
+  .variant-grid > .variant-item:nth-last-child(2):nth-child(4n + 1) { grid-column: 2; transform: translateX(-50%); }
+  .variant-grid > .variant-item:nth-last-child(1):nth-child(4n + 2) { grid-column: 3; transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(3):nth-child(4n + 1) { grid-column: 1; transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(2):nth-child(4n + 2) { transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(1):nth-child(4n + 3) { transform: translateX(50%); }
+}
+
+/* Narrow desktop/tablet above the existing two-column breakpoint: three columns. */
+@media (min-width: 721px) and (max-width: 877px) {
+  .variant-grid > .variant-item:last-child:nth-child(3n + 1) { grid-column: 2; }
+  .variant-grid > .variant-item:nth-last-child(2):nth-child(3n + 1) { grid-column: 1; transform: translateX(50%); }
+  .variant-grid > .variant-item:nth-last-child(1):nth-child(3n + 2) { grid-column: 2; transform: translateX(50%); }
+}
+
+/* Existing mobile layout is two columns; center a single leftover card. */
+@media (min-width: 421px) and (max-width: 720px) {
+  .variant-grid > .variant-item:last-child:nth-child(odd) {
+    grid-column: 1 / span 2;
+    width: calc(50% - 9px) !important;
+    justify-self: center;
+  }
+}
+/* WARHOLESQUE FINAL-ROW CENTERING - END */
+</style>
 </head>
 
 <body>
