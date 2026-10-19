@@ -156,6 +156,31 @@
 }
 /* WARHOLESQUE INDEX CENTERING CLEANUP - END */
 </style>
+<style id="warholesque-series-last-row-centered-v1">
+/* Center an incomplete final index row without stretching the remaining card. */
+body main.series-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 22px !important;
+}
+body main.series-list > a.series-block {
+  flex: 0 0 calc((100% - 22px) / 2) !important;
+  width: calc((100% - 22px) / 2) !important;
+  min-width: 0 !important;
+  max-width: calc((100% - 22px) / 2) !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 720px) {
+  body main.series-list { gap: 18px !important; }
+  body main.series-list > a.series-block {
+    flex-basis: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+</style>
 </head>
 
 <body>
