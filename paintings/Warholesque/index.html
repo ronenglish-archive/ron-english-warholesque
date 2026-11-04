@@ -181,6 +181,22 @@ body main.series-list > a.series-block {
   }
 }
 </style>
+
+<!-- Owner-approved compact catalogue index layout; source: 7-page V2 / corrected 2-page V3 previews. -->
+<style id="ron-seven-approved-compact-v1">
+/* Three modest-size series cards per desktop row. Preserve two original variant images per card. */
+body .page-header,body .intro-text,body main.series-list{max-width:760px!important;width:calc(100% - 24px)!important;box-sizing:border-box!important;margin-left:auto!important;margin-right:auto!important}
+body .page-title{font-size:26px!important}body .intro-text{font-size:12px!important;line-height:1.5!important}body .intro-meta{font-size:12px!important}body .intro-text h3{font-size:14px!important}
+body main.series-list{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:stretch!important;gap:14px!important}
+body main.series-list>a.series-block{box-sizing:border-box!important;flex:0 0 calc((100% - 28px)/3)!important;width:calc((100% - 28px)/3)!important;max-width:calc((100% - 28px)/3)!important;min-width:0!important;margin:0!important}
+body main.series-list>a.series-block .series-header{padding:8px!important}
+body main.series-list>a.series-block .series-title{font-size:13px!important;line-height:1.3!important}
+body main.series-list>a.series-block .series-meta,body main.series-list>a.series-block .page-links{font-size:11px!important}
+body main.series-list>a.series-block .variant-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:4px!important;padding:5px!important;box-sizing:border-box!important}
+body main.series-list>a.series-block .variant-grid img{display:block!important;width:100%!important;height:110px!important;object-fit:contain!important;box-sizing:border-box!important}
+@media(max-width:600px){body main.series-list>a.series-block{flex-basis:calc((100% - 14px)/2)!important;width:calc((100% - 14px)/2)!important;max-width:calc((100% - 14px)/2)!important}body main.series-list>a.series-block .variant-grid img{height:100px!important}}
+@media(max-width:370px){body main.series-list>a.series-block{flex-basis:100%!important;width:100%!important;max-width:260px!important}}
+</style>
 </head>
 
 <body>
